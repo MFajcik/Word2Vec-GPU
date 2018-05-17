@@ -412,8 +412,8 @@ class DataProcessor():
                 word_pairs = word_pairs[self.batch_size:]
 
     def load_vocab(self):
-        from explanation.visualisation.tsne_on_vec import read_vocab
-        return read_vocab(self.vocab_path)
+        from preprocessing.tools import read_frequency_vocab
+        return read_frequency_vocab(self.vocab_path)
 
     def parse_vocab(self):
         # TODO: implement
