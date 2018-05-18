@@ -1,0 +1,2 @@
+GPU 1080Ti reaches around 46% usage on batch size 512 and higher
+34.2% word analogies on text8 corpus

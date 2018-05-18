@@ -13,12 +13,27 @@ import torch.optim as optimizer
 import torch.nn.functional as F
 import math
 
-
-# Author: Martin Fajcik
-# Code partially inspired by https://adoni.github.io/2017/11/08/word2vec-pytorch/
+__author__="Martin Fajčík"
+# Small parts of this code were inspired by snippets from
+#  https://adoni.github.io/2017/11/08/word2vec-pytorch/
 
 # The wisdom server can be started with command
 #  python -m visdom.server
+
+# TODO
+# Phrase clustering
+# Implement save option
+# Vocabulary parsing
+# Visualise embedding training via dim-reduced 2D space
+
+# TODO for optimization
+# Make batch generator to run in parallel (producer-consumer architecture)
+# Precalculate random ints!
+# according to cProfile,
+# <method 'choice' of 'mtrand.RandomState' objects> took 7% of program time
+
+# FIXME
+# Using small number of bytes like 50 for file reading results into failure
 
 class Skipgram(nn.Module):
 
@@ -136,22 +151,18 @@ class Skipgram(nn.Module):
                         win=self.loss_window,
                         update='append')
                 if iteration % 10000 == 0:
-                    print(f"Epoch {epoch}, Loss: {loss.data}")
+                    print(f"\nEpoch {epoch}, Loss: {loss.data}")
                     if self.data_processor.analogy_questions is not None:
                         self.eval_analogy_questions()
-                    print("\nSANITY CHECK")
-                    print("----------------------------------------------------------------------------------------------------------------------------------")
-                    for testword in self.data_processor.sanitycheck:
-                        print(f"Nearest words to '{testword}' are: {', '.join(self.find_nearest(testword))}")
-                    print("----------------------------------------------------------------------------------------------------------------------------------")
 
-            # if epoch * self.batch_size % 100000 == 0:
-            #     lr = self.initial_lr * (1.0 - epoch / batch_count)
-            #     for param_group in self.optimizer.param_groups:
-            #         param_group['lr'] = lr
-            # if iteration>0 and iteration * self.data_processor.batch_size % 1e6 == 0:
-            #     for param_group in self.optimizer.param_groups:
-            #         param_group['lr'] =  param_group['lr'] - param_group['lr']/1e-5
+                    if iteration % 50000 == 0:
+                        print("\nSANITY CHECK")
+                        print(
+                            "----------------------------------------------------------------------------------------------------------------------------------")
+                        for testword in self.data_processor.sanitycheck:
+                            print(f"Nearest words to '{testword}' are: {', '.join(self.find_nearest(testword))}")
+                        print(
+                            "----------------------------------------------------------------------------------------------------------------------------------")
 
             iteration += 1
         return self.data_processor.bytes_read
@@ -225,14 +236,14 @@ class Skipgram(nn.Module):
         embedding = self.u_embeddings(word_id)
         dist = torch.matmul(embedding, nembs)
 
-        top_predicted = torch.topk(dist, dim=1, k=k + 1)[1].cpu().numpy().tolist()[0]
+        top_predicted = torch.topk(dist, dim=1, k=k + 1)[1].cpu().numpy().tolist()[0][1:]
         return list(map(lambda x: self.data_processor.id2w[x], top_predicted))
 
     def find_nearest_emb(self, embedding, k=10):
         nembs = torch.transpose(F.normalize(self.u_embeddings.weight), 0, 1)
         dist = torch.matmul(embedding, nembs)
 
-        top_predicted = torch.topk(dist, dim=1, k=k + 1)[1].cpu().numpy().tolist()[0]
+        top_predicted = torch.topk(dist, dim=1, k=k + 1)[1].cpu().numpy().tolist()[0][1:]
         return list(map(lambda x: self.data_processor.id2w[x], top_predicted))
 
     def translate_emb(self, embedding):
@@ -336,18 +347,19 @@ class DataProcessor():
         si = 0
         for wlist_ in wordgen:
             wlist = wlist_[0]
-            self.bytes_read = wlist_[1] + previously_read
+            self.bytes_read = wlist_[1]  # + previously_read
 
             # print(word_pairs)
             self.cnt += 1
             if self.cnt % 5000 == 0:
                 t = time.time()
                 p = t - self.benchmarktime
-                #Derive epoch from bytes read
-                total_size = fsize * (math.floor(self.bytes_read/fsize) +1)
-                print(f"processed in {p} - {self.bytes_read}/{total_size} bytes\r")
+                # Derive epoch from bytes read
+                total_size = fsize * (math.floor(self.bytes_read / fsize) + 1)
+                print(
+                    f"Time: {p/60:.2f} min - epoch state {self.bytes_read/total_size *100:.2f}% ({int(self.bytes_read/p/1e3)} KB/s)")
 
-            # Discard words with 5 or less occurences
+            # Discard words with min_freq or less occurences
             # Subsample of Frequent Words
             # hese words are removed from the text before generating the contexts
             wlist_clean = []
@@ -361,7 +373,7 @@ class DataProcessor():
                     print(f"Wlist: {wlist}")
             wlist = wlist_clean
 
-            # TODO: Phrase clustering
+            # TODO: Phrase clustering here
             # FIXME: Using small number of bytes like 50 for file reading results into failure, WHY?
 
             if not wlist:
@@ -413,6 +425,7 @@ class DataProcessor():
 
     def load_vocab(self):
         from preprocessing.tools import read_frequency_vocab
+        print("Loading vocabulary...")
         return read_frequency_vocab(self.vocab_path)
 
     def parse_vocab(self):
@@ -479,7 +492,7 @@ if __name__ == "__main__":
     parser.add_argument("-mf", "--min_freq", help="minimum frequence of occurence for a word",
                         default=5)
     parser.add_argument("-lr", "--learning_rate", help="initial learning rate",
-                        default=0.0025 # 10x smaller than used by Tomas Mikolov, because we use SparseAdam, not the SGD
+                        default=0.0025  # 10x smaller than used by Tomas Mikolov, because we use SparseAdam, not the SGD
                         )
     parser.add_argument("-d", "--dimension", help="size of the embedding dimension",
                         default=300)
@@ -508,8 +521,8 @@ if __name__ == "__main__":
     # For example, parameters like weight_decay and momentum in torch.optim. SGD require the global calculation
     # on embedding matrix, which is extremely time-consuming.
     bytes_read = 0
-    for e in range(100):
+    for e in range(10):
         print(f"Starting epoch: {e}")
         bytes_read = skipgram_model._train(previously_read=bytes_read, epoch=e)
-    #TODO: Implement save functionality
+    # TODO: Implement save functionality
     # skipgram_model.save()
