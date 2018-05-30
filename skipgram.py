@@ -13,6 +13,8 @@ import torch.optim as optimizer
 import torch.nn.functional as F
 import math
 
+from evaluation.analogy_questions import read_analogies, eval_analogy_questions
+
 __author__="Martin Fajčík"
 # Small parts of this code were inspired by snippets from
 #  https://adoni.github.io/2017/11/08/word2vec-pytorch/
@@ -153,7 +155,9 @@ class Skipgram(nn.Module):
                 if iteration % 10000 == 0:
                     print(f"\nEpoch {epoch}, Loss: {loss.data}")
                     if self.data_processor.analogy_questions is not None:
-                        self.eval_analogy_questions()
+                        eval_analogy_questions(data_processor= self.data_processor,
+                                               u_embeddings=self.u_embeddings,
+                                               use_cuda = self.use_cuda)
 
                     if iteration % 50000 == 0:
                         print("\nSANITY CHECK")
@@ -166,67 +170,6 @@ class Skipgram(nn.Module):
 
             iteration += 1
         return self.data_processor.bytes_read
-
-    # Each analogy task is to predict the 4th word (d) given three
-    # words: a, b, c.  E.g., a=italy, b=rome, c=france, we should
-    # predict d=paris
-    def eval_analogy_questions(self, top_k=4):
-        """Evaluate analogy questions and reports accuracy."""
-        # How many questions we get right at precision@1.
-        correct = 0
-        aq = self.data_processor.analogy_questions
-        total = aq.shape[0]
-
-        start = 0
-        N = 256
-        predict_item_index = 3
-
-        # Normalize matrix so we can calculate cosine distances with dot product
-
-        nembs = torch.transpose(F.normalize(self.u_embeddings.weight), 0, 1)
-        while start < total:
-            limit = start + N
-            analogy = aq[start:limit, :]
-
-            # Each row of a_emb, b_emb, c_emb is a word's embedding vector.
-            # They all have the shape [N, emb_dim]
-            a = torch.LongTensor(analogy[:, 0])
-            b = torch.LongTensor(analogy[:, 1])
-            c = torch.LongTensor(analogy[:, 2])
-            if self.use_cuda:
-                a = a.cuda()
-                b = b.cuda()
-                c = c.cuda()
-
-            a_emb = self.u_embeddings(a)
-            b_emb = self.u_embeddings(b)
-            c_emb = self.u_embeddings(c)
-
-            # We expect that d's embedding vectors on the unit hyper-sphere is
-            # near: c_emb + (b_emb - a_emb), which has the shape [N, emb_dim].
-            d_emb = c_emb + b_emb - a_emb
-
-            # Compute cosine distance of d_emb to each vocab word
-            # dist has shape [N, vocab_size]
-            dist = torch.matmul(d_emb, nembs)
-
-            # top_k closest EMBEDDINGS
-            top_predicted = torch.topk(dist, dim=1, k=top_k)[1].cpu().numpy()
-
-            start = limit
-            for question in range(analogy.shape[0]):
-                for j in range(top_k):
-                    if top_predicted[question, j] == analogy[question, predict_item_index]:
-                        # Bingo! We predicted correctly. E.g., [italy, rome, france, paris].
-                        correct += 1
-                        break
-                    elif top_predicted[question, j] in analogy[question, :predict_item_index]:
-                        # We need to skip words already in the question.
-                        continue
-                    else:
-                        # The correct label is not the precision@1
-                        break
-        print("Eval analogy questions %4d/%d accuracy = %4.1f%%" % (correct, total, correct * 100.0 / total))
 
     def find_nearest(self, word, k=10):
         nembs = torch.transpose(F.normalize(self.u_embeddings.weight), 0, 1)
@@ -292,7 +235,7 @@ class DataProcessor():
         # Preload eval analogy questions
         if args.eval_aq:
             self.eval_data_aq = args.eval_aq
-            self.analogy_questions = self.read_analogies()
+            self.analogy_questions = read_analogies(file=self.eval_data_aq,w2id=self.w2id)
 
         self.cnt = 0
         self.benchmarktime = time.time()
@@ -353,7 +296,7 @@ class DataProcessor():
             self.cnt += 1
             if self.cnt % 5000 == 0:
                 t = time.time()
-                p = t - self.benchmarktime
+                p = t
                 # Derive epoch from bytes read
                 total_size = fsize * (math.floor(self.bytes_read / fsize) + 1)
                 print(
@@ -450,39 +393,7 @@ class DataProcessor():
             w2id[k] = i
         return w2id
 
-    # Method taken from tensorflow/models skipgram
-    def read_analogies(self):
-        """Reads through the analogy question file.
-        Returns:
-          questions: a [n, 4] numpy array containing the analogy question's
-                     word ids.
-          questions_skipped: questions skipped due to unknown words.
-        """
-        questions = []
-        questions_skipped = 0
-        with open(self.eval_data_aq, "rb") as analogy_f:
-            for line in analogy_f:
-                if line.startswith(b":"):  # Skip comments.
-                    continue
-                words = line.decode().strip().lower().split()
-                ids = [self.w2id.get(w.strip(), None) for w in words]
-                if None in ids or len(ids) != 4:
-                    questions_skipped += 1
-                else:
-                    questions.append(np.array(ids))
-
-        print("\n###########################################")
-        print("Loaded evaluation method: Question analogy")
-        print("-------------------------------------------\n")
-        print("Eval analogy file: ", self.eval_data_aq)
-        print("Questions: ", len(questions))
-        print("Skipped: ", questions_skipped)
-        print("###########################################\n")
-        return np.array(questions, dtype=np.int32)
-
-
-if __name__ == "__main__":
-    parser = argparse.ArgumentParser()
+def init_parser(parser):
     parser.add_argument("-c", "--corpus", help="input data corpus", required=True)
     parser.add_argument("-v", "--verbose", help="increase the model verbosity", action="store_true")
     parser.add_argument("-w", "--window", help="size of a context window",
@@ -499,6 +410,8 @@ if __name__ == "__main__":
     parser.add_argument("-br", "--bytes_to_read", help="how much bytes to read from corpus file per chunk",
                         default=512)
     parser.add_argument("-bs", "--batch_size", help="size of 1 batch in training iteration", default=512)
+    parser.add_argument("-pc", "--phrase_clustering", help="enable phrase clustering as described by Mikolov (i.e. New York becomes New_York)",
+                        default=True)
     parser.add_argument("-ri", "--random_ints",
                         help="how many random ints for window subsampling to precalculate at once",
                         default=1310720  # 5 megabytes of int32s
@@ -512,6 +425,10 @@ if __name__ == "__main__":
                         help='list of words for which the nearest word embeddings are found during training, '
                              'serves as sanity check, i.e. "dog family king eye"',
                         default="dog family king eye")
+
+if __name__ == "__main__":
+    parser = argparse.ArgumentParser()
+    init_parser(parser)
     args = parser.parse_args()
 
     data_proc = DataProcessor(args)
