@@ -15,7 +15,9 @@ import math
 
 from evaluation.analogy_questions import read_analogies, eval_analogy_questions
 
-__author__="Martin Fajčík"
+__author__ = "Martin Fajčík"
+
+
 # Small parts of this code were inspired by snippets from
 #  https://adoni.github.io/2017/11/08/word2vec-pytorch/
 
@@ -104,14 +106,9 @@ class Skipgram(nn.Module):
         v_neg_emb_batch = self.v_embeddings(neg_v)
         # v_neg_emb_batch has shape [BATCH_SIZE,NUM_OF_NEG_SAMPLES,EMBEDDING_DIMENSIONALITY]
         # u_emb_batch has shape [BATCH_SIZE,EMBEDDING_DIMENSIONALITY]
-        neg_score = None
-        try:
-            neg_score = torch.bmm(v_neg_emb_batch, u_emb_batch.unsqueeze(2))
-            neg_score = self.logsigmoid(-1. * neg_score)
-        except Exception as e:
-            print(e)
-            print(f"v_emb: {v_neg_emb_batch.shape}")
-            print(f"u_emb: {u_emb_batch.unsqueeze(2).shape}")
+
+        neg_score = torch.bmm(v_neg_emb_batch, u_emb_batch.unsqueeze(2))
+        neg_score = self.logsigmoid(-1. * neg_score)
 
         return -1. * (torch.sum(score) + torch.sum(neg_score))
 
@@ -155,9 +152,9 @@ class Skipgram(nn.Module):
                 if iteration % 10000 == 0:
                     print(f"\nEpoch {epoch}, Loss: {loss.data}")
                     if self.data_processor.analogy_questions is not None:
-                        eval_analogy_questions(data_processor= self.data_processor,
+                        eval_analogy_questions(data_processor=self.data_processor,
                                                u_embeddings=self.u_embeddings,
-                                               use_cuda = self.use_cuda)
+                                               use_cuda=self.use_cuda)
 
                     if iteration % 50000 == 0:
                         print("\nSANITY CHECK")
@@ -235,7 +232,7 @@ class DataProcessor():
         # Preload eval analogy questions
         if args.eval_aq:
             self.eval_data_aq = args.eval_aq
-            self.analogy_questions = read_analogies(file=self.eval_data_aq,w2id=self.w2id)
+            self.analogy_questions = read_analogies(file=self.eval_data_aq, w2id=self.w2id)
 
         self.cnt = 0
         self.benchmarktime = time.time()
@@ -321,7 +318,8 @@ class DataProcessor():
 
             if not wlist:
                 # This happens if we reached the end of dataset
-                # Maybe this is redundant code...
+                # Maybe this is redundant code, since this happens only few times
+                # Is is here just for the sake of completness
                 while word_from_last_list:
                     if not rchoices:
                         rchoices = deque(
@@ -393,6 +391,7 @@ class DataProcessor():
             w2id[k] = i
         return w2id
 
+
 def init_parser(parser):
     parser.add_argument("-c", "--corpus", help="input data corpus", required=True)
     parser.add_argument("--vocab", help="precalculated vocabulary")
@@ -413,7 +412,8 @@ def init_parser(parser):
     parser.add_argument("-br", "--bytes_to_read", help="how much bytes to read from corpus file per chunk",
                         default=512)
     parser.add_argument("-bs", "--batch_size", help="size of 1 batch in training iteration", default=512)
-    parser.add_argument("-pc", "--phrase_clustering", help="enable phrase clustering as described by Mikolov (i.e. New York becomes New_York)",
+    parser.add_argument("-pc", "--phrase_clustering",
+                        help="enable phrase clustering as described by Mikolov (i.e. New York becomes New_York)",
                         default=True)
     parser.add_argument("-ri", "--random_ints",
                         help="how many random ints for window subsampling to precalculate at once",
@@ -425,6 +425,7 @@ def init_parser(parser):
                         help='list of words for which the nearest word embeddings are found during training, '
                              'serves as sanity check, i.e. "dog family king eye"',
                         default="dog family king eye")
+
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
@@ -441,5 +442,5 @@ if __name__ == "__main__":
     for e in range(10):
         print(f"Starting epoch: {e}")
         bytes_read = skipgram_model._train(previously_read=bytes_read, epoch=e)
-    # TODO: Implement save functionality
-    # skipgram_model.save()
+
+    skipgram_model.save()
