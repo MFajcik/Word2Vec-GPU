@@ -5,7 +5,7 @@ import numpy as np
 import torch
 import argparse
 import visdom
-from preprocessing.nlp_io import read_word_lists
+from nlpfit.preprocessing.nlp_io import read_word_lists
 import torch.nn as nn
 from torch.autograd import Variable
 from collections import deque
@@ -367,7 +367,7 @@ class DataProcessor():
                 word_pairs = word_pairs[self.batch_size:]
 
     def load_vocab(self):
-        from preprocessing.tools import read_frequency_vocab
+        from nlpfit.preprocessing.tools import read_frequency_vocab
         print("Loading vocabulary...")
         return read_frequency_vocab(self.vocab_path)
 
@@ -395,6 +395,9 @@ class DataProcessor():
 
 def init_parser(parser):
     parser.add_argument("-c", "--corpus", help="input data corpus", required=True)
+    parser.add_argument("--vocab", help="precalculated vocabulary")
+    parser.add_argument("--eval_aq", "--eval_analogy_questions",
+                        help="file with analogy questions to do the evaluation on", default=None)
     parser.add_argument("-v", "--verbose", help="increase the model verbosity", action="store_true")
     parser.add_argument("-w", "--window", help="size of a context window",
                         default=5)
@@ -417,10 +420,7 @@ def init_parser(parser):
                         default=1310720  # 5 megabytes of int32s
                         )
     parser.add_argument("-tr", "--subsfqwords_tr", help="subsample frequent words threshold", default=1e-4)
-    parser.add_argument("--vocab", help="precalculated vocabulary")
     parser.add_argument("--visdom", help="visualize training via visdom_enabled library", default=True)
-    parser.add_argument("--eval_aq", "--eval_analogy_questions",
-                        help="file with analogy questions to do the evaluation on", default=None)
     parser.add_argument("--sanitycheck",
                         help='list of words for which the nearest word embeddings are found during training, '
                              'serves as sanity check, i.e. "dog family king eye"',
