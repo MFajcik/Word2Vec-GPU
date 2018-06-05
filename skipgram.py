@@ -16,6 +16,7 @@ import math
 from evaluation.analogy_questions import read_analogies, eval_analogy_questions
 
 __author__="Martin Fajčík"
+
 # Small parts of this code were inspired by snippets from
 #  https://adoni.github.io/2017/11/08/word2vec-pytorch/
 
@@ -24,7 +25,6 @@ __author__="Martin Fajčík"
 
 # TODO
 # Phrase clustering
-# Implement save option
 # Vocabulary parsing
 # Visualise embedding training via dim-reduced 2D space
 
@@ -195,8 +195,28 @@ class Skipgram(nn.Module):
         id = torch.topk(dist, dim=1, k=1)[1].cpu().numpy().tolist()[0][0]
         return self.data_processor.id2w[id]
 
-    def save(self):
-        pass
+
+    # The vec file is a text file that contains the word vectors, one per line for each word in the vocabulary.
+    # The first line is a header containing the number of words and the dimensionality of the vectors.
+    # Subsequent lines are the word vectors for all words in the vocabulary, sorted by decreasing frequency.
+    # Example:
+    # 218316 100
+    # the -0.10363 -0.063669 0.032436 -0.040798...
+    # of -0.0083724 0.0059414 -0.046618 -0.072735...
+    # one 0.32731 0.044409 -0.46484 0.14716...
+    def save(self,vec_path):
+        vocab_size = self.data_processor.vocab_size
+        embedding_dimension = self.data_processor.embedding_size
+        # Using linux file endings
+        with open(vec_path, 'w') as f:
+            print("Saving .vec file to {}".format(vec_path))
+            f.write("{} {}\n".format(vocab_size, embedding_dimension))
+            for word,id in self.data_processor.w2id.items():
+                tensor_id = torch.LongTensor([id])
+                if self.use_cuda:
+                    tensor_id = tensor_id.cuda()
+                embedding=self.u_embeddings(tensor_id).cpu().squeeze(0).detach().numpy()
+                f.write("{} {}\n".format(word, ' '.join(map(str, embedding))))
 
 
 class DataProcessor():
@@ -296,7 +316,7 @@ class DataProcessor():
             self.cnt += 1
             if self.cnt % 5000 == 0:
                 t = time.time()
-                p = t
+                p = t - self.benchmarktime
                 # Derive epoch from bytes read
                 total_size = fsize * (math.floor(self.bytes_read / fsize) + 1)
                 print(
@@ -388,8 +408,7 @@ class DataProcessor():
 
     def create_w2id(self):
         w2id = dict()
-        w2id['UNK'] = 0
-        for i, k in enumerate(self.frequency_vocab, start=1):
+        for i, k in enumerate(self.frequency_vocab, start=0):
             w2id[k] = i
         return w2id
 
@@ -438,8 +457,8 @@ if __name__ == "__main__":
     # For example, parameters like weight_decay and momentum in torch.optim. SGD require the global calculation
     # on embedding matrix, which is extremely time-consuming.
     bytes_read = 0
-    for e in range(10):
+    epochs = 10
+    for e in range(epochs):
         print(f"Starting epoch: {e}")
         bytes_read = skipgram_model._train(previously_read=bytes_read, epoch=e)
-    # TODO: Implement save functionality
-    # skipgram_model.save()
+    skipgram_model.save(f"trained/embeddings_e{epochs}.vec")
