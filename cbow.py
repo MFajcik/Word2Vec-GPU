@@ -7,6 +7,7 @@ import argparse
 import visdom
 from nlpfit.preprocessing.nlp_io import read_word_lists
 import torch.nn as nn
+from torch.autograd import Variable
 from collections import deque
 import torch.optim as optimizer
 import torch.nn.functional as F
@@ -17,8 +18,7 @@ from evaluation.analogy_questions import read_analogies, eval_analogy_questions
 __author__ = "Martin Fajčík"
 
 
-# Small parts of this code were inspired by snippets from
-#  https://adoni.github.io/2017/11/08/word2vec-pytorch/
+# This is just quick edit of skipgram model
 
 # The wisdom server can be started with command
 #  python -m visdom.server
@@ -35,13 +35,21 @@ __author__ = "Martin Fajčík"
 # <method 'choice' of 'mtrand.RandomState' objects> took 7% of program time
 
 # FIXME
+# Sanity check time and evaluation time are accounted into processing speed
+# Altought I planned to skip few words in the end, I am suspicious
+# about corectness of following behavior [further investigation needed]:
+# Time: 2.08 min - epoch state 84.48% (676 KB/s)
+# Starting epoch: 1
+# Epoch 1, Loss: 3572.568359375
 # Using small number of bytes like 50 for file reading results into failure
 
-class Skipgram(nn.Module):
+class CBOW(nn.Module):
 
     def __init__(self, data_proc):
-        super(Skipgram, self).__init__()
-        self.u_embeddings = nn.Embedding(data_proc.vocab_size, data_proc.embedding_size, sparse=True)
+        super(CBOW, self).__init__()
+        self.u_embeddingbag = nn.EmbeddingBag(num_embeddings=data_proc.vocab_size,
+                                              embedding_dim=data_proc.embedding_size,
+                                              sparse=True)
         self.v_embeddings = nn.Embedding(data_proc.vocab_size, data_proc.embedding_size, sparse=True)
         self.data_processor = data_proc
         self.logsigmoid = nn.LogSigmoid()
@@ -67,34 +75,38 @@ class Skipgram(nn.Module):
     def init_embeddings(self):
         # Initialize with 0.5/embedding dimension  uniform distribution
         initrange = 0.5 / data_proc.embedding_size
-        self.u_embeddings.weight.data.uniform_(-initrange, initrange)
+        self.u_embeddingbag.weight.data.uniform_(-initrange, initrange)
         self.v_embeddings.weight.data.uniform_(0, 0)
 
-    def forward(self, pos_u, pos_v, neg_v):
+    def forward(self, pos, indices, targets, neg_v):
         """Forward process.
         As pytorch designed, all variables must be batch format, so all input of this method is a list of word id.
         Args:
-            pos_u: list of center word ids for positive word pairs.
-            pos_v: list of neighbor word ids for positive word pairs.
-            neg_v: list of neighbor word ids for negative word pairs.
+            pos:
+            indices:
+            targets: list of center word ids for positive word samples.
+            neg_v: list of neighbor word ids for negative word samples.
         Returns:
             Loss of this process, a pytorch variable.
 
         The sizes of input variables are as following:
-            pos_u: [batch_size]
-            pos_v: [batch_size]
+            pos: [batch_size, random_window_size]
+            indices: [batch_size]
+            targets:
             neg_v: [batch_size, neg_sampling_count]
         """
 
         # pick embeddings for words pos_u, pos_v
-        u_emb_batch = self.u_embeddings(pos_u)
-        v_emb_batch = self.v_embeddings(pos_v)
+        u_emb_batch = self.u_embeddingbag(pos, indices)
+        v_emb_batch = self.v_embeddings(targets)
 
         # o is sigmoid function
         # NS loss for 1 sample and max objective is
         ##########################################################
         # log o(v^T*u) + sum of k samples log o(-negative_v^T *u)#
         ##########################################################
+        # log o(v^T*u)  = score
+        # sum of k samples log o(-negative_v^T *u) = neg_score
 
         # Multiply element wise
         score = torch.mul(u_emb_batch, v_emb_batch)
@@ -104,14 +116,8 @@ class Skipgram(nn.Module):
         v_neg_emb_batch = self.v_embeddings(neg_v)
         # v_neg_emb_batch has shape [BATCH_SIZE,NUM_OF_NEG_SAMPLES,EMBEDDING_DIMENSIONALITY]
         # u_emb_batch has shape [BATCH_SIZE,EMBEDDING_DIMENSIONALITY]
-        neg_score = None
-        try:
-            neg_score = torch.bmm(v_neg_emb_batch, u_emb_batch.unsqueeze(2))
-            neg_score = self.logsigmoid(-1. * neg_score)
-        except Exception as e:
-            print(e)
-            print(f"v_emb: {v_neg_emb_batch.shape}")
-            print(f"u_emb: {u_emb_batch.unsqueeze(2).shape}")
+        neg_score = torch.bmm(v_neg_emb_batch, u_emb_batch.unsqueeze(2))
+        neg_score = self.logsigmoid(-1. * neg_score)
 
         return -1. * (torch.sum(score) + torch.sum(neg_score))
 
@@ -127,22 +133,36 @@ class Skipgram(nn.Module):
         # progress_bar = tqdm(range(int(batch_count)))
         batch_gen = data_proc.create_batch_gen(previously_read)
         iteration = 0
-        for pos_pairs in batch_gen:
-            pos_u = [pair[0] for pair in pos_pairs]
-            pos_v = [pair[1] for pair in pos_pairs]
+        for sample in batch_gen:
             # prog,ress_bar.update(1)
             neg_v = self.data_processor.get_neg_v_neg_sampling()
 
-            pos_u = torch.LongTensor(pos_u)
-            pos_v = torch.LongTensor(pos_v)
+            # pos contains list that looks like
+            # i.e. [([xx],y),([aaa],y2),([bbbb],y3)
+            # since we are using embedding bag, we need to parse this example format where:
+
+            # pos: flatten list of all word sequences i.e. [xxaaabbbb]
+            # indices: indices of split points in pos i.e. [0,2,5]
+            # targets: [y1,y2,y3]
+
+            indices = [0]
+            for p in sample:
+                indices.append(len(p[0]) + indices[-1])
+            indices = indices[:-1]
+
+            targets = torch.LongTensor([item[1] for item in sample])
+            pos = torch.LongTensor([item for sublist in sample for item in sublist[0]])
+            indices = torch.LongTensor(indices)
             neg_v = torch.LongTensor(neg_v)
+
             if self.use_cuda:
-                pos_u = pos_u.cuda()
-                pos_v = pos_v.cuda()
+                pos = pos.cuda()
+                targets = targets.cuda()
+                indices = indices.cuda()
                 neg_v = neg_v.cuda()
 
             self.optimizer.zero_grad()
-            loss = self.forward(pos_u, pos_v, neg_v)
+            loss = self.forward(pos, indices, targets, neg_v)
             loss.backward()
             self.optimizer.step()
             if iteration % 200 == 0:
@@ -156,7 +176,7 @@ class Skipgram(nn.Module):
                     print(f"\nEpoch {epoch}, Loss: {loss.data}")
                     if self.data_processor.analogy_questions is not None:
                         eval_analogy_questions(data_processor=self.data_processor,
-                                               u_embeddings=self.u_embeddings,
+                                               u_embeddings=self.u_embeddingbag,
                                                use_cuda=self.use_cuda)
 
                     if iteration % 50000 == 0:
@@ -172,25 +192,30 @@ class Skipgram(nn.Module):
         return self.data_processor.bytes_read
 
     def find_nearest(self, word, k=10):
-        nembs = torch.transpose(F.normalize(self.u_embeddings.weight), 0, 1)
-        word_id = torch.LongTensor([self.data_processor.w2id[word]])
+        nembs = torch.transpose(F.normalize(self.u_embeddingbag.weight), 0, 1)
+        word_id = [self.data_processor.w2id[word]]
+        word_id_range = range(len(word_id))
+
+        word_id = torch.LongTensor(word_id)
+        word_id_range = torch.LongTensor(word_id_range)
         if self.use_cuda:
             word_id = word_id.cuda()
-        embedding = self.u_embeddings(word_id)
+            word_id_range = word_id_range.cuda()
+        embedding = self.u_embeddingbag(word_id,word_id_range)
         dist = torch.matmul(embedding, nembs)
 
         top_predicted = torch.topk(dist, dim=1, k=k + 1)[1].cpu().numpy().tolist()[0][1:]
         return list(map(lambda x: self.data_processor.id2w[x], top_predicted))
 
     def find_nearest_emb(self, embedding, k=10):
-        nembs = torch.transpose(F.normalize(self.u_embeddings.weight), 0, 1)
+        nembs = torch.transpose(F.normalize(self.u_embeddingbag.weight), 0, 1)
         dist = torch.matmul(embedding, nembs)
 
         top_predicted = torch.topk(dist, dim=1, k=k + 1)[1].cpu().numpy().tolist()[0][1:]
         return list(map(lambda x: self.data_processor.id2w[x], top_predicted))
 
     def translate_emb(self, embedding):
-        nembs = torch.transpose(F.normalize(self.u_embeddings.weight), 0, 1)
+        nembs = torch.transpose(F.normalize(self.u_embeddingbag.weight), 0, 1)
         dist = torch.matmul(embedding, nembs)
         id = torch.topk(dist, dim=1, k=1)[1].cpu().numpy().tolist()[0][0]
         return self.data_processor.id2w[id]
@@ -212,9 +237,12 @@ class Skipgram(nn.Module):
             f.write("{} {}\n".format(vocab_size, embedding_dimension))
             for word, id in self.data_processor.w2id.items():
                 tensor_id = torch.LongTensor([id])
+                tensor_id_rng = torch.LongTensor(range(1))
                 if self.use_cuda:
                     tensor_id = tensor_id.cuda()
-                embedding = self.u_embeddings(tensor_id).cpu().squeeze(0).detach().numpy()
+                    tensor_id_rng.cuda()
+
+                embedding = self.u_embeddingbag(tensor_id,tensor_id_rng).cpu().squeeze(0).detach().numpy()
                 f.write("{} {}\n".format(word, ' '.join(map(str, embedding))))
 
 
@@ -305,7 +333,7 @@ class DataProcessor():
         rchoices = deque(np.random.choice(np.arange(1, self.window_size + 1), self.randints_to_precalculate))
         # create doubles
         word_from_last_list = []
-        word_pairs = []
+        window_datasamples = []
         si = 0
         for wlist_ in wordgen:
             wlist = wlist_[0]
@@ -336,38 +364,15 @@ class DataProcessor():
             wlist = wlist_clean
 
             # TODO: Phrase clustering here
-            # FIXME: Using small number of bytes like 50 for file reading results into failure, WHY?
 
             if not wlist:
-                # This happens if we reached the end of dataset
-                # Maybe this is redundant code...
-                while word_from_last_list:
-                    if not rchoices:
-                        rchoices = deque(
-                            np.random.choice(np.arange(1, self.window_size + 1), self.randints_to_precalculate))
-                    r = rchoices.pop()
-                    for i in range(len(word_from_last_list)):
-                        for c in range(-r, r + 1):
-                            if c == 0 or i + c < 0:
-                                continue
-                            elif i + c > len(word_from_last_list) - 1:
-                                break
-                            elif len(word_pairs) == self.batch_size:
-                                word_from_last_list = word_from_last_list[i:]
-                                break
-                            word_pairs.append((word_from_last_list[i], word_from_last_list[i + c]))
-                        if i == len(word_from_last_list) - 1:
-                            word_from_last_list = []
-                    for _ in range(self.batch_size - len(word_pairs)):
-                        word_pairs.append((0, 0))
-                    assert len(word_pairs) == self.batch_size
-                    yield word_pairs
                 return
 
             wlist = list(map(lambda x: self.w2id[x], wlist))
             wlist = word_from_last_list + wlist
             word_from_last_list = []
             for i in range(si, len(wlist)):
+                # if the window exceeds the buffered part
                 if (i + self.window_size > len(wlist) - 1):
                     # find index m, that points on leftmost word still in a window
                     # of central word
@@ -383,13 +388,13 @@ class DataProcessor():
                     rchoices = deque(
                         np.random.choice(np.arange(1, self.window_size + 1), self.randints_to_precalculate))
                 r = rchoices.pop()
-                for c in range(-r, r + 1):
-                    if c == 0 or i + c < 0:
-                        continue
-                    word_pairs.append((wlist[i], wlist[i + c]))
-            if len(word_pairs) > self.batch_size:
-                yield word_pairs[:self.batch_size]
-                word_pairs = word_pairs[self.batch_size:]
+                if i - r < 0:
+                    continue
+                window_datasamples.append((wlist[i - r:i] + wlist[i + 1:i + r + 1], wlist[i]))
+
+            if len(window_datasamples) > self.batch_size:
+                yield window_datasamples[:self.batch_size]
+                window_datasamples = window_datasamples[self.batch_size:]
 
     def load_vocab(self):
         from nlpfit.preprocessing.tools import read_frequency_vocab
@@ -431,13 +436,13 @@ def init_parser(parser):
     parser.add_argument("-mf", "--min_freq", help="minimum frequence of occurence for a word",
                         default=5)
     parser.add_argument("-lr", "--learning_rate", help="initial learning rate",
-                        default=0.0025  # 10x smaller than used by Tomas Mikolov, because we use SparseAdam, not the SGD
+                        default=0.005  # 10x smaller than used by Tomas Mikolov, because we use SparseAdam, not the SGD
                         )
     parser.add_argument("-d", "--dimension", help="size of the embedding dimension",
                         default=300)
     parser.add_argument("-br", "--bytes_to_read", help="how much bytes to read from corpus file per chunk",
                         default=512)
-    parser.add_argument("-bs", "--batch_size", help="size of 1 batch in training iteration", default=512)
+    parser.add_argument("-bs", "--batch_size", help="size of 1 batch in training iteration", default=1024)
     parser.add_argument("-pc", "--phrase_clustering",
                         help="enable phrase clustering as described by Mikolov (i.e. New York becomes New_York)",
                         default=True)
@@ -459,14 +464,14 @@ if __name__ == "__main__":
     args = parser.parse_args()
 
     data_proc = DataProcessor(args)
-    skipgram_model = Skipgram(data_proc)
+    cbow_model = CBOW(data_proc)
 
     # We need to carefully choose optimizer and its parameters to guarantee no global update will be excuted when training.
     # For example, parameters like weight_decay and momentum in torch.optim. SGD require the global calculation
     # on embedding matrix, which is extremely time-consuming.
     bytes_read = 0
-    epochs = 10
+    epochs = 100
     for e in range(epochs):
         print(f"Starting epoch: {e}")
-        bytes_read = skipgram_model._train(previously_read=bytes_read, epoch=e)
-    skipgram_model.save(f"trained/embeddings_test_e{epochs}.vec")
+        bytes_read = cbow_model._train(previously_read=bytes_read, epoch=e)
+    cbow_model.save(f"trained/embeddings_test_e{epochs}.vec")

@@ -59,14 +59,22 @@ def eval_analogy_questions(data_processor,u_embeddings,use_cuda,top_k=4):
         a = torch.LongTensor(analogy[:, 0])
         b = torch.LongTensor(analogy[:, 1])
         c = torch.LongTensor(analogy[:, 2])
+
+        arange = torch.LongTensor(range(len(a)))
+        brange = torch.LongTensor(range(len(b)))
+        crange = torch.LongTensor(range(len(c)))
+
         if use_cuda:
             a = a.cuda()
             b = b.cuda()
             c = c.cuda()
+            arange = arange.cuda()
+            brange = brange.cuda()
+            crange = crange.cuda()
 
-        a_emb = u_embeddings(a)
-        b_emb = u_embeddings(b)
-        c_emb = u_embeddings(c)
+        a_emb = u_embeddings(a,arange)
+        b_emb = u_embeddings(b,brange)
+        c_emb = u_embeddings(c,crange)
 
         # We expect that d's embedding vectors on the unit hyper-sphere is
         # near: c_emb + (b_emb - a_emb), which has the shape [N, emb_dim].
