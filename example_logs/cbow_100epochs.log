@@ -1,0 +1,4227 @@
+//35.1 Top Score (on 100MB text8 corpus)
+
+/opt/anaconda3/envs/Skipgram-GPU/bin/python /snap/pycharm-professional/66/helpers/pydev/pydev_run_in_console.py 46091 41623 /home/ifajcik/PycharmProjects/Word2Vec-GPU/cbow.py -c /home/ifajcik/Work/NLP/Corpus/text8/text8 --eval_aq /home/ifajcik/Work/NLP/Evaluation/questions-words.txt --vocab /home/ifajcik/Work/NLP/Vocab/text8/vocab_text8.txt
+Running /home/ifajcik/PycharmProjects/Word2Vec-GPU/cbow.py
+import sys; print('Python %s on %s' % (sys.version, sys.platform))
+sys.path.extend(['/home/ifajcik/PycharmProjects/Word2Vec-GPU'])
+0it [00:00, ?it/s]Loading vocabulary...
+82629it [00:00, 826180.48it/s]
+167417it [00:00, 837030.92it/s]
+252402it [00:00, 841300.02it/s]
+253855it [00:00, 840737.31it/s]
+###########################################
+Loaded evaluation method: Question analogy
+-------------------------------------------
+Eval analogy file:  /home/ifajcik/Work/NLP/Evaluation/questions-words.txt
+Questions:  17827
+Skipped:  1717
+###########################################
+Starting epoch: 0
+Epoch 0, Loss: 5678.26513671875
+Eval analogy questions    0/17827 accuracy =  0.0%
+Time: 0.14 min - epoch state 2.56% (310 KB/s)
+Time: 0.20 min - epoch state 5.12% (421 KB/s)
+Time: 0.27 min - epoch state 7.68% (479 KB/s)
+Time: 0.33 min - epoch state 10.24% (512 KB/s)
+Time: 0.40 min - epoch state 12.80% (538 KB/s)
+Time: 0.46 min - epoch state 15.36% (552 KB/s)
+Time: 0.53 min - epoch state 17.92% (566 KB/s)
+Time: 0.59 min - epoch state 20.48% (574 KB/s)
+Epoch 0, Loss: 1861.97412109375
+Eval analogy questions   23/17827 accuracy =  0.1%
+Time: 0.68 min - epoch state 23.04% (566 KB/s)
+Time: 0.75 min - epoch state 25.60% (568 KB/s)
+Time: 0.83 min - epoch state 28.16% (567 KB/s)
+Time: 0.90 min - epoch state 30.72% (567 KB/s)
+Time: 0.98 min - epoch state 33.28% (566 KB/s)
+Time: 1.06 min - epoch state 35.84% (565 KB/s)
+Time: 1.13 min - epoch state 38.40% (564 KB/s)
+Time: 1.21 min - epoch state 40.96% (564 KB/s)
+Epoch 0, Loss: 1842.0224609375
+Eval analogy questions   67/17827 accuracy =  0.4%
+Time: 1.30 min - epoch state 43.52% (557 KB/s)
+Time: 1.39 min - epoch state 46.08% (553 KB/s)
+Time: 1.47 min - epoch state 48.64% (552 KB/s)
+Time: 1.54 min - epoch state 51.20% (553 KB/s)
+Time: 1.61 min - epoch state 53.76% (555 KB/s)
+Time: 1.68 min - epoch state 56.32% (557 KB/s)
+Time: 1.75 min - epoch state 58.88% (560 KB/s)
+Time: 1.82 min - epoch state 61.44% (562 KB/s)
+Time: 1.88 min - epoch state 64.00% (565 KB/s)
+Epoch 0, Loss: 1753.367919921875
+Eval analogy questions  104/17827 accuracy =  0.6%
+Time: 1.96 min - epoch state 66.56% (566 KB/s)
+Time: 2.03 min - epoch state 69.12% (567 KB/s)
+Time: 2.10 min - epoch state 71.68% (569 KB/s)
+Time: 2.16 min - epoch state 74.24% (572 KB/s)
+Time: 2.23 min - epoch state 76.80% (575 KB/s)
+Time: 2.29 min - epoch state 79.36% (577 KB/s)
+Time: 2.36 min - epoch state 81.92% (579 KB/s)
+Time: 2.42 min - epoch state 84.48% (580 KB/s)
+Starting epoch: 1
+Epoch 1, Loss: 1751.978271484375
+Eval analogy questions  135/17827 accuracy =  0.8%
+Time: 2.50 min - epoch state 2.32% (15 KB/s)
+Time: 2.56 min - epoch state 4.88% (31 KB/s)
+Time: 2.63 min - epoch state 7.44% (47 KB/s)
+Time: 2.69 min - epoch state 10.00% (61 KB/s)
+Time: 2.76 min - epoch state 12.56% (75 KB/s)
+Time: 2.83 min - epoch state 15.12% (89 KB/s)
+Time: 2.90 min - epoch state 17.68% (101 KB/s)
+Time: 2.96 min - epoch state 20.24% (113 KB/s)
+Epoch 1, Loss: 1750.266357421875
+Eval analogy questions  363/17827 accuracy =  2.0%
+Time: 3.04 min - epoch state 22.80% (125 KB/s)
+Time: 3.10 min - epoch state 25.36% (136 KB/s)
+Time: 3.17 min - epoch state 27.92% (146 KB/s)
+Time: 3.23 min - epoch state 30.48% (157 KB/s)
+Time: 3.30 min - epoch state 33.04% (166 KB/s)
+Time: 3.37 min - epoch state 35.60% (176 KB/s)
+Time: 3.43 min - epoch state 38.16% (185 KB/s)
+Time: 3.50 min - epoch state 40.72% (194 KB/s)
+Time: 3.56 min - epoch state 43.28% (202 KB/s)
+Epoch 1, Loss: 1547.2003173828125
+Eval analogy questions  594/17827 accuracy =  3.3%
+Time: 3.64 min - epoch state 45.84% (210 KB/s)
+Time: 3.71 min - epoch state 48.40% (217 KB/s)
+Time: 3.77 min - epoch state 50.96% (225 KB/s)
+Time: 3.84 min - epoch state 53.52% (232 KB/s)
+Time: 3.90 min - epoch state 56.08% (239 KB/s)
+Time: 3.97 min - epoch state 58.64% (246 KB/s)
+Time: 4.03 min - epoch state 61.20% (252 KB/s)
+Time: 4.10 min - epoch state 63.76% (259 KB/s)
+Epoch 1, Loss: 1390.4527587890625
+Eval analogy questions  797/17827 accuracy =  4.5%
+Time: 4.17 min - epoch state 66.32% (264 KB/s)
+Time: 4.24 min - epoch state 68.88% (270 KB/s)
+Time: 4.31 min - epoch state 71.44% (276 KB/s)
+Time: 4.37 min - epoch state 74.00% (281 KB/s)
+Time: 4.44 min - epoch state 76.56% (287 KB/s)
+Time: 4.50 min - epoch state 79.12% (292 KB/s)
+Time: 4.57 min - epoch state 81.68% (297 KB/s)
+Time: 4.64 min - epoch state 84.24% (302 KB/s)
+Starting epoch: 2
+Epoch 2, Loss: 1581.3896484375
+Eval analogy questions  927/17827 accuracy =  5.2%
+Time: 4.71 min - epoch state 2.08% (7 KB/s)
+Time: 4.78 min - epoch state 4.64% (16 KB/s)
+Time: 4.84 min - epoch state 7.20% (24 KB/s)
+Time: 4.91 min - epoch state 9.76% (33 KB/s)
+Time: 4.97 min - epoch state 12.32% (41 KB/s)
+Time: 5.04 min - epoch state 14.88% (49 KB/s)
+Time: 5.10 min - epoch state 17.44% (56 KB/s)
+Time: 5.17 min - epoch state 20.00% (64 KB/s)
+Epoch 2, Loss: 1550.9776611328125
+Eval analogy questions 1193/17827 accuracy =  6.7%
+Time: 5.24 min - epoch state 22.56% (71 KB/s)
+Time: 5.31 min - epoch state 25.12% (78 KB/s)
+Time: 5.37 min - epoch state 27.68% (85 KB/s)
+Time: 5.44 min - epoch state 30.24% (92 KB/s)
+Time: 5.50 min - epoch state 32.80% (99 KB/s)
+Time: 5.57 min - epoch state 35.36% (105 KB/s)
+Time: 5.64 min - epoch state 37.92% (112 KB/s)
+Time: 5.70 min - epoch state 40.48% (118 KB/s)
+Time: 5.77 min - epoch state 43.04% (124 KB/s)
+Epoch 2, Loss: 1274.502685546875
+Eval analogy questions 1433/17827 accuracy =  8.0%
+Time: 5.84 min - epoch state 45.60% (130 KB/s)
+Time: 5.90 min - epoch state 48.16% (136 KB/s)
+Time: 5.97 min - epoch state 50.72% (141 KB/s)
+Time: 6.03 min - epoch state 53.28% (147 KB/s)
+Time: 6.10 min - epoch state 55.84% (152 KB/s)
+Time: 6.16 min - epoch state 58.40% (158 KB/s)
+Time: 6.23 min - epoch state 60.96% (163 KB/s)
+Time: 6.30 min - epoch state 63.52% (168 KB/s)
+Epoch 2, Loss: 1454.7657470703125
+Eval analogy questions 1599/17827 accuracy =  9.0%
+Time: 6.37 min - epoch state 66.08% (172 KB/s)
+Time: 6.44 min - epoch state 68.64% (177 KB/s)
+Time: 6.51 min - epoch state 71.20% (182 KB/s)
+Time: 6.57 min - epoch state 73.76% (187 KB/s)
+Time: 6.63 min - epoch state 76.32% (191 KB/s)
+Time: 6.70 min - epoch state 78.88% (196 KB/s)
+Time: 6.76 min - epoch state 81.44% (200 KB/s)
+Time: 6.82 min - epoch state 84.00% (205 KB/s)
+Starting epoch: 3
+Epoch 3, Loss: 1490.4630126953125
+Eval analogy questions 1812/17827 accuracy = 10.2%
+Time: 6.90 min - epoch state 1.84% (4 KB/s)
+Time: 6.96 min - epoch state 4.40% (10 KB/s)
+Time: 7.02 min - epoch state 6.96% (16 KB/s)
+Time: 7.09 min - epoch state 9.52% (22 KB/s)
+Time: 7.15 min - epoch state 12.08% (28 KB/s)
+Time: 7.21 min - epoch state 14.64% (33 KB/s)
+Time: 7.28 min - epoch state 17.20% (39 KB/s)
+Time: 7.34 min - epoch state 19.76% (44 KB/s)
+Epoch 3, Loss: 1542.163330078125
+Eval analogy questions 2051/17827 accuracy = 11.5%
+Time: 7.41 min - epoch state 22.32% (50 KB/s)
+Time: 7.48 min - epoch state 24.88% (55 KB/s)
+Time: 7.54 min - epoch state 27.44% (60 KB/s)
+Time: 7.61 min - epoch state 30.00% (65 KB/s)
+Time: 7.67 min - epoch state 32.56% (70 KB/s)
+Time: 7.74 min - epoch state 35.12% (75 KB/s)
+Time: 7.80 min - epoch state 37.68% (80 KB/s)
+Time: 7.87 min - epoch state 40.24% (85 KB/s)
+Time: 7.93 min - epoch state 42.80% (89 KB/s)
+Epoch 3, Loss: 1167.636474609375
+Eval analogy questions 2207/17827 accuracy = 12.4%
+Time: 8.00 min - epoch state 45.36% (94 KB/s)
+Time: 8.07 min - epoch state 47.92% (99 KB/s)
+Time: 8.13 min - epoch state 50.48% (103 KB/s)
+Time: 8.20 min - epoch state 53.04% (107 KB/s)
+Time: 8.26 min - epoch state 55.60% (112 KB/s)
+Time: 8.33 min - epoch state 58.16% (116 KB/s)
+Time: 8.40 min - epoch state 60.72% (120 KB/s)
+Time: 8.47 min - epoch state 63.28% (124 KB/s)
+Epoch 3, Loss: 1320.7987060546875
+Eval analogy questions 2332/17827 accuracy = 13.1%
+Time: 8.55 min - epoch state 65.84% (128 KB/s)
+Time: 8.62 min - epoch state 68.40% (132 KB/s)
+Time: 8.68 min - epoch state 70.96% (136 KB/s)
+Time: 8.74 min - epoch state 73.52% (140 KB/s)
+Time: 8.81 min - epoch state 76.08% (143 KB/s)
+Time: 8.87 min - epoch state 78.64% (147 KB/s)
+Time: 8.94 min - epoch state 81.20% (151 KB/s)
+Time: 9.00 min - epoch state 83.76% (155 KB/s)
+Starting epoch: 4
+Epoch 4, Loss: 1390.0091552734375
+Eval analogy questions 2486/17827 accuracy = 13.9%
+Time: 9.08 min - epoch state 1.60% (2 KB/s)
+Time: 9.15 min - epoch state 4.16% (7 KB/s)
+Time: 9.21 min - epoch state 6.72% (12 KB/s)
+Time: 9.28 min - epoch state 9.28% (16 KB/s)
+Time: 9.36 min - epoch state 11.84% (21 KB/s)
+Time: 9.43 min - epoch state 14.40% (25 KB/s)
+Time: 9.50 min - epoch state 16.96% (29 KB/s)
+Time: 9.56 min - epoch state 19.52% (34 KB/s)
+Epoch 4, Loss: 1419.94677734375
+Eval analogy questions 2640/17827 accuracy = 14.8%
+Time: 9.64 min - epoch state 22.08% (38 KB/s)
+Time: 9.70 min - epoch state 24.64% (42 KB/s)
+Time: 9.77 min - epoch state 27.20% (46 KB/s)
+Time: 9.83 min - epoch state 29.76% (50 KB/s)
+Time: 9.91 min - epoch state 32.32% (54 KB/s)
+Time: 9.98 min - epoch state 34.88% (58 KB/s)
+Time: 10.05 min - epoch state 37.44% (62 KB/s)
+Time: 10.11 min - epoch state 40.00% (65 KB/s)
+Time: 10.18 min - epoch state 42.56% (69 KB/s)
+Epoch 4, Loss: 1154.454345703125
+Eval analogy questions 2721/17827 accuracy = 15.3%
+Time: 10.25 min - epoch state 45.12% (73 KB/s)
+Time: 10.32 min - epoch state 47.68% (77 KB/s)
+Time: 10.39 min - epoch state 50.24% (80 KB/s)
+Time: 10.45 min - epoch state 52.80% (84 KB/s)
+Time: 10.52 min - epoch state 55.36% (87 KB/s)
+Time: 10.58 min - epoch state 57.92% (91 KB/s)
+Time: 10.65 min - epoch state 60.48% (94 KB/s)
+Time: 10.72 min - epoch state 63.04% (98 KB/s)
+Epoch 4, Loss: 1427.7353515625
+Eval analogy questions 2855/17827 accuracy = 16.0%
+Time: 10.79 min - epoch state 65.60% (101 KB/s)
+Time: 10.85 min - epoch state 68.16% (104 KB/s)
+Time: 10.92 min - epoch state 70.72% (107 KB/s)
+Time: 10.98 min - epoch state 73.28% (111 KB/s)
+Time: 11.04 min - epoch state 75.84% (114 KB/s)
+Time: 11.11 min - epoch state 78.40% (117 KB/s)
+Time: 11.17 min - epoch state 80.96% (120 KB/s)
+Time: 11.23 min - epoch state 83.52% (123 KB/s)
+Starting epoch: 5
+Epoch 5, Loss: 1400.353515625
+Eval analogy questions 2953/17827 accuracy = 16.6%
+Time: 11.31 min - epoch state 1.36% (2 KB/s)
+Time: 11.37 min - epoch state 3.92% (5 KB/s)
+Time: 11.43 min - epoch state 6.48% (9 KB/s)
+Time: 11.50 min - epoch state 9.04% (13 KB/s)
+Time: 11.56 min - epoch state 11.60% (16 KB/s)
+Time: 11.62 min - epoch state 14.16% (20 KB/s)
+Time: 11.69 min - epoch state 16.72% (23 KB/s)
+Time: 11.75 min - epoch state 19.28% (27 KB/s)
+Epoch 5, Loss: 1438.565673828125
+Eval analogy questions 3072/17827 accuracy = 17.2%
+Time: 11.83 min - epoch state 21.84% (30 KB/s)
+Time: 11.89 min - epoch state 24.40% (34 KB/s)
+Time: 11.95 min - epoch state 26.96% (37 KB/s)
+Time: 12.02 min - epoch state 29.52% (40 KB/s)
+Time: 12.08 min - epoch state 32.08% (44 KB/s)
+Time: 12.15 min - epoch state 34.64% (47 KB/s)
+Time: 12.21 min - epoch state 37.20% (50 KB/s)
+Time: 12.27 min - epoch state 39.76% (53 KB/s)
+Time: 12.34 min - epoch state 42.32% (57 KB/s)
+Epoch 5, Loss: 1077.47314453125
+Eval analogy questions 3158/17827 accuracy = 17.7%
+Time: 12.41 min - epoch state 44.88% (60 KB/s)
+Time: 12.47 min - epoch state 47.44% (63 KB/s)
+Time: 12.54 min - epoch state 50.00% (66 KB/s)
+Time: 12.60 min - epoch state 52.56% (69 KB/s)
+Time: 12.67 min - epoch state 55.12% (72 KB/s)
+Time: 12.73 min - epoch state 57.68% (75 KB/s)
+Time: 12.80 min - epoch state 60.24% (78 KB/s)
+Time: 12.86 min - epoch state 62.80% (81 KB/s)
+Epoch 5, Loss: 995.7717895507812
+Eval analogy questions 3244/17827 accuracy = 18.2%
+Time: 12.93 min - epoch state 65.36% (84 KB/s)
+Time: 13.00 min - epoch state 67.92% (87 KB/s)
+Time: 13.06 min - epoch state 70.48% (89 KB/s)
+Time: 13.13 min - epoch state 73.04% (92 KB/s)
+Time: 13.19 min - epoch state 75.60% (95 KB/s)
+Time: 13.25 min - epoch state 78.16% (98 KB/s)
+Time: 13.32 min - epoch state 80.72% (101 KB/s)
+Time: 13.38 min - epoch state 83.28% (103 KB/s)
+Starting epoch: 6
+Epoch 6, Loss: 1311.61669921875
+Eval analogy questions 3340/17827 accuracy = 18.7%
+Time: 13.45 min - epoch state 1.13% (1 KB/s)
+Time: 13.52 min - epoch state 3.69% (4 KB/s)
+Time: 13.58 min - epoch state 6.25% (7 KB/s)
+Time: 13.64 min - epoch state 8.81% (10 KB/s)
+Time: 13.71 min - epoch state 11.37% (13 KB/s)
+Time: 13.77 min - epoch state 13.93% (16 KB/s)
+Time: 13.84 min - epoch state 16.49% (19 KB/s)
+Time: 13.90 min - epoch state 19.05% (22 KB/s)
+Time: 13.96 min - epoch state 21.61% (25 KB/s)
+Epoch 6, Loss: 1322.4288330078125
+Eval analogy questions 3457/17827 accuracy = 19.4%
+Time: 14.04 min - epoch state 24.17% (28 KB/s)
+Time: 14.10 min - epoch state 26.73% (31 KB/s)
+Time: 14.17 min - epoch state 29.29% (34 KB/s)
+Time: 14.23 min - epoch state 31.85% (37 KB/s)
+Time: 14.29 min - epoch state 34.41% (40 KB/s)
+Time: 14.36 min - epoch state 36.97% (42 KB/s)
+Time: 14.42 min - epoch state 39.53% (45 KB/s)
+Time: 14.49 min - epoch state 42.09% (48 KB/s)
+Epoch 6, Loss: 968.8011474609375
+Eval analogy questions 3519/17827 accuracy = 19.7%
+Time: 14.56 min - epoch state 44.65% (51 KB/s)
+Time: 14.62 min - epoch state 47.21% (53 KB/s)
+Time: 14.69 min - epoch state 49.77% (56 KB/s)
+Time: 14.75 min - epoch state 52.33% (59 KB/s)
+Time: 14.82 min - epoch state 54.89% (61 KB/s)
+Time: 14.88 min - epoch state 57.45% (64 KB/s)
+Time: 14.95 min - epoch state 60.01% (66 KB/s)
+Time: 15.01 min - epoch state 62.57% (69 KB/s)
+Time: 15.07 min - epoch state 65.13% (72 KB/s)
+Epoch 6, Loss: 1255.517333984375
+Eval analogy questions 3599/17827 accuracy = 20.2%
+Time: 15.15 min - epoch state 67.69% (74 KB/s)
+Time: 15.21 min - epoch state 70.25% (76 KB/s)
+Time: 15.28 min - epoch state 72.81% (79 KB/s)
+Time: 15.34 min - epoch state 75.37% (81 KB/s)
+Time: 15.40 min - epoch state 77.93% (84 KB/s)
+Time: 15.47 min - epoch state 80.49% (86 KB/s)
+Time: 15.53 min - epoch state 83.05% (89 KB/s)
+Starting epoch: 7
+Epoch 7, Loss: 1272.573486328125
+Eval analogy questions 3719/17827 accuracy = 20.9%
+Time: 15.61 min - epoch state 0.89% (0 KB/s)
+Time: 15.67 min - epoch state 3.45% (3 KB/s)
+Time: 15.74 min - epoch state 6.01% (6 KB/s)
+Time: 15.80 min - epoch state 8.57% (9 KB/s)
+Time: 15.86 min - epoch state 11.13% (11 KB/s)
+Time: 15.93 min - epoch state 13.69% (14 KB/s)
+Time: 15.99 min - epoch state 16.25% (16 KB/s)
+Time: 16.06 min - epoch state 18.81% (19 KB/s)
+Time: 16.12 min - epoch state 21.37% (22 KB/s)
+Epoch 7, Loss: 1025.159912109375
+Eval analogy questions 3793/17827 accuracy = 21.3%
+Time: 16.19 min - epoch state 23.93% (24 KB/s)
+Time: 16.26 min - epoch state 26.49% (27 KB/s)
+Time: 16.32 min - epoch state 29.05% (29 KB/s)
+Time: 16.39 min - epoch state 31.61% (32 KB/s)
+Time: 16.45 min - epoch state 34.17% (34 KB/s)
+Time: 16.52 min - epoch state 36.73% (37 KB/s)
+Time: 16.58 min - epoch state 39.29% (39 KB/s)
+Time: 16.65 min - epoch state 41.85% (41 KB/s)
+Epoch 7, Loss: 1286.545654296875
+Eval analogy questions 3857/17827 accuracy = 21.6%
+Time: 16.72 min - epoch state 44.41% (44 KB/s)
+Time: 16.78 min - epoch state 46.97% (46 KB/s)
+Time: 16.85 min - epoch state 49.53% (49 KB/s)
+Time: 16.91 min - epoch state 52.09% (51 KB/s)
+Time: 16.97 min - epoch state 54.65% (53 KB/s)
+Time: 17.04 min - epoch state 57.21% (55 KB/s)
+Time: 17.10 min - epoch state 59.77% (58 KB/s)
+Time: 17.17 min - epoch state 62.33% (60 KB/s)
+Time: 17.23 min - epoch state 64.89% (62 KB/s)
+Epoch 7, Loss: 1188.744140625
+Eval analogy questions 3924/17827 accuracy = 22.0%
+Time: 17.30 min - epoch state 67.45% (64 KB/s)
+Time: 17.37 min - epoch state 70.01% (67 KB/s)
+Time: 17.43 min - epoch state 72.57% (69 KB/s)
+Time: 17.50 min - epoch state 75.13% (71 KB/s)
+Time: 17.56 min - epoch state 77.69% (73 KB/s)
+Time: 17.62 min - epoch state 80.25% (75 KB/s)
+Time: 17.69 min - epoch state 82.81% (78 KB/s)
+Starting epoch: 8
+Epoch 8, Loss: 1272.40673828125
+Eval analogy questions 4040/17827 accuracy = 22.7%
+Time: 17.76 min - epoch state 0.65% (0 KB/s)
+Time: 17.82 min - epoch state 3.21% (2 KB/s)
+Time: 17.89 min - epoch state 5.77% (5 KB/s)
+Time: 17.95 min - epoch state 8.33% (7 KB/s)
+Time: 18.01 min - epoch state 10.89% (10 KB/s)
+Time: 18.08 min - epoch state 13.45% (12 KB/s)
+Time: 18.14 min - epoch state 16.01% (14 KB/s)
+Time: 18.21 min - epoch state 18.57% (16 KB/s)
+Time: 18.27 min - epoch state 21.13% (19 KB/s)
+Epoch 8, Loss: 1255.784423828125
+Eval analogy questions 4062/17827 accuracy = 22.8%
+Time: 18.34 min - epoch state 23.69% (21 KB/s)
+Time: 18.40 min - epoch state 26.25% (23 KB/s)
+Time: 18.47 min - epoch state 28.81% (25 KB/s)
+Time: 18.53 min - epoch state 31.37% (28 KB/s)
+Time: 18.60 min - epoch state 33.93% (30 KB/s)
+Time: 18.66 min - epoch state 36.49% (32 KB/s)
+Time: 18.73 min - epoch state 39.05% (34 KB/s)
+Time: 18.79 min - epoch state 41.61% (36 KB/s)
+Epoch 8, Loss: 951.626708984375
+Eval analogy questions 4135/17827 accuracy = 23.2%
+Time: 18.86 min - epoch state 44.17% (39 KB/s)
+Time: 18.93 min - epoch state 46.73% (41 KB/s)
+Time: 18.99 min - epoch state 49.29% (43 KB/s)
+Time: 19.05 min - epoch state 51.85% (45 KB/s)
+Time: 19.12 min - epoch state 54.41% (47 KB/s)
+Time: 19.18 min - epoch state 56.97% (49 KB/s)
+Time: 19.25 min - epoch state 59.53% (51 KB/s)
+Time: 19.31 min - epoch state 62.09% (53 KB/s)
+Time: 19.37 min - epoch state 64.65% (55 KB/s)
+Epoch 8, Loss: 876.45263671875
+Eval analogy questions 4224/17827 accuracy = 23.7%
+Time: 19.45 min - epoch state 67.21% (57 KB/s)
+Time: 19.51 min - epoch state 69.77% (59 KB/s)
+Time: 19.58 min - epoch state 72.33% (61 KB/s)
+Time: 19.64 min - epoch state 74.89% (63 KB/s)
+Time: 19.70 min - epoch state 77.45% (65 KB/s)
+Time: 19.77 min - epoch state 80.01% (67 KB/s)
+Time: 19.83 min - epoch state 82.57% (69 KB/s)
+Starting epoch: 9
+Epoch 9, Loss: 1211.725341796875
+Eval analogy questions 4292/17827 accuracy = 24.1%
+Time: 19.90 min - epoch state 0.41% (0 KB/s)
+Time: 19.97 min - epoch state 2.97% (2 KB/s)
+Time: 20.03 min - epoch state 5.53% (4 KB/s)
+Time: 20.10 min - epoch state 8.09% (6 KB/s)
+Time: 20.16 min - epoch state 10.65% (8 KB/s)
+Time: 20.22 min - epoch state 13.21% (10 KB/s)
+Time: 20.29 min - epoch state 15.77% (12 KB/s)
+Time: 20.35 min - epoch state 18.33% (15 KB/s)
+Time: 20.42 min - epoch state 20.89% (17 KB/s)
+Epoch 9, Loss: 1254.07373046875
+Eval analogy questions 4354/17827 accuracy = 24.4%
+Time: 20.49 min - epoch state 23.45% (19 KB/s)
+Time: 20.55 min - epoch state 26.01% (21 KB/s)
+Time: 20.62 min - epoch state 28.57% (23 KB/s)
+Time: 20.68 min - epoch state 31.13% (25 KB/s)
+Time: 20.75 min - epoch state 33.69% (27 KB/s)
+Time: 20.81 min - epoch state 36.25% (29 KB/s)
+Time: 20.87 min - epoch state 38.81% (30 KB/s)
+Time: 20.94 min - epoch state 41.37% (32 KB/s)
+Epoch 9, Loss: 1145.843017578125
+Eval analogy questions 4393/17827 accuracy = 24.6%
+Time: 21.01 min - epoch state 43.93% (34 KB/s)
+Time: 21.07 min - epoch state 46.49% (36 KB/s)
+Time: 21.13 min - epoch state 49.05% (38 KB/s)
+Time: 21.20 min - epoch state 51.61% (40 KB/s)
+Time: 21.26 min - epoch state 54.17% (42 KB/s)
+Time: 21.33 min - epoch state 56.73% (44 KB/s)
+Time: 21.39 min - epoch state 59.29% (46 KB/s)
+Time: 21.45 min - epoch state 61.85% (48 KB/s)
+Time: 21.52 min - epoch state 64.41% (49 KB/s)
+Epoch 9, Loss: 1179.700927734375
+Eval analogy questions 4447/17827 accuracy = 24.9%
+Time: 21.59 min - epoch state 66.97% (51 KB/s)
+Time: 21.65 min - epoch state 69.53% (53 KB/s)
+Time: 21.72 min - epoch state 72.09% (55 KB/s)
+Time: 21.78 min - epoch state 74.65% (57 KB/s)
+Time: 21.84 min - epoch state 77.21% (58 KB/s)
+Time: 21.91 min - epoch state 79.77% (60 KB/s)
+Time: 21.97 min - epoch state 82.33% (62 KB/s)
+Starting epoch: 10
+Epoch 10, Loss: 1206.45654296875
+Eval analogy questions 4499/17827 accuracy = 25.2%
+Time: 22.05 min - epoch state 0.17% (0 KB/s)
+Time: 22.11 min - epoch state 2.73% (2 KB/s)
+Time: 22.17 min - epoch state 5.29% (3 KB/s)
+Time: 22.24 min - epoch state 7.85% (5 KB/s)
+Time: 22.30 min - epoch state 10.41% (7 KB/s)
+Time: 22.37 min - epoch state 12.97% (9 KB/s)
+Time: 22.43 min - epoch state 15.53% (11 KB/s)
+Time: 22.50 min - epoch state 18.09% (13 KB/s)
+Time: 22.56 min - epoch state 20.65% (15 KB/s)
+Epoch 10, Loss: 1181.5455322265625
+Eval analogy questions 4555/17827 accuracy = 25.6%
+Time: 22.63 min - epoch state 23.21% (17 KB/s)
+Time: 22.70 min - epoch state 25.77% (18 KB/s)
+Time: 22.76 min - epoch state 28.33% (20 KB/s)
+Time: 22.83 min - epoch state 30.89% (22 KB/s)
+Time: 22.89 min - epoch state 33.45% (24 KB/s)
+Time: 22.96 min - epoch state 36.01% (26 KB/s)
+Time: 23.02 min - epoch state 38.57% (27 KB/s)
+Time: 23.09 min - epoch state 41.13% (29 KB/s)
+Epoch 10, Loss: 707.494873046875
+Eval analogy questions 4598/17827 accuracy = 25.8%
+Time: 23.16 min - epoch state 43.69% (31 KB/s)
+Time: 23.23 min - epoch state 46.25% (33 KB/s)
+Time: 23.29 min - epoch state 48.81% (34 KB/s)
+Time: 23.36 min - epoch state 51.37% (36 KB/s)
+Time: 23.42 min - epoch state 53.93% (38 KB/s)
+Time: 23.49 min - epoch state 56.49% (40 KB/s)
+Time: 23.55 min - epoch state 59.05% (41 KB/s)
+Time: 23.61 min - epoch state 61.61% (43 KB/s)
+Time: 23.68 min - epoch state 64.17% (45 KB/s)
+Epoch 10, Loss: 1216.963134765625
+Eval analogy questions 4668/17827 accuracy = 26.2%
+Time: 23.75 min - epoch state 66.73% (46 KB/s)
+Time: 23.81 min - epoch state 69.29% (48 KB/s)
+Time: 23.88 min - epoch state 71.85% (50 KB/s)
+Time: 23.95 min - epoch state 74.41% (51 KB/s)
+Time: 24.01 min - epoch state 76.97% (53 KB/s)
+Time: 24.07 min - epoch state 79.53% (55 KB/s)
+Time: 24.14 min - epoch state 82.09% (56 KB/s)
+Time: 24.20 min - epoch state 84.65% (58 KB/s)
+Starting epoch: 11
+Epoch 11, Loss: 1198.2510986328125
+Eval analogy questions 4722/17827 accuracy = 26.5%
+Time: 24.28 min - epoch state 2.49% (1 KB/s)
+Time: 24.34 min - epoch state 5.05% (3 KB/s)
+Time: 24.41 min - epoch state 7.61% (5 KB/s)
+Time: 24.47 min - epoch state 10.17% (6 KB/s)
+Time: 24.54 min - epoch state 12.73% (8 KB/s)
+Time: 24.60 min - epoch state 15.29% (10 KB/s)
+Time: 24.66 min - epoch state 17.85% (12 KB/s)
+Time: 24.73 min - epoch state 20.41% (13 KB/s)
+Epoch 11, Loss: 1158.8817138671875
+Eval analogy questions 4752/17827 accuracy = 26.7%
+Time: 24.80 min - epoch state 22.97% (15 KB/s)
+Time: 24.87 min - epoch state 25.53% (17 KB/s)
+Time: 24.93 min - epoch state 28.09% (18 KB/s)
+Time: 25.00 min - epoch state 30.65% (20 KB/s)
+Time: 25.07 min - epoch state 33.21% (22 KB/s)
+Time: 25.13 min - epoch state 35.77% (23 KB/s)
+Time: 25.20 min - epoch state 38.33% (25 KB/s)
+Time: 25.26 min - epoch state 40.89% (26 KB/s)
+Time: 25.33 min - epoch state 43.45% (28 KB/s)
+Epoch 11, Loss: 820.5443115234375
+Eval analogy questions 4788/17827 accuracy = 26.9%
+Time: 25.42 min - epoch state 46.01% (30 KB/s)
+Time: 25.49 min - epoch state 48.57% (31 KB/s)
+Time: 25.56 min - epoch state 51.13% (33 KB/s)
+Time: 25.63 min - epoch state 53.69% (34 KB/s)
+Time: 25.70 min - epoch state 56.25% (36 KB/s)
+Time: 25.76 min - epoch state 58.81% (38 KB/s)
+Time: 25.83 min - epoch state 61.37% (39 KB/s)
+Time: 25.89 min - epoch state 63.93% (41 KB/s)
+Epoch 11, Loss: 1070.7537841796875
+Eval analogy questions 4845/17827 accuracy = 27.2%
+Time: 25.96 min - epoch state 66.49% (42 KB/s)
+Time: 26.03 min - epoch state 69.05% (44 KB/s)
+Time: 26.09 min - epoch state 71.61% (45 KB/s)
+Time: 26.16 min - epoch state 74.17% (47 KB/s)
+Time: 26.22 min - epoch state 76.73% (48 KB/s)
+Time: 26.28 min - epoch state 79.29% (50 KB/s)
+Time: 26.35 min - epoch state 81.85% (51 KB/s)
+Time: 26.42 min - epoch state 84.41% (53 KB/s)
+Starting epoch: 12
+Epoch 12, Loss: 1159.024169921875
+Eval analogy questions 4911/17827 accuracy = 27.5%
+Time: 26.49 min - epoch state 2.25% (1 KB/s)
+Time: 26.56 min - epoch state 4.81% (3 KB/s)
+Time: 26.63 min - epoch state 7.37% (4 KB/s)
+Time: 26.69 min - epoch state 9.93% (6 KB/s)
+Time: 26.76 min - epoch state 12.49% (7 KB/s)
+Time: 26.82 min - epoch state 15.05% (9 KB/s)
+Time: 26.89 min - epoch state 17.61% (10 KB/s)
+Time: 26.95 min - epoch state 20.17% (12 KB/s)
+Epoch 12, Loss: 1161.9903564453125
+Eval analogy questions 4930/17827 accuracy = 27.7%
+Time: 27.03 min - epoch state 22.73% (14 KB/s)
+Time: 27.10 min - epoch state 25.29% (15 KB/s)
+Time: 27.16 min - epoch state 27.85% (17 KB/s)
+Time: 27.23 min - epoch state 30.41% (18 KB/s)
+Time: 27.29 min - epoch state 32.97% (20 KB/s)
+Time: 27.36 min - epoch state 35.53% (21 KB/s)
+Time: 27.42 min - epoch state 38.09% (23 KB/s)
+Time: 27.49 min - epoch state 40.65% (24 KB/s)
+Time: 27.55 min - epoch state 43.21% (26 KB/s)
+Epoch 12, Loss: 886.0655517578125
+Eval analogy questions 4955/17827 accuracy = 27.8%
+Time: 27.63 min - epoch state 45.77% (27 KB/s)
+Time: 27.69 min - epoch state 48.33% (29 KB/s)
+Time: 27.76 min - epoch state 50.89% (30 KB/s)
+Time: 27.82 min - epoch state 53.45% (32 KB/s)
+Time: 27.89 min - epoch state 56.01% (33 KB/s)
+Time: 27.95 min - epoch state 58.57% (34 KB/s)
+Time: 28.02 min - epoch state 61.13% (36 KB/s)
+Time: 28.09 min - epoch state 63.69% (37 KB/s)
+Epoch 12, Loss: 1074.45751953125
+Eval analogy questions 4978/17827 accuracy = 27.9%
+Time: 28.17 min - epoch state 66.25% (39 KB/s)
+Time: 28.23 min - epoch state 68.81% (40 KB/s)
+Time: 28.30 min - epoch state 71.37% (42 KB/s)
+Time: 28.37 min - epoch state 73.93% (43 KB/s)
+Time: 28.43 min - epoch state 76.49% (44 KB/s)
+Time: 28.49 min - epoch state 79.05% (46 KB/s)
+Time: 28.56 min - epoch state 81.61% (47 KB/s)
+Time: 28.62 min - epoch state 84.17% (49 KB/s)
+Starting epoch: 13
+Epoch 13, Loss: 1159.253662109375
+Eval analogy questions 5031/17827 accuracy = 28.2%
+Time: 28.70 min - epoch state 2.01% (1 KB/s)
+Time: 28.76 min - epoch state 4.57% (2 KB/s)
+Time: 28.82 min - epoch state 7.13% (4 KB/s)
+Time: 28.89 min - epoch state 9.69% (5 KB/s)
+Time: 28.95 min - epoch state 12.25% (7 KB/s)
+Time: 29.02 min - epoch state 14.81% (8 KB/s)
+Time: 29.08 min - epoch state 17.37% (9 KB/s)
+Time: 29.15 min - epoch state 19.93% (11 KB/s)
+Epoch 13, Loss: 1185.849853515625
+Eval analogy questions 5094/17827 accuracy = 28.6%
+Time: 29.22 min - epoch state 22.49% (12 KB/s)
+Time: 29.29 min - epoch state 25.05% (14 KB/s)
+Time: 29.35 min - epoch state 27.61% (15 KB/s)
+Time: 29.42 min - epoch state 30.17% (17 KB/s)
+Time: 29.48 min - epoch state 32.73% (18 KB/s)
+Time: 29.55 min - epoch state 35.29% (19 KB/s)
+Time: 29.61 min - epoch state 37.85% (21 KB/s)
+Time: 29.68 min - epoch state 40.41% (22 KB/s)
+Time: 29.74 min - epoch state 42.97% (24 KB/s)
+Epoch 13, Loss: 924.3250732421875
+Eval analogy questions 5116/17827 accuracy = 28.7%
+Time: 29.82 min - epoch state 45.53% (25 KB/s)
+Time: 29.89 min - epoch state 48.09% (26 KB/s)
+Time: 29.95 min - epoch state 50.65% (28 KB/s)
+Time: 30.02 min - epoch state 53.21% (29 KB/s)
+Time: 30.08 min - epoch state 55.77% (30 KB/s)
+Time: 30.15 min - epoch state 58.33% (32 KB/s)
+Time: 30.21 min - epoch state 60.89% (33 KB/s)
+Time: 30.28 min - epoch state 63.45% (34 KB/s)
+Epoch 13, Loss: 904.2666625976562
+Eval analogy questions 5151/17827 accuracy = 28.9%
+Time: 30.35 min - epoch state 66.01% (36 KB/s)
+Time: 30.42 min - epoch state 68.57% (37 KB/s)
+Time: 30.48 min - epoch state 71.13% (38 KB/s)
+Time: 30.55 min - epoch state 73.69% (40 KB/s)
+Time: 30.61 min - epoch state 76.25% (41 KB/s)
+Time: 30.68 min - epoch state 78.81% (42 KB/s)
+Time: 30.74 min - epoch state 81.37% (44 KB/s)
+Time: 30.81 min - epoch state 83.93% (45 KB/s)
+Starting epoch: 14
+Epoch 14, Loss: 1103.7646484375
+Eval analogy questions 5213/17827 accuracy = 29.2%
+Time: 30.88 min - epoch state 1.77% (0 KB/s)
+Time: 30.95 min - epoch state 4.33% (2 KB/s)
+Time: 31.01 min - epoch state 6.89% (3 KB/s)
+Time: 31.07 min - epoch state 9.45% (5 KB/s)
+Time: 31.14 min - epoch state 12.01% (6 KB/s)
+Time: 31.20 min - epoch state 14.57% (7 KB/s)
+Time: 31.27 min - epoch state 17.13% (9 KB/s)
+Time: 31.33 min - epoch state 19.69% (10 KB/s)
+Epoch 14, Loss: 1156.473388671875
+Eval analogy questions 5234/17827 accuracy = 29.4%
+Time: 31.41 min - epoch state 22.25% (11 KB/s)
+Time: 31.47 min - epoch state 24.81% (13 KB/s)
+Time: 31.54 min - epoch state 27.37% (14 KB/s)
+Time: 31.61 min - epoch state 29.93% (15 KB/s)
+Time: 31.68 min - epoch state 32.49% (17 KB/s)
+Time: 31.75 min - epoch state 35.05% (18 KB/s)
+Time: 31.81 min - epoch state 37.61% (19 KB/s)
+Time: 31.88 min - epoch state 40.17% (21 KB/s)
+Time: 31.95 min - epoch state 42.73% (22 KB/s)
+Epoch 14, Loss: 719.06689453125
+Eval analogy questions 5261/17827 accuracy = 29.5%
+Time: 32.02 min - epoch state 45.29% (23 KB/s)
+Time: 32.10 min - epoch state 47.85% (24 KB/s)
+Time: 32.17 min - epoch state 50.41% (26 KB/s)
+Time: 32.25 min - epoch state 52.97% (27 KB/s)
+Time: 32.34 min - epoch state 55.53% (28 KB/s)
+Time: 32.42 min - epoch state 58.09% (29 KB/s)
+Time: 32.50 min - epoch state 60.65% (31 KB/s)
+Time: 32.58 min - epoch state 63.21% (32 KB/s)
+Epoch 14, Loss: 922.489501953125
+Eval analogy questions 5280/17827 accuracy = 29.6%
+Time: 32.67 min - epoch state 65.77% (33 KB/s)
+Time: 32.74 min - epoch state 68.33% (34 KB/s)
+Time: 32.82 min - epoch state 70.89% (35 KB/s)
+Time: 32.90 min - epoch state 73.45% (37 KB/s)
+Time: 32.96 min - epoch state 76.01% (38 KB/s)
+Time: 33.03 min - epoch state 78.57% (39 KB/s)
+Time: 33.09 min - epoch state 81.13% (40 KB/s)
+Time: 33.16 min - epoch state 83.69% (42 KB/s)
+Starting epoch: 15
+Epoch 15, Loss: 1109.533935546875
+Eval analogy questions 5350/17827 accuracy = 30.0%
+Time: 33.23 min - epoch state 1.53% (0 KB/s)
+Time: 33.30 min - epoch state 4.09% (2 KB/s)
+Time: 33.36 min - epoch state 6.65% (3 KB/s)
+Time: 33.43 min - epoch state 9.21% (4 KB/s)
+Time: 33.49 min - epoch state 11.77% (5 KB/s)
+Time: 33.56 min - epoch state 14.33% (7 KB/s)
+Time: 33.62 min - epoch state 16.89% (8 KB/s)
+Time: 33.69 min - epoch state 19.45% (9 KB/s)
+Epoch 15, Loss: 1248.2406005859375
+Eval analogy questions 5365/17827 accuracy = 30.1%
+Time: 33.76 min - epoch state 22.01% (10 KB/s)
+Time: 33.83 min - epoch state 24.57% (12 KB/s)
+Time: 33.89 min - epoch state 27.13% (13 KB/s)
+Time: 33.96 min - epoch state 29.69% (14 KB/s)
+Time: 34.02 min - epoch state 32.25% (15 KB/s)
+Time: 34.09 min - epoch state 34.81% (17 KB/s)
+Time: 34.15 min - epoch state 37.37% (18 KB/s)
+Time: 34.22 min - epoch state 39.93% (19 KB/s)
+Time: 34.28 min - epoch state 42.49% (20 KB/s)
+Epoch 15, Loss: 823.4393310546875
+Eval analogy questions 5371/17827 accuracy = 30.1%
+Time: 34.36 min - epoch state 45.05% (21 KB/s)
+Time: 34.42 min - epoch state 47.61% (23 KB/s)
+Time: 34.49 min - epoch state 50.17% (24 KB/s)
+Time: 34.55 min - epoch state 52.73% (25 KB/s)
+Time: 34.62 min - epoch state 55.29% (26 KB/s)
+Time: 34.68 min - epoch state 57.85% (27 KB/s)
+Time: 34.75 min - epoch state 60.41% (28 KB/s)
+Time: 34.81 min - epoch state 62.97% (30 KB/s)
+Epoch 15, Loss: 1005.3704833984375
+Eval analogy questions 5380/17827 accuracy = 30.2%
+Time: 34.89 min - epoch state 65.53% (31 KB/s)
+Time: 34.95 min - epoch state 68.09% (32 KB/s)
+Time: 35.02 min - epoch state 70.65% (33 KB/s)
+Time: 35.08 min - epoch state 73.21% (34 KB/s)
+Time: 35.15 min - epoch state 75.77% (35 KB/s)
+Time: 35.21 min - epoch state 78.33% (37 KB/s)
+Time: 35.28 min - epoch state 80.89% (38 KB/s)
+Time: 35.34 min - epoch state 83.45% (39 KB/s)
+Starting epoch: 16
+Epoch 16, Loss: 1088.023193359375
+Eval analogy questions 5427/17827 accuracy = 30.4%
+Time: 35.42 min - epoch state 1.29% (0 KB/s)
+Time: 35.48 min - epoch state 3.85% (1 KB/s)
+Time: 35.55 min - epoch state 6.41% (3 KB/s)
+Time: 35.62 min - epoch state 8.97% (4 KB/s)
+Time: 35.69 min - epoch state 11.53% (5 KB/s)
+Time: 35.75 min - epoch state 14.09% (6 KB/s)
+Time: 35.82 min - epoch state 16.65% (7 KB/s)
+Time: 35.88 min - epoch state 19.21% (8 KB/s)
+Time: 35.95 min - epoch state 21.77% (10 KB/s)
+Epoch 16, Loss: 1177.5784912109375
+Eval analogy questions 5469/17827 accuracy = 30.7%
+Time: 36.02 min - epoch state 24.33% (11 KB/s)
+Time: 36.08 min - epoch state 26.89% (12 KB/s)
+Time: 36.15 min - epoch state 29.45% (13 KB/s)
+Time: 36.22 min - epoch state 32.01% (14 KB/s)
+Time: 36.28 min - epoch state 34.57% (15 KB/s)
+Time: 36.34 min - epoch state 37.13% (17 KB/s)
+Time: 36.41 min - epoch state 39.69% (18 KB/s)
+Time: 36.48 min - epoch state 42.25% (19 KB/s)
+Epoch 16, Loss: 962.5186157226562
+Eval analogy questions 5454/17827 accuracy = 30.6%
+Time: 36.55 min - epoch state 44.81% (20 KB/s)
+Time: 36.61 min - epoch state 47.37% (21 KB/s)
+Time: 36.68 min - epoch state 49.93% (22 KB/s)
+Time: 36.74 min - epoch state 52.49% (23 KB/s)
+Time: 36.81 min - epoch state 55.05% (24 KB/s)
+Time: 36.87 min - epoch state 57.61% (26 KB/s)
+Time: 36.94 min - epoch state 60.17% (27 KB/s)
+Time: 37.00 min - epoch state 62.73% (28 KB/s)
+Epoch 16, Loss: 960.212890625
+Eval analogy questions 5489/17827 accuracy = 30.8%
+Time: 37.08 min - epoch state 65.29% (29 KB/s)
+Time: 37.14 min - epoch state 67.85% (30 KB/s)
+Time: 37.21 min - epoch state 70.41% (31 KB/s)
+Time: 37.28 min - epoch state 72.97% (32 KB/s)
+Time: 37.35 min - epoch state 75.53% (33 KB/s)
+Time: 37.41 min - epoch state 78.09% (34 KB/s)
+Time: 37.48 min - epoch state 80.65% (35 KB/s)
+Time: 37.54 min - epoch state 83.21% (36 KB/s)
+Starting epoch: 17
+Epoch 17, Loss: 1117.0416259765625
+Eval analogy questions 5505/17827 accuracy = 30.9%
+Time: 37.61 min - epoch state 1.06% (0 KB/s)
+Time: 37.68 min - epoch state 3.62% (1 KB/s)
+Time: 37.74 min - epoch state 6.18% (2 KB/s)
+Time: 37.81 min - epoch state 8.74% (3 KB/s)
+Time: 37.87 min - epoch state 11.30% (4 KB/s)
+Time: 37.93 min - epoch state 13.86% (6 KB/s)
+Time: 38.00 min - epoch state 16.42% (7 KB/s)
+Time: 38.06 min - epoch state 18.98% (8 KB/s)
+Time: 38.13 min - epoch state 21.54% (9 KB/s)
+Epoch 17, Loss: 1169.0753173828125
+Eval analogy questions 5515/17827 accuracy = 30.9%
+Time: 38.20 min - epoch state 24.10% (10 KB/s)
+Time: 38.26 min - epoch state 26.66% (11 KB/s)
+Time: 38.33 min - epoch state 29.22% (12 KB/s)
+Time: 38.39 min - epoch state 31.78% (13 KB/s)
+Time: 38.46 min - epoch state 34.34% (14 KB/s)
+Time: 38.52 min - epoch state 36.90% (15 KB/s)
+Time: 38.58 min - epoch state 39.46% (17 KB/s)
+Time: 38.65 min - epoch state 42.02% (18 KB/s)
+Epoch 17, Loss: 821.15966796875
+Eval analogy questions 5524/17827 accuracy = 31.0%
+Time: 38.72 min - epoch state 44.58% (19 KB/s)
+Time: 38.79 min - epoch state 47.14% (20 KB/s)
+Time: 38.85 min - epoch state 49.70% (21 KB/s)
+Time: 38.91 min - epoch state 52.26% (22 KB/s)
+Time: 38.98 min - epoch state 54.82% (23 KB/s)
+Time: 39.04 min - epoch state 57.38% (24 KB/s)
+Time: 39.11 min - epoch state 59.94% (25 KB/s)
+Time: 39.17 min - epoch state 62.50% (26 KB/s)
+Time: 39.25 min - epoch state 65.06% (27 KB/s)
+Epoch 17, Loss: 1043.3955078125
+Eval analogy questions 5542/17827 accuracy = 31.1%
+Time: 39.33 min - epoch state 67.62% (28 KB/s)
+Time: 39.41 min - epoch state 70.18% (29 KB/s)
+Time: 39.48 min - epoch state 72.74% (30 KB/s)
+Time: 39.56 min - epoch state 75.30% (31 KB/s)
+Time: 39.63 min - epoch state 77.86% (32 KB/s)
+Time: 39.70 min - epoch state 80.42% (33 KB/s)
+Time: 39.78 min - epoch state 82.98% (34 KB/s)
+Starting epoch: 18
+Epoch 18, Loss: 1063.22802734375
+Eval analogy questions 5573/17827 accuracy = 31.3%
+Time: 39.87 min - epoch state 0.82% (0 KB/s)
+Time: 39.94 min - epoch state 3.38% (1 KB/s)
+Time: 40.01 min - epoch state 5.94% (2 KB/s)
+Time: 40.08 min - epoch state 8.50% (3 KB/s)
+Time: 40.15 min - epoch state 11.06% (4 KB/s)
+Time: 40.21 min - epoch state 13.62% (5 KB/s)
+Time: 40.28 min - epoch state 16.18% (6 KB/s)
+Time: 40.34 min - epoch state 18.74% (7 KB/s)
+Time: 40.41 min - epoch state 21.30% (8 KB/s)
+Epoch 18, Loss: 1081.8890380859375
+Eval analogy questions 5586/17827 accuracy = 31.3%
+Time: 40.48 min - epoch state 23.86% (9 KB/s)
+Time: 40.55 min - epoch state 26.42% (10 KB/s)
+Time: 40.61 min - epoch state 28.98% (11 KB/s)
+Time: 40.68 min - epoch state 31.54% (12 KB/s)
+Time: 40.75 min - epoch state 34.10% (13 KB/s)
+Time: 40.81 min - epoch state 36.66% (14 KB/s)
+Time: 40.88 min - epoch state 39.22% (15 KB/s)
+Time: 40.95 min - epoch state 41.78% (17 KB/s)
+Epoch 18, Loss: 770.0142822265625
+Eval analogy questions 5599/17827 accuracy = 31.4%
+Time: 41.02 min - epoch state 44.34% (18 KB/s)
+Time: 41.08 min - epoch state 46.90% (19 KB/s)
+Time: 41.15 min - epoch state 49.46% (20 KB/s)
+Time: 41.21 min - epoch state 52.02% (21 KB/s)
+Time: 41.28 min - epoch state 54.58% (22 KB/s)
+Time: 41.35 min - epoch state 57.14% (23 KB/s)
+Time: 41.41 min - epoch state 59.70% (24 KB/s)
+Time: 41.48 min - epoch state 62.26% (25 KB/s)
+Time: 41.55 min - epoch state 64.82% (26 KB/s)
+Epoch 18, Loss: 977.1236572265625
+Eval analogy questions 5661/17827 accuracy = 31.8%
+Time: 41.62 min - epoch state 67.38% (26 KB/s)
+Time: 41.69 min - epoch state 69.94% (27 KB/s)
+Time: 41.75 min - epoch state 72.50% (28 KB/s)
+Time: 41.82 min - epoch state 75.06% (29 KB/s)
+Time: 41.88 min - epoch state 77.62% (30 KB/s)
+Time: 41.94 min - epoch state 80.18% (31 KB/s)
+Time: 42.01 min - epoch state 82.74% (32 KB/s)
+Starting epoch: 19
+Epoch 19, Loss: 1123.3963623046875
+Eval analogy questions 5643/17827 accuracy = 31.7%
+Time: 42.09 min - epoch state 0.58% (0 KB/s)
+Time: 42.15 min - epoch state 3.14% (1 KB/s)
+Time: 42.22 min - epoch state 5.70% (2 KB/s)
+Time: 42.29 min - epoch state 8.26% (3 KB/s)
+Time: 42.36 min - epoch state 10.82% (4 KB/s)
+Time: 42.43 min - epoch state 13.38% (5 KB/s)
+Time: 42.51 min - epoch state 15.94% (6 KB/s)
+Time: 42.57 min - epoch state 18.50% (7 KB/s)
+Time: 42.64 min - epoch state 21.06% (8 KB/s)
+Epoch 19, Loss: 1047.635498046875
+Eval analogy questions 5651/17827 accuracy = 31.7%
+Time: 42.71 min - epoch state 23.62% (9 KB/s)
+Time: 42.77 min - epoch state 26.18% (10 KB/s)
+Time: 42.84 min - epoch state 28.74% (11 KB/s)
+Time: 42.90 min - epoch state 31.30% (12 KB/s)
+Time: 42.98 min - epoch state 33.86% (13 KB/s)
+Time: 43.05 min - epoch state 36.42% (14 KB/s)
+Time: 43.11 min - epoch state 38.98% (15 KB/s)
+Time: 43.18 min - epoch state 41.54% (16 KB/s)
+Epoch 19, Loss: 1104.9329833984375
+Eval analogy questions 5697/17827 accuracy = 32.0%
+Time: 43.26 min - epoch state 44.10% (16 KB/s)
+Time: 43.33 min - epoch state 46.66% (17 KB/s)
+Time: 43.39 min - epoch state 49.22% (18 KB/s)
+Time: 43.46 min - epoch state 51.78% (19 KB/s)
+Time: 43.52 min - epoch state 54.34% (20 KB/s)
+Time: 43.59 min - epoch state 56.90% (21 KB/s)
+Time: 43.65 min - epoch state 59.46% (22 KB/s)
+Time: 43.72 min - epoch state 62.02% (23 KB/s)
+Time: 43.78 min - epoch state 64.58% (24 KB/s)
+Epoch 19, Loss: 981.7943115234375
+Eval analogy questions 5731/17827 accuracy = 32.1%
+Time: 43.85 min - epoch state 67.14% (25 KB/s)
+Time: 43.92 min - epoch state 69.70% (26 KB/s)
+Time: 43.98 min - epoch state 72.26% (27 KB/s)
+Time: 44.05 min - epoch state 74.82% (28 KB/s)
+Time: 44.11 min - epoch state 77.38% (29 KB/s)
+Time: 44.17 min - epoch state 79.94% (30 KB/s)
+Time: 44.24 min - epoch state 82.50% (31 KB/s)
+Starting epoch: 20
+Epoch 20, Loss: 1106.021240234375
+Eval analogy questions 5731/17827 accuracy = 32.1%
+Time: 44.31 min - epoch state 0.34% (0 KB/s)
+Time: 44.37 min - epoch state 2.90% (1 KB/s)
+Time: 44.44 min - epoch state 5.46% (2 KB/s)
+Time: 44.50 min - epoch state 8.02% (3 KB/s)
+Time: 44.56 min - epoch state 10.58% (3 KB/s)
+Time: 44.63 min - epoch state 13.14% (4 KB/s)
+Time: 44.69 min - epoch state 15.70% (5 KB/s)
+Time: 44.75 min - epoch state 18.26% (6 KB/s)
+Time: 44.82 min - epoch state 20.82% (7 KB/s)
+Epoch 20, Loss: 1112.45751953125
+Eval analogy questions 5734/17827 accuracy = 32.2%
+Time: 44.89 min - epoch state 23.38% (8 KB/s)
+Time: 44.96 min - epoch state 25.94% (9 KB/s)
+Time: 45.02 min - epoch state 28.50% (10 KB/s)
+Time: 45.08 min - epoch state 31.06% (11 KB/s)
+Time: 45.15 min - epoch state 33.62% (12 KB/s)
+Time: 45.21 min - epoch state 36.18% (13 KB/s)
+Time: 45.28 min - epoch state 38.74% (14 KB/s)
+Time: 45.34 min - epoch state 41.30% (15 KB/s)
+Epoch 20, Loss: 786.0987548828125
+Eval analogy questions 5734/17827 accuracy = 32.2%
+Time: 45.41 min - epoch state 43.86% (16 KB/s)
+Time: 45.48 min - epoch state 46.42% (17 KB/s)
+Time: 45.54 min - epoch state 48.98% (17 KB/s)
+Time: 45.60 min - epoch state 51.54% (18 KB/s)
+Time: 45.67 min - epoch state 54.10% (19 KB/s)
+Time: 45.73 min - epoch state 56.66% (20 KB/s)
+Time: 45.80 min - epoch state 59.22% (21 KB/s)
+Time: 45.86 min - epoch state 61.78% (22 KB/s)
+Time: 45.93 min - epoch state 64.34% (23 KB/s)
+Epoch 20, Loss: 747.57763671875
+Eval analogy questions 5773/17827 accuracy = 32.4%
+Time: 46.01 min - epoch state 66.90% (24 KB/s)
+Time: 46.08 min - epoch state 69.46% (25 KB/s)
+Time: 46.15 min - epoch state 72.02% (26 KB/s)
+Time: 46.21 min - epoch state 74.58% (26 KB/s)
+Time: 46.28 min - epoch state 77.14% (27 KB/s)
+Time: 46.34 min - epoch state 79.70% (28 KB/s)
+Time: 46.41 min - epoch state 82.26% (29 KB/s)
+Starting epoch: 21
+Epoch 21, Loss: 1087.6954345703125
+Eval analogy questions 5815/17827 accuracy = 32.6%
+Time: 46.48 min - epoch state 0.10% (0 KB/s)
+Time: 46.55 min - epoch state 2.66% (0 KB/s)
+Time: 46.61 min - epoch state 5.22% (1 KB/s)
+Time: 46.67 min - epoch state 7.78% (2 KB/s)
+Time: 46.74 min - epoch state 10.34% (3 KB/s)
+Time: 46.80 min - epoch state 12.90% (4 KB/s)
+Time: 46.87 min - epoch state 15.46% (5 KB/s)
+Time: 46.93 min - epoch state 18.02% (6 KB/s)
+Time: 47.00 min - epoch state 20.58% (7 KB/s)
+Epoch 21, Loss: 1075.57275390625
+Eval analogy questions 5814/17827 accuracy = 32.6%
+Time: 47.07 min - epoch state 23.14% (8 KB/s)
+Time: 47.13 min - epoch state 25.70% (9 KB/s)
+Time: 47.20 min - epoch state 28.26% (9 KB/s)
+Time: 47.26 min - epoch state 30.82% (10 KB/s)
+Time: 47.33 min - epoch state 33.38% (11 KB/s)
+Time: 47.40 min - epoch state 35.94% (12 KB/s)
+Time: 47.46 min - epoch state 38.50% (13 KB/s)
+Time: 47.53 min - epoch state 41.06% (14 KB/s)
+Epoch 21, Loss: 1055.862548828125
+Eval analogy questions 5824/17827 accuracy = 32.7%
+Time: 47.60 min - epoch state 43.62% (15 KB/s)
+Time: 47.66 min - epoch state 46.18% (16 KB/s)
+Time: 47.73 min - epoch state 48.74% (17 KB/s)
+Time: 47.79 min - epoch state 51.30% (17 KB/s)
+Time: 47.86 min - epoch state 53.86% (18 KB/s)
+Time: 47.92 min - epoch state 56.42% (19 KB/s)
+Time: 47.99 min - epoch state 58.98% (20 KB/s)
+Time: 48.05 min - epoch state 61.54% (21 KB/s)
+Time: 48.12 min - epoch state 64.10% (22 KB/s)
+Epoch 21, Loss: 1104.355224609375
+Eval analogy questions 5832/17827 accuracy = 32.7%
+Time: 48.19 min - epoch state 66.66% (23 KB/s)
+Time: 48.25 min - epoch state 69.22% (23 KB/s)
+Time: 48.32 min - epoch state 71.78% (24 KB/s)
+Time: 48.38 min - epoch state 74.34% (25 KB/s)
+Time: 48.45 min - epoch state 76.90% (26 KB/s)
+Time: 48.51 min - epoch state 79.46% (27 KB/s)
+Time: 48.57 min - epoch state 82.02% (28 KB/s)
+Time: 48.64 min - epoch state 84.58% (28 KB/s)
+Starting epoch: 22
+Epoch 22, Loss: 1045.646240234375
+Eval analogy questions 5836/17827 accuracy = 32.7%
+Time: 48.71 min - epoch state 2.42% (0 KB/s)
+Time: 48.78 min - epoch state 4.98% (1 KB/s)
+Time: 48.84 min - epoch state 7.54% (2 KB/s)
+Time: 48.90 min - epoch state 10.10% (3 KB/s)
+Time: 48.96 min - epoch state 12.66% (4 KB/s)
+Time: 49.03 min - epoch state 15.22% (5 KB/s)
+Time: 49.09 min - epoch state 17.78% (6 KB/s)
+Time: 49.16 min - epoch state 20.34% (6 KB/s)
+Epoch 22, Loss: 1176.443603515625
+Eval analogy questions 5814/17827 accuracy = 32.6%
+Time: 49.23 min - epoch state 22.90% (7 KB/s)
+Time: 49.30 min - epoch state 25.46% (8 KB/s)
+Time: 49.36 min - epoch state 28.02% (9 KB/s)
+Time: 49.42 min - epoch state 30.58% (10 KB/s)
+Time: 49.49 min - epoch state 33.14% (11 KB/s)
+Time: 49.55 min - epoch state 35.70% (12 KB/s)
+Time: 49.62 min - epoch state 38.26% (12 KB/s)
+Time: 49.68 min - epoch state 40.82% (13 KB/s)
+Time: 49.75 min - epoch state 43.38% (14 KB/s)
+Epoch 22, Loss: 978.6776123046875
+Eval analogy questions 5856/17827 accuracy = 32.8%
+Time: 49.82 min - epoch state 45.94% (15 KB/s)
+Time: 49.88 min - epoch state 48.50% (16 KB/s)
+Time: 49.95 min - epoch state 51.06% (17 KB/s)
+Time: 50.01 min - epoch state 53.62% (17 KB/s)
+Time: 50.08 min - epoch state 56.18% (18 KB/s)
+Time: 50.14 min - epoch state 58.74% (19 KB/s)
+Time: 50.21 min - epoch state 61.30% (20 KB/s)
+Time: 50.27 min - epoch state 63.86% (21 KB/s)
+Epoch 22, Loss: 1010.6303100585938
+Eval analogy questions 5916/17827 accuracy = 33.2%
+Time: 50.34 min - epoch state 66.42% (21 KB/s)
+Time: 50.41 min - epoch state 68.98% (22 KB/s)
+Time: 50.47 min - epoch state 71.54% (23 KB/s)
+Time: 50.54 min - epoch state 74.10% (24 KB/s)
+Time: 50.60 min - epoch state 76.66% (25 KB/s)
+Time: 50.66 min - epoch state 79.22% (26 KB/s)
+Time: 50.73 min - epoch state 81.78% (26 KB/s)
+Time: 50.79 min - epoch state 84.34% (27 KB/s)
+Starting epoch: 23
+Epoch 23, Loss: 1107.2777099609375
+Eval analogy questions 5925/17827 accuracy = 33.2%
+Time: 50.87 min - epoch state 2.18% (0 KB/s)
+Time: 50.93 min - epoch state 4.74% (1 KB/s)
+Time: 50.99 min - epoch state 7.30% (2 KB/s)
+Time: 51.06 min - epoch state 9.86% (3 KB/s)
+Time: 51.12 min - epoch state 12.42% (4 KB/s)
+Time: 51.19 min - epoch state 14.98% (4 KB/s)
+Time: 51.25 min - epoch state 17.54% (5 KB/s)
+Time: 51.32 min - epoch state 20.10% (6 KB/s)
+Epoch 23, Loss: 964.689208984375
+Eval analogy questions 5905/17827 accuracy = 33.1%
+Time: 51.39 min - epoch state 22.66% (7 KB/s)
+Time: 51.45 min - epoch state 25.22% (8 KB/s)
+Time: 51.52 min - epoch state 27.78% (8 KB/s)
+Time: 51.58 min - epoch state 30.34% (9 KB/s)
+Time: 51.65 min - epoch state 32.90% (10 KB/s)
+Time: 51.71 min - epoch state 35.46% (11 KB/s)
+Time: 51.78 min - epoch state 38.02% (12 KB/s)
+Time: 51.84 min - epoch state 40.58% (13 KB/s)
+Time: 51.91 min - epoch state 43.14% (13 KB/s)
+Epoch 23, Loss: 1112.9068603515625
+Eval analogy questions 5914/17827 accuracy = 33.2%
+Time: 51.98 min - epoch state 45.70% (14 KB/s)
+Time: 52.04 min - epoch state 48.26% (15 KB/s)
+Time: 52.11 min - epoch state 50.82% (16 KB/s)
+Time: 52.17 min - epoch state 53.38% (17 KB/s)
+Time: 52.24 min - epoch state 55.94% (17 KB/s)
+Time: 52.30 min - epoch state 58.50% (18 KB/s)
+Time: 52.37 min - epoch state 61.06% (19 KB/s)
+Time: 52.43 min - epoch state 63.62% (20 KB/s)
+Epoch 23, Loss: 1032.3974609375
+Eval analogy questions 5945/17827 accuracy = 33.3%
+Time: 52.50 min - epoch state 66.18% (21 KB/s)
+Time: 52.57 min - epoch state 68.74% (21 KB/s)
+Time: 52.63 min - epoch state 71.30% (22 KB/s)
+Time: 52.69 min - epoch state 73.86% (23 KB/s)
+Time: 52.76 min - epoch state 76.42% (24 KB/s)
+Time: 52.82 min - epoch state 78.98% (24 KB/s)
+Time: 52.88 min - epoch state 81.54% (25 KB/s)
+Time: 52.95 min - epoch state 84.10% (26 KB/s)
+Starting epoch: 24
+Epoch 24, Loss: 1062.5963134765625
+Eval analogy questions 5950/17827 accuracy = 33.4%
+Time: 53.02 min - epoch state 1.94% (0 KB/s)
+Time: 53.09 min - epoch state 4.50% (1 KB/s)
+Time: 53.15 min - epoch state 7.06% (2 KB/s)
+Time: 53.21 min - epoch state 9.62% (3 KB/s)
+Time: 53.28 min - epoch state 12.18% (3 KB/s)
+Time: 53.34 min - epoch state 14.74% (4 KB/s)
+Time: 53.41 min - epoch state 17.30% (5 KB/s)
+Time: 53.47 min - epoch state 19.86% (6 KB/s)
+Epoch 24, Loss: 1090.6361083984375
+Eval analogy questions 5973/17827 accuracy = 33.5%
+Time: 53.54 min - epoch state 22.42% (6 KB/s)
+Time: 53.61 min - epoch state 24.98% (7 KB/s)
+Time: 53.67 min - epoch state 27.54% (8 KB/s)
+Time: 53.74 min - epoch state 30.10% (9 KB/s)
+Time: 53.80 min - epoch state 32.66% (10 KB/s)
+Time: 53.86 min - epoch state 35.22% (10 KB/s)
+Time: 53.93 min - epoch state 37.78% (11 KB/s)
+Time: 53.99 min - epoch state 40.34% (12 KB/s)
+Time: 54.06 min - epoch state 42.90% (13 KB/s)
+Epoch 24, Loss: 772.2324829101562
+Eval analogy questions 5957/17827 accuracy = 33.4%
+Time: 54.13 min - epoch state 45.46% (13 KB/s)
+Time: 54.19 min - epoch state 48.02% (14 KB/s)
+Time: 54.26 min - epoch state 50.58% (15 KB/s)
+Time: 54.32 min - epoch state 53.14% (16 KB/s)
+Time: 54.39 min - epoch state 55.70% (17 KB/s)
+Time: 54.46 min - epoch state 58.26% (17 KB/s)
+Time: 54.53 min - epoch state 60.82% (18 KB/s)
+Time: 54.59 min - epoch state 63.38% (19 KB/s)
+Epoch 24, Loss: 1002.2489013671875
+Eval analogy questions 5975/17827 accuracy = 33.5%
+Time: 54.66 min - epoch state 65.94% (20 KB/s)
+Time: 54.73 min - epoch state 68.50% (20 KB/s)
+Time: 54.79 min - epoch state 71.06% (21 KB/s)
+Time: 54.86 min - epoch state 73.62% (22 KB/s)
+Time: 54.92 min - epoch state 76.18% (23 KB/s)
+Time: 54.98 min - epoch state 78.74% (23 KB/s)
+Time: 55.05 min - epoch state 81.30% (24 KB/s)
+Time: 55.11 min - epoch state 83.86% (25 KB/s)
+Starting epoch: 25
+Epoch 25, Loss: 1073.095458984375
+Eval analogy questions 5988/17827 accuracy = 33.6%
+Time: 55.18 min - epoch state 1.70% (0 KB/s)
+Time: 55.25 min - epoch state 4.26% (1 KB/s)
+Time: 55.31 min - epoch state 6.82% (2 KB/s)
+Time: 55.37 min - epoch state 9.38% (2 KB/s)
+Time: 55.44 min - epoch state 11.94% (3 KB/s)
+Time: 55.50 min - epoch state 14.50% (4 KB/s)
+Time: 55.57 min - epoch state 17.06% (5 KB/s)
+Time: 55.63 min - epoch state 19.62% (5 KB/s)
+Epoch 25, Loss: 1177.49267578125
+Eval analogy questions 6001/17827 accuracy = 33.7%
+Time: 55.70 min - epoch state 22.18% (6 KB/s)
+Time: 55.77 min - epoch state 24.74% (7 KB/s)
+Time: 55.83 min - epoch state 27.30% (8 KB/s)
+Time: 55.90 min - epoch state 29.86% (8 KB/s)
+Time: 55.96 min - epoch state 32.42% (9 KB/s)
+Time: 56.03 min - epoch state 34.98% (10 KB/s)
+Time: 56.09 min - epoch state 37.54% (11 KB/s)
+Time: 56.16 min - epoch state 40.10% (11 KB/s)
+Time: 56.22 min - epoch state 42.66% (12 KB/s)
+Epoch 25, Loss: 829.5906982421875
+Eval analogy questions 5994/17827 accuracy = 33.6%
+Time: 56.29 min - epoch state 45.22% (13 KB/s)
+Time: 56.36 min - epoch state 47.78% (14 KB/s)
+Time: 56.42 min - epoch state 50.34% (14 KB/s)
+Time: 56.49 min - epoch state 52.90% (15 KB/s)
+Time: 56.55 min - epoch state 55.46% (16 KB/s)
+Time: 56.62 min - epoch state 58.02% (17 KB/s)
+Time: 56.68 min - epoch state 60.58% (17 KB/s)
+Time: 56.74 min - epoch state 63.14% (18 KB/s)
+Epoch 25, Loss: 958.839599609375
+Eval analogy questions 6049/17827 accuracy = 33.9%
+Time: 56.82 min - epoch state 65.70% (19 KB/s)
+Time: 56.88 min - epoch state 68.26% (20 KB/s)
+Time: 56.95 min - epoch state 70.82% (20 KB/s)
+Time: 57.01 min - epoch state 73.38% (21 KB/s)
+Time: 57.07 min - epoch state 75.94% (22 KB/s)
+Time: 57.14 min - epoch state 78.50% (22 KB/s)
+Time: 57.20 min - epoch state 81.06% (23 KB/s)
+Time: 57.27 min - epoch state 83.62% (24 KB/s)
+Starting epoch: 26
+Epoch 26, Loss: 1072.3809814453125
+Eval analogy questions 6057/17827 accuracy = 34.0%
+Time: 57.34 min - epoch state 1.46% (0 KB/s)
+Time: 57.40 min - epoch state 4.02% (1 KB/s)
+Time: 57.47 min - epoch state 6.58% (1 KB/s)
+Time: 57.53 min - epoch state 9.14% (2 KB/s)
+Time: 57.59 min - epoch state 11.70% (3 KB/s)
+Time: 57.66 min - epoch state 14.26% (4 KB/s)
+Time: 57.72 min - epoch state 16.82% (4 KB/s)
+Time: 57.79 min - epoch state 19.38% (5 KB/s)
+Epoch 26, Loss: 1055.453857421875
+Eval analogy questions 6053/17827 accuracy = 34.0%
+Time: 57.86 min - epoch state 21.94% (6 KB/s)
+Time: 57.92 min - epoch state 24.50% (7 KB/s)
+Time: 57.99 min - epoch state 27.06% (7 KB/s)
+Time: 58.05 min - epoch state 29.62% (8 KB/s)
+Time: 58.12 min - epoch state 32.18% (9 KB/s)
+Time: 58.18 min - epoch state 34.74% (9 KB/s)
+Time: 58.25 min - epoch state 37.30% (10 KB/s)
+Time: 58.31 min - epoch state 39.86% (11 KB/s)
+Time: 58.38 min - epoch state 42.42% (12 KB/s)
+Epoch 26, Loss: 749.4345703125
+Eval analogy questions 6045/17827 accuracy = 33.9%
+Time: 58.45 min - epoch state 44.98% (12 KB/s)
+Time: 58.51 min - epoch state 47.54% (13 KB/s)
+Time: 58.58 min - epoch state 50.10% (14 KB/s)
+Time: 58.64 min - epoch state 52.66% (14 KB/s)
+Time: 58.70 min - epoch state 55.22% (15 KB/s)
+Time: 58.77 min - epoch state 57.78% (16 KB/s)
+Time: 58.83 min - epoch state 60.34% (17 KB/s)
+Time: 58.90 min - epoch state 62.90% (17 KB/s)
+Epoch 26, Loss: 786.014892578125
+Eval analogy questions 6052/17827 accuracy = 33.9%
+Time: 58.97 min - epoch state 65.46% (18 KB/s)
+Time: 59.04 min - epoch state 68.02% (19 KB/s)
+Time: 59.10 min - epoch state 70.58% (19 KB/s)
+Time: 59.16 min - epoch state 73.14% (20 KB/s)
+Time: 59.23 min - epoch state 75.70% (21 KB/s)
+Time: 59.29 min - epoch state 78.26% (22 KB/s)
+Time: 59.35 min - epoch state 80.82% (22 KB/s)
+Time: 59.42 min - epoch state 83.38% (23 KB/s)
+Starting epoch: 27
+Epoch 27, Loss: 1041.570556640625
+Eval analogy questions 6064/17827 accuracy = 34.0%
+Time: 59.49 min - epoch state 1.22% (0 KB/s)
+Time: 59.56 min - epoch state 3.78% (1 KB/s)
+Time: 59.62 min - epoch state 6.34% (1 KB/s)
+Time: 59.68 min - epoch state 8.90% (2 KB/s)
+Time: 59.75 min - epoch state 11.46% (3 KB/s)
+Time: 59.81 min - epoch state 14.02% (3 KB/s)
+Time: 59.87 min - epoch state 16.58% (4 KB/s)
+Time: 59.94 min - epoch state 19.14% (5 KB/s)
+Time: 60.00 min - epoch state 21.70% (6 KB/s)
+Epoch 27, Loss: 1024.419921875
+Eval analogy questions 6048/17827 accuracy = 33.9%
+Time: 60.08 min - epoch state 24.26% (6 KB/s)
+Time: 60.14 min - epoch state 26.82% (7 KB/s)
+Time: 60.20 min - epoch state 29.38% (8 KB/s)
+Time: 60.27 min - epoch state 31.94% (8 KB/s)
+Time: 60.33 min - epoch state 34.50% (9 KB/s)
+Time: 60.40 min - epoch state 37.06% (10 KB/s)
+Time: 60.46 min - epoch state 39.62% (10 KB/s)
+Time: 60.53 min - epoch state 42.18% (11 KB/s)
+Epoch 27, Loss: 664.9308471679688
+Eval analogy questions 6067/17827 accuracy = 34.0%
+Time: 60.60 min - epoch state 44.74% (12 KB/s)
+Time: 60.66 min - epoch state 47.30% (12 KB/s)
+Time: 60.73 min - epoch state 49.86% (13 KB/s)
+Time: 60.79 min - epoch state 52.42% (14 KB/s)
+Time: 60.86 min - epoch state 54.98% (15 KB/s)
+Time: 60.92 min - epoch state 57.54% (15 KB/s)
+Time: 60.99 min - epoch state 60.10% (16 KB/s)
+Time: 61.05 min - epoch state 62.66% (17 KB/s)
+Epoch 27, Loss: 861.408935546875
+Eval analogy questions 6071/17827 accuracy = 34.1%
+Time: 61.13 min - epoch state 65.22% (17 KB/s)
+Time: 61.19 min - epoch state 67.78% (18 KB/s)
+Time: 61.25 min - epoch state 70.34% (19 KB/s)
+Time: 61.32 min - epoch state 72.90% (19 KB/s)
+Time: 61.38 min - epoch state 75.46% (20 KB/s)
+Time: 61.44 min - epoch state 78.02% (21 KB/s)
+Time: 61.51 min - epoch state 80.58% (21 KB/s)
+Time: 61.57 min - epoch state 83.14% (22 KB/s)
+Starting epoch: 28
+Epoch 28, Loss: 1102.9298095703125
+Eval analogy questions 6095/17827 accuracy = 34.2%
+Time: 61.65 min - epoch state 0.99% (0 KB/s)
+Time: 61.71 min - epoch state 3.55% (0 KB/s)
+Time: 61.77 min - epoch state 6.11% (1 KB/s)
+Time: 61.84 min - epoch state 8.67% (2 KB/s)
+Time: 61.90 min - epoch state 11.23% (3 KB/s)
+Time: 61.96 min - epoch state 13.79% (3 KB/s)
+Time: 62.03 min - epoch state 16.35% (4 KB/s)
+Time: 62.09 min - epoch state 18.91% (5 KB/s)
+Time: 62.16 min - epoch state 21.47% (5 KB/s)
+Epoch 28, Loss: 1032.0760498046875
+Eval analogy questions 6077/17827 accuracy = 34.1%
+Time: 62.23 min - epoch state 24.03% (6 KB/s)
+Time: 62.30 min - epoch state 26.59% (7 KB/s)
+Time: 62.36 min - epoch state 29.15% (7 KB/s)
+Time: 62.42 min - epoch state 31.71% (8 KB/s)
+Time: 62.49 min - epoch state 34.27% (9 KB/s)
+Time: 62.55 min - epoch state 36.83% (9 KB/s)
+Time: 62.62 min - epoch state 39.39% (10 KB/s)
+Time: 62.68 min - epoch state 41.95% (11 KB/s)
+Epoch 28, Loss: 660.63037109375
+Eval analogy questions 6104/17827 accuracy = 34.2%
+Time: 62.75 min - epoch state 44.51% (11 KB/s)
+Time: 62.82 min - epoch state 47.07% (12 KB/s)
+Time: 62.88 min - epoch state 49.63% (13 KB/s)
+Time: 62.94 min - epoch state 52.19% (13 KB/s)
+Time: 63.01 min - epoch state 54.75% (14 KB/s)
+Time: 63.08 min - epoch state 57.31% (15 KB/s)
+Time: 63.14 min - epoch state 59.87% (15 KB/s)
+Time: 63.20 min - epoch state 62.43% (16 KB/s)
+Time: 63.27 min - epoch state 64.99% (17 KB/s)
+Epoch 28, Loss: 1025.2574462890625
+Eval analogy questions 6100/17827 accuracy = 34.2%
+Time: 63.34 min - epoch state 67.55% (17 KB/s)
+Time: 63.41 min - epoch state 70.11% (18 KB/s)
+Time: 63.47 min - epoch state 72.67% (19 KB/s)
+Time: 63.53 min - epoch state 75.23% (19 KB/s)
+Time: 63.59 min - epoch state 77.79% (20 KB/s)
+Time: 63.66 min - epoch state 80.35% (21 KB/s)
+Time: 63.72 min - epoch state 82.91% (21 KB/s)
+Starting epoch: 29
+Epoch 29, Loss: 1038.862060546875
+Eval analogy questions 6076/17827 accuracy = 34.1%
+Time: 63.80 min - epoch state 0.75% (0 KB/s)
+Time: 63.86 min - epoch state 3.31% (0 KB/s)
+Time: 63.92 min - epoch state 5.87% (1 KB/s)
+Time: 63.99 min - epoch state 8.43% (2 KB/s)
+Time: 64.05 min - epoch state 10.99% (2 KB/s)
+Time: 64.12 min - epoch state 13.55% (3 KB/s)
+Time: 64.18 min - epoch state 16.11% (4 KB/s)
+Time: 64.24 min - epoch state 18.67% (4 KB/s)
+Time: 64.31 min - epoch state 21.23% (5 KB/s)
+Epoch 29, Loss: 1163.8328857421875
+Eval analogy questions 6089/17827 accuracy = 34.2%
+Time: 64.38 min - epoch state 23.79% (6 KB/s)
+Time: 64.45 min - epoch state 26.35% (6 KB/s)
+Time: 64.51 min - epoch state 28.91% (7 KB/s)
+Time: 64.57 min - epoch state 31.47% (8 KB/s)
+Time: 64.64 min - epoch state 34.03% (8 KB/s)
+Time: 64.70 min - epoch state 36.59% (9 KB/s)
+Time: 64.77 min - epoch state 39.15% (10 KB/s)
+Time: 64.83 min - epoch state 41.71% (10 KB/s)
+Epoch 29, Loss: 836.477783203125
+Eval analogy questions 6113/17827 accuracy = 34.3%
+Time: 64.90 min - epoch state 44.27% (11 KB/s)
+Time: 64.97 min - epoch state 46.83% (12 KB/s)
+Time: 65.03 min - epoch state 49.39% (12 KB/s)
+Time: 65.10 min - epoch state 51.95% (13 KB/s)
+Time: 65.16 min - epoch state 54.51% (13 KB/s)
+Time: 65.23 min - epoch state 57.07% (14 KB/s)
+Time: 65.29 min - epoch state 59.63% (15 KB/s)
+Time: 65.35 min - epoch state 62.19% (15 KB/s)
+Time: 65.42 min - epoch state 64.75% (16 KB/s)
+Epoch 29, Loss: 960.3236694335938
+Eval analogy questions 6086/17827 accuracy = 34.1%
+Time: 65.49 min - epoch state 67.31% (17 KB/s)
+Time: 65.56 min - epoch state 69.87% (17 KB/s)
+Time: 65.62 min - epoch state 72.43% (18 KB/s)
+Time: 65.68 min - epoch state 74.99% (19 KB/s)
+Time: 65.75 min - epoch state 77.55% (19 KB/s)
+Time: 65.81 min - epoch state 80.11% (20 KB/s)
+Time: 65.87 min - epoch state 82.67% (20 KB/s)
+Starting epoch: 30
+Epoch 30, Loss: 1039.86376953125
+Eval analogy questions 6108/17827 accuracy = 34.3%
+Time: 65.95 min - epoch state 0.51% (0 KB/s)
+Time: 66.01 min - epoch state 3.07% (0 KB/s)
+Time: 66.07 min - epoch state 5.63% (1 KB/s)
+Time: 66.14 min - epoch state 8.19% (2 KB/s)
+Time: 66.20 min - epoch state 10.75% (2 KB/s)
+Time: 66.26 min - epoch state 13.31% (3 KB/s)
+Time: 66.33 min - epoch state 15.87% (3 KB/s)
+Time: 66.39 min - epoch state 18.43% (4 KB/s)
+Time: 66.46 min - epoch state 20.99% (5 KB/s)
+Epoch 30, Loss: 975.3887329101562
+Eval analogy questions 6133/17827 accuracy = 34.4%
+Time: 66.53 min - epoch state 23.55% (5 KB/s)
+Time: 66.59 min - epoch state 26.11% (6 KB/s)
+Time: 66.66 min - epoch state 28.67% (7 KB/s)
+Time: 66.72 min - epoch state 31.23% (7 KB/s)
+Time: 66.79 min - epoch state 33.79% (8 KB/s)
+Time: 66.85 min - epoch state 36.35% (9 KB/s)
+Time: 66.91 min - epoch state 38.91% (9 KB/s)
+Time: 66.98 min - epoch state 41.47% (10 KB/s)
+Epoch 30, Loss: 786.5804443359375
+Eval analogy questions 6138/17827 accuracy = 34.4%
+Time: 67.05 min - epoch state 44.03% (10 KB/s)
+Time: 67.11 min - epoch state 46.59% (11 KB/s)
+Time: 67.18 min - epoch state 49.15% (12 KB/s)
+Time: 67.24 min - epoch state 51.71% (12 KB/s)
+Time: 67.31 min - epoch state 54.27% (13 KB/s)
+Time: 67.37 min - epoch state 56.83% (14 KB/s)
+Time: 67.44 min - epoch state 59.39% (14 KB/s)
+Time: 67.50 min - epoch state 61.95% (15 KB/s)
+Time: 67.56 min - epoch state 64.51% (15 KB/s)
+Epoch 30, Loss: 807.1441650390625
+Eval analogy questions 6121/17827 accuracy = 34.3%
+Time: 67.64 min - epoch state 67.07% (16 KB/s)
+Time: 67.70 min - epoch state 69.63% (17 KB/s)
+Time: 67.77 min - epoch state 72.19% (17 KB/s)
+Time: 67.83 min - epoch state 74.75% (18 KB/s)
+Time: 67.89 min - epoch state 77.31% (18 KB/s)
+Time: 67.96 min - epoch state 79.87% (19 KB/s)
+Time: 68.02 min - epoch state 82.43% (20 KB/s)
+Starting epoch: 31
+Epoch 31, Loss: 996.850341796875
+Eval analogy questions 6132/17827 accuracy = 34.4%
+Time: 68.09 min - epoch state 0.27% (0 KB/s)
+Time: 68.16 min - epoch state 2.83% (0 KB/s)
+Time: 68.22 min - epoch state 5.39% (1 KB/s)
+Time: 68.28 min - epoch state 7.95% (1 KB/s)
+Time: 68.35 min - epoch state 10.51% (2 KB/s)
+Time: 68.41 min - epoch state 13.07% (3 KB/s)
+Time: 68.47 min - epoch state 15.63% (3 KB/s)
+Time: 68.54 min - epoch state 18.19% (4 KB/s)
+Time: 68.60 min - epoch state 20.75% (5 KB/s)
+Epoch 31, Loss: 989.0160522460938
+Eval analogy questions 6144/17827 accuracy = 34.5%
+Time: 68.68 min - epoch state 23.31% (5 KB/s)
+Time: 68.74 min - epoch state 25.87% (6 KB/s)
+Time: 68.80 min - epoch state 28.43% (6 KB/s)
+Time: 68.87 min - epoch state 30.99% (7 KB/s)
+Time: 68.93 min - epoch state 33.55% (8 KB/s)
+Time: 69.00 min - epoch state 36.11% (8 KB/s)
+Time: 69.06 min - epoch state 38.67% (9 KB/s)
+Time: 69.12 min - epoch state 41.23% (9 KB/s)
+Epoch 31, Loss: 873.495361328125
+Eval analogy questions 6169/17827 accuracy = 34.6%
+Time: 69.20 min - epoch state 43.79% (10 KB/s)
+Time: 69.26 min - epoch state 46.35% (11 KB/s)
+Time: 69.32 min - epoch state 48.91% (11 KB/s)
+Time: 69.39 min - epoch state 51.47% (12 KB/s)
+Time: 69.45 min - epoch state 54.03% (12 KB/s)
+Time: 69.52 min - epoch state 56.59% (13 KB/s)
+Time: 69.58 min - epoch state 59.15% (14 KB/s)
+Time: 69.65 min - epoch state 61.71% (14 KB/s)
+Time: 69.71 min - epoch state 64.27% (15 KB/s)
+Epoch 31, Loss: 970.7737426757812
+Eval analogy questions 6168/17827 accuracy = 34.6%
+Time: 69.78 min - epoch state 66.83% (15 KB/s)
+Time: 69.85 min - epoch state 69.39% (16 KB/s)
+Time: 69.91 min - epoch state 71.95% (17 KB/s)
+Time: 69.98 min - epoch state 74.51% (17 KB/s)
+Time: 70.04 min - epoch state 77.07% (18 KB/s)
+Time: 70.10 min - epoch state 79.63% (18 KB/s)
+Time: 70.16 min - epoch state 82.19% (19 KB/s)
+Starting epoch: 32
+Epoch 32, Loss: 1002.177490234375
+Eval analogy questions 6187/17827 accuracy = 34.7%
+Time: 70.24 min - epoch state 0.03% (0 KB/s)
+Time: 70.30 min - epoch state 2.59% (0 KB/s)
+Time: 70.37 min - epoch state 5.15% (1 KB/s)
+Time: 70.43 min - epoch state 7.71% (1 KB/s)
+Time: 70.49 min - epoch state 10.27% (2 KB/s)
+Time: 70.56 min - epoch state 12.83% (3 KB/s)
+Time: 70.62 min - epoch state 15.39% (3 KB/s)
+Time: 70.68 min - epoch state 17.95% (4 KB/s)
+Time: 70.75 min - epoch state 20.51% (4 KB/s)
+Epoch 32, Loss: 1074.4312744140625
+Eval analogy questions 6146/17827 accuracy = 34.5%
+Time: 70.82 min - epoch state 23.07% (5 KB/s)
+Time: 70.88 min - epoch state 25.63% (6 KB/s)
+Time: 70.95 min - epoch state 28.19% (6 KB/s)
+Time: 71.01 min - epoch state 30.75% (7 KB/s)
+Time: 71.08 min - epoch state 33.31% (7 KB/s)
+Time: 71.14 min - epoch state 35.87% (8 KB/s)
+Time: 71.20 min - epoch state 38.43% (8 KB/s)
+Time: 71.27 min - epoch state 40.99% (9 KB/s)
+Epoch 32, Loss: 887.9313354492188
+Eval analogy questions 6166/17827 accuracy = 34.6%
+Time: 71.34 min - epoch state 43.55% (10 KB/s)
+Time: 71.41 min - epoch state 46.11% (10 KB/s)
+Time: 71.47 min - epoch state 48.67% (11 KB/s)
+Time: 71.53 min - epoch state 51.23% (11 KB/s)
+Time: 71.60 min - epoch state 53.79% (12 KB/s)
+Time: 71.66 min - epoch state 56.35% (13 KB/s)
+Time: 71.73 min - epoch state 58.91% (13 KB/s)
+Time: 71.79 min - epoch state 61.47% (14 KB/s)
+Time: 71.85 min - epoch state 64.03% (14 KB/s)
+Epoch 32, Loss: 931.0367431640625
+Eval analogy questions 6156/17827 accuracy = 34.5%
+Time: 71.93 min - epoch state 66.59% (15 KB/s)
+Time: 71.99 min - epoch state 69.15% (16 KB/s)
+Time: 72.06 min - epoch state 71.71% (16 KB/s)
+Time: 72.12 min - epoch state 74.27% (17 KB/s)
+Time: 72.18 min - epoch state 76.83% (17 KB/s)
+Time: 72.24 min - epoch state 79.39% (18 KB/s)
+Time: 72.31 min - epoch state 81.95% (18 KB/s)
+Time: 72.37 min - epoch state 84.51% (19 KB/s)
+Starting epoch: 33
+Epoch 33, Loss: 1025.794677734375
+Eval analogy questions 6181/17827 accuracy = 34.7%
+Time: 72.45 min - epoch state 2.35% (0 KB/s)
+Time: 72.51 min - epoch state 4.91% (1 KB/s)
+Time: 72.57 min - epoch state 7.47% (1 KB/s)
+Time: 72.64 min - epoch state 10.03% (2 KB/s)
+Time: 72.70 min - epoch state 12.59% (2 KB/s)
+Time: 72.76 min - epoch state 15.15% (3 KB/s)
+Time: 72.83 min - epoch state 17.71% (4 KB/s)
+Time: 72.89 min - epoch state 20.27% (4 KB/s)
+Epoch 33, Loss: 967.2614135742188
+Eval analogy questions 6163/17827 accuracy = 34.6%
+Time: 72.96 min - epoch state 22.83% (5 KB/s)
+Time: 73.03 min - epoch state 25.39% (5 KB/s)
+Time: 73.09 min - epoch state 27.95% (6 KB/s)
+Time: 73.16 min - epoch state 30.51% (6 KB/s)
+Time: 73.22 min - epoch state 33.07% (7 KB/s)
+Time: 73.29 min - epoch state 35.63% (8 KB/s)
+Time: 73.35 min - epoch state 38.19% (8 KB/s)
+Time: 73.41 min - epoch state 40.75% (9 KB/s)
+Time: 73.48 min - epoch state 43.31% (9 KB/s)
+Epoch 33, Loss: 787.4815673828125
+Eval analogy questions 6188/17827 accuracy = 34.7%
+Time: 73.55 min - epoch state 45.87% (10 KB/s)
+Time: 73.62 min - epoch state 48.43% (10 KB/s)
+Time: 73.68 min - epoch state 50.99% (11 KB/s)
+Time: 73.74 min - epoch state 53.55% (12 KB/s)
+Time: 73.81 min - epoch state 56.11% (12 KB/s)
+Time: 73.87 min - epoch state 58.67% (13 KB/s)
+Time: 73.94 min - epoch state 61.23% (13 KB/s)
+Time: 74.00 min - epoch state 63.79% (14 KB/s)
+Epoch 33, Loss: 969.9633178710938
+Eval analogy questions 6173/17827 accuracy = 34.6%
+Time: 74.07 min - epoch state 66.35% (14 KB/s)
+Time: 74.14 min - epoch state 68.91% (15 KB/s)
+Time: 74.20 min - epoch state 71.47% (16 KB/s)
+Time: 74.26 min - epoch state 74.03% (16 KB/s)
+Time: 74.33 min - epoch state 76.59% (17 KB/s)
+Time: 74.39 min - epoch state 79.15% (17 KB/s)
+Time: 74.45 min - epoch state 81.71% (18 KB/s)
+Time: 74.52 min - epoch state 84.27% (18 KB/s)
+Starting epoch: 34
+Epoch 34, Loss: 1029.1614990234375
+Eval analogy questions 6160/17827 accuracy = 34.6%
+Time: 74.59 min - epoch state 2.11% (0 KB/s)
+Time: 74.66 min - epoch state 4.67% (1 KB/s)
+Time: 74.72 min - epoch state 7.23% (1 KB/s)
+Time: 74.78 min - epoch state 9.79% (2 KB/s)
+Time: 74.85 min - epoch state 12.35% (2 KB/s)
+Time: 74.91 min - epoch state 14.91% (3 KB/s)
+Time: 74.98 min - epoch state 17.47% (3 KB/s)
+Time: 75.04 min - epoch state 20.03% (4 KB/s)
+Epoch 34, Loss: 785.348388671875
+Eval analogy questions 6157/17827 accuracy = 34.5%
+Time: 75.11 min - epoch state 22.59% (5 KB/s)
+Time: 75.18 min - epoch state 25.15% (5 KB/s)
+Time: 75.24 min - epoch state 27.71% (6 KB/s)
+Time: 75.30 min - epoch state 30.27% (6 KB/s)
+Time: 75.37 min - epoch state 32.83% (7 KB/s)
+Time: 75.43 min - epoch state 35.39% (7 KB/s)
+Time: 75.50 min - epoch state 37.95% (8 KB/s)
+Time: 75.56 min - epoch state 40.51% (8 KB/s)
+Time: 75.63 min - epoch state 43.07% (9 KB/s)
+Epoch 34, Loss: 1002.9706420898438
+Eval analogy questions 6173/17827 accuracy = 34.6%
+Time: 75.70 min - epoch state 45.63% (10 KB/s)
+Time: 75.76 min - epoch state 48.19% (10 KB/s)
+Time: 75.83 min - epoch state 50.75% (11 KB/s)
+Time: 75.89 min - epoch state 53.31% (11 KB/s)
+Time: 75.96 min - epoch state 55.87% (12 KB/s)
+Time: 76.02 min - epoch state 58.43% (12 KB/s)
+Time: 76.08 min - epoch state 60.99% (13 KB/s)
+Time: 76.15 min - epoch state 63.55% (13 KB/s)
+Epoch 34, Loss: 810.9935302734375
+Eval analogy questions 6181/17827 accuracy = 34.7%
+Time: 76.22 min - epoch state 66.11% (14 KB/s)
+Time: 76.28 min - epoch state 68.67% (15 KB/s)
+Time: 76.35 min - epoch state 71.23% (15 KB/s)
+Time: 76.41 min - epoch state 73.79% (16 KB/s)
+Time: 76.47 min - epoch state 76.35% (16 KB/s)
+Time: 76.54 min - epoch state 78.91% (17 KB/s)
+Time: 76.60 min - epoch state 81.47% (17 KB/s)
+Time: 76.67 min - epoch state 84.03% (18 KB/s)
+Starting epoch: 35
+Epoch 35, Loss: 1010.63525390625
+Eval analogy questions 6202/17827 accuracy = 34.8%
+Time: 76.74 min - epoch state 1.87% (0 KB/s)
+Time: 76.80 min - epoch state 4.43% (0 KB/s)
+Time: 76.86 min - epoch state 6.99% (1 KB/s)
+Time: 76.93 min - epoch state 9.55% (2 KB/s)
+Time: 76.99 min - epoch state 12.11% (2 KB/s)
+Time: 77.06 min - epoch state 14.67% (3 KB/s)
+Time: 77.12 min - epoch state 17.23% (3 KB/s)
+Time: 77.18 min - epoch state 19.79% (4 KB/s)
+Epoch 35, Loss: 1087.77490234375
+Eval analogy questions 6170/17827 accuracy = 34.6%
+Time: 77.26 min - epoch state 22.35% (4 KB/s)
+Time: 77.32 min - epoch state 24.91% (5 KB/s)
+Time: 77.39 min - epoch state 27.47% (5 KB/s)
+Time: 77.45 min - epoch state 30.03% (6 KB/s)
+Time: 77.51 min - epoch state 32.59% (7 KB/s)
+Time: 77.58 min - epoch state 35.15% (7 KB/s)
+Time: 77.64 min - epoch state 37.71% (8 KB/s)
+Time: 77.71 min - epoch state 40.27% (8 KB/s)
+Time: 77.77 min - epoch state 42.83% (9 KB/s)
+Epoch 35, Loss: 760.6832275390625
+Eval analogy questions 6150/17827 accuracy = 34.5%
+Time: 77.84 min - epoch state 45.39% (9 KB/s)
+Time: 77.91 min - epoch state 47.95% (10 KB/s)
+Time: 77.97 min - epoch state 50.51% (10 KB/s)
+Time: 78.04 min - epoch state 53.07% (11 KB/s)
+Time: 78.10 min - epoch state 55.63% (11 KB/s)
+Time: 78.17 min - epoch state 58.19% (12 KB/s)
+Time: 78.23 min - epoch state 60.75% (12 KB/s)
+Time: 78.29 min - epoch state 63.31% (13 KB/s)
+Epoch 35, Loss: 970.853271484375
+Eval analogy questions 6181/17827 accuracy = 34.7%
+Time: 78.37 min - epoch state 65.87% (14 KB/s)
+Time: 78.43 min - epoch state 68.43% (14 KB/s)
+Time: 78.49 min - epoch state 70.99% (15 KB/s)
+Time: 78.56 min - epoch state 73.55% (15 KB/s)
+Time: 78.62 min - epoch state 76.11% (16 KB/s)
+Time: 78.68 min - epoch state 78.67% (16 KB/s)
+Time: 78.75 min - epoch state 81.23% (17 KB/s)
+Time: 78.81 min - epoch state 83.79% (17 KB/s)
+Starting epoch: 36
+Epoch 36, Loss: 1004.3212890625
+Eval analogy questions 6189/17827 accuracy = 34.7%
+Time: 78.88 min - epoch state 1.63% (0 KB/s)
+Time: 78.95 min - epoch state 4.19% (0 KB/s)
+Time: 79.01 min - epoch state 6.75% (1 KB/s)
+Time: 79.07 min - epoch state 9.31% (1 KB/s)
+Time: 79.13 min - epoch state 11.87% (2 KB/s)
+Time: 79.20 min - epoch state 14.43% (3 KB/s)
+Time: 79.26 min - epoch state 16.99% (3 KB/s)
+Time: 79.33 min - epoch state 19.55% (4 KB/s)
+Epoch 36, Loss: 1059.7386474609375
+Eval analogy questions 6140/17827 accuracy = 34.4%
+Time: 79.40 min - epoch state 22.11% (4 KB/s)
+Time: 79.46 min - epoch state 24.67% (5 KB/s)
+Time: 79.53 min - epoch state 27.23% (5 KB/s)
+Time: 79.59 min - epoch state 29.79% (6 KB/s)
+Time: 79.66 min - epoch state 32.35% (6 KB/s)
+Time: 79.72 min - epoch state 34.91% (7 KB/s)
+Time: 79.78 min - epoch state 37.47% (7 KB/s)
+Time: 79.85 min - epoch state 40.03% (8 KB/s)
+Time: 79.91 min - epoch state 42.59% (8 KB/s)
+Epoch 36, Loss: 839.0606689453125
+Eval analogy questions 6178/17827 accuracy = 34.7%
+Time: 79.99 min - epoch state 45.15% (9 KB/s)
+Time: 80.05 min - epoch state 47.71% (9 KB/s)
+Time: 80.11 min - epoch state 50.27% (10 KB/s)
+Time: 80.18 min - epoch state 52.83% (10 KB/s)
+Time: 80.24 min - epoch state 55.39% (11 KB/s)
+Time: 80.31 min - epoch state 57.95% (12 KB/s)
+Time: 80.37 min - epoch state 60.51% (12 KB/s)
+Time: 80.43 min - epoch state 63.07% (13 KB/s)
+Epoch 36, Loss: 1040.1934814453125
+Eval analogy questions 6213/17827 accuracy = 34.9%
+Time: 80.51 min - epoch state 65.63% (13 KB/s)
+Time: 80.57 min - epoch state 68.19% (14 KB/s)
+Time: 80.64 min - epoch state 70.75% (14 KB/s)
+Time: 80.70 min - epoch state 73.31% (15 KB/s)
+Time: 80.76 min - epoch state 75.87% (15 KB/s)
+Time: 80.83 min - epoch state 78.43% (16 KB/s)
+Time: 80.89 min - epoch state 80.99% (16 KB/s)
+Time: 80.95 min - epoch state 83.55% (17 KB/s)
+Starting epoch: 37
+Epoch 37, Loss: 998.423095703125
+Eval analogy questions 6172/17827 accuracy = 34.6%
+Time: 81.03 min - epoch state 1.39% (0 KB/s)
+Time: 81.09 min - epoch state 3.95% (0 KB/s)
+Time: 81.15 min - epoch state 6.51% (1 KB/s)
+Time: 81.22 min - epoch state 9.07% (1 KB/s)
+Time: 81.28 min - epoch state 11.63% (2 KB/s)
+Time: 81.35 min - epoch state 14.19% (2 KB/s)
+Time: 81.41 min - epoch state 16.75% (3 KB/s)
+Time: 81.47 min - epoch state 19.31% (3 KB/s)
+Epoch 37, Loss: 904.4410400390625
+Eval analogy questions 6135/17827 accuracy = 34.4%
+Time: 81.55 min - epoch state 21.87% (4 KB/s)
+Time: 81.61 min - epoch state 24.43% (4 KB/s)
+Time: 81.68 min - epoch state 26.99% (5 KB/s)
+Time: 81.74 min - epoch state 29.55% (6 KB/s)
+Time: 81.81 min - epoch state 32.11% (6 KB/s)
+Time: 81.87 min - epoch state 34.67% (7 KB/s)
+Time: 81.94 min - epoch state 37.23% (7 KB/s)
+Time: 82.00 min - epoch state 39.79% (8 KB/s)
+Time: 82.07 min - epoch state 42.35% (8 KB/s)
+Epoch 37, Loss: 727.9440307617188
+Eval analogy questions 6187/17827 accuracy = 34.7%
+Time: 82.13 min - epoch state 44.91% (9 KB/s)
+Time: 82.20 min - epoch state 47.47% (9 KB/s)
+Time: 82.26 min - epoch state 50.03% (10 KB/s)
+Time: 82.32 min - epoch state 52.59% (10 KB/s)
+Time: 82.38 min - epoch state 55.15% (11 KB/s)
+Time: 82.44 min - epoch state 57.71% (11 KB/s)
+Time: 82.50 min - epoch state 60.27% (12 KB/s)
+Time: 82.56 min - epoch state 62.83% (12 KB/s)
+Epoch 37, Loss: 770.173095703125
+Eval analogy questions 6190/17827 accuracy = 34.7%
+Time: 82.63 min - epoch state 65.39% (13 KB/s)
+Time: 82.69 min - epoch state 67.95% (13 KB/s)
+Time: 82.75 min - epoch state 70.51% (14 KB/s)
+Time: 82.81 min - epoch state 73.07% (14 KB/s)
+Time: 82.87 min - epoch state 75.63% (15 KB/s)
+Time: 82.93 min - epoch state 78.19% (15 KB/s)
+Time: 82.99 min - epoch state 80.75% (16 KB/s)
+Time: 83.05 min - epoch state 83.31% (16 KB/s)
+Starting epoch: 38
+Epoch 38, Loss: 1049.4400634765625
+Eval analogy questions 6167/17827 accuracy = 34.6%
+Time: 83.13 min - epoch state 1.15% (0 KB/s)
+Time: 83.19 min - epoch state 3.71% (0 KB/s)
+Time: 83.25 min - epoch state 6.27% (1 KB/s)
+Time: 83.31 min - epoch state 8.83% (1 KB/s)
+Time: 83.37 min - epoch state 11.39% (2 KB/s)
+Time: 83.43 min - epoch state 13.95% (2 KB/s)
+Time: 83.49 min - epoch state 16.51% (3 KB/s)
+Time: 83.55 min - epoch state 19.07% (3 KB/s)
+Time: 83.61 min - epoch state 21.63% (4 KB/s)
+Epoch 38, Loss: 1110.022705078125
+Eval analogy questions 6174/17827 accuracy = 34.6%
+Time: 83.68 min - epoch state 24.19% (4 KB/s)
+Time: 83.74 min - epoch state 26.75% (5 KB/s)
+Time: 83.80 min - epoch state 29.31% (5 KB/s)
+Time: 83.86 min - epoch state 31.87% (6 KB/s)
+Time: 83.92 min - epoch state 34.43% (6 KB/s)
+Time: 83.99 min - epoch state 36.99% (7 KB/s)
+Time: 84.05 min - epoch state 39.55% (7 KB/s)
+Time: 84.12 min - epoch state 42.11% (8 KB/s)
+Epoch 38, Loss: 722.655029296875
+Eval analogy questions 6175/17827 accuracy = 34.6%
+Time: 84.19 min - epoch state 44.67% (8 KB/s)
+Time: 84.26 min - epoch state 47.23% (9 KB/s)
+Time: 84.33 min - epoch state 49.79% (9 KB/s)
+Time: 84.39 min - epoch state 52.35% (10 KB/s)
+Time: 84.46 min - epoch state 54.91% (10 KB/s)
+Time: 84.53 min - epoch state 57.47% (11 KB/s)
+Time: 84.60 min - epoch state 60.03% (11 KB/s)
+Time: 84.66 min - epoch state 62.59% (12 KB/s)
+Time: 84.72 min - epoch state 65.15% (12 KB/s)
+Epoch 38, Loss: 936.12890625
+Eval analogy questions 6204/17827 accuracy = 34.8%
+Time: 84.80 min - epoch state 67.71% (13 KB/s)
+Time: 84.87 min - epoch state 70.27% (13 KB/s)
+Time: 84.93 min - epoch state 72.83% (14 KB/s)
+Time: 84.99 min - epoch state 75.39% (14 KB/s)
+Time: 85.06 min - epoch state 77.95% (15 KB/s)
+Time: 85.12 min - epoch state 80.51% (15 KB/s)
+Time: 85.18 min - epoch state 83.07% (16 KB/s)
+Starting epoch: 39
+Epoch 39, Loss: 983.1014404296875
+Eval analogy questions 6207/17827 accuracy = 34.8%
+Time: 85.26 min - epoch state 0.91% (0 KB/s)
+Time: 85.32 min - epoch state 3.47% (0 KB/s)
+Time: 85.38 min - epoch state 6.03% (1 KB/s)
+Time: 85.45 min - epoch state 8.59% (1 KB/s)
+Time: 85.51 min - epoch state 11.15% (2 KB/s)
+Time: 85.57 min - epoch state 13.71% (2 KB/s)
+Time: 85.64 min - epoch state 16.27% (3 KB/s)
+Time: 85.70 min - epoch state 18.83% (3 KB/s)
+Time: 85.76 min - epoch state 21.39% (4 KB/s)
+Epoch 39, Loss: 952.851806640625
+Eval analogy questions 6172/17827 accuracy = 34.6%
+Time: 85.83 min - epoch state 23.95% (4 KB/s)
+Time: 85.90 min - epoch state 26.51% (5 KB/s)
+Time: 85.96 min - epoch state 29.07% (5 KB/s)
+Time: 86.02 min - epoch state 31.63% (6 KB/s)
+Time: 86.09 min - epoch state 34.19% (6 KB/s)
+Time: 86.15 min - epoch state 36.75% (7 KB/s)
+Time: 86.21 min - epoch state 39.31% (7 KB/s)
+Time: 86.27 min - epoch state 41.87% (8 KB/s)
+Epoch 39, Loss: 688.7442626953125
+Eval analogy questions 6180/17827 accuracy = 34.7%
+Time: 86.34 min - epoch state 44.43% (8 KB/s)
+Time: 86.41 min - epoch state 46.99% (9 KB/s)
+Time: 86.48 min - epoch state 49.55% (9 KB/s)
+Time: 86.54 min - epoch state 52.11% (10 KB/s)
+Time: 86.61 min - epoch state 54.67% (10 KB/s)
+Time: 86.68 min - epoch state 57.23% (11 KB/s)
+Time: 86.74 min - epoch state 59.79% (11 KB/s)
+Time: 86.81 min - epoch state 62.35% (11 KB/s)
+Time: 86.88 min - epoch state 64.91% (12 KB/s)
+Epoch 39, Loss: 972.7301025390625
+Eval analogy questions 6199/17827 accuracy = 34.8%
+Time: 86.95 min - epoch state 67.47% (12 KB/s)
+Time: 87.02 min - epoch state 70.03% (13 KB/s)
+Time: 87.08 min - epoch state 72.59% (13 KB/s)
+Time: 87.15 min - epoch state 75.15% (14 KB/s)
+Time: 87.21 min - epoch state 77.71% (14 KB/s)
+Time: 87.27 min - epoch state 80.27% (15 KB/s)
+Time: 87.34 min - epoch state 82.83% (15 KB/s)
+Starting epoch: 40
+Epoch 40, Loss: 956.9906005859375
+Eval analogy questions 6197/17827 accuracy = 34.8%
+Time: 87.41 min - epoch state 0.68% (0 KB/s)
+Time: 87.47 min - epoch state 3.24% (0 KB/s)
+Time: 87.54 min - epoch state 5.80% (1 KB/s)
+Time: 87.60 min - epoch state 8.36% (1 KB/s)
+Time: 87.66 min - epoch state 10.92% (2 KB/s)
+Time: 87.72 min - epoch state 13.48% (2 KB/s)
+Time: 87.79 min - epoch state 16.04% (3 KB/s)
+Time: 87.85 min - epoch state 18.60% (3 KB/s)
+Time: 87.92 min - epoch state 21.16% (4 KB/s)
+Epoch 40, Loss: 964.73583984375
+Eval analogy questions 6190/17827 accuracy = 34.7%
+Time: 87.99 min - epoch state 23.72% (4 KB/s)
+Time: 88.05 min - epoch state 26.28% (4 KB/s)
+Time: 88.12 min - epoch state 28.84% (5 KB/s)
+Time: 88.18 min - epoch state 31.40% (5 KB/s)
+Time: 88.25 min - epoch state 33.96% (6 KB/s)
+Time: 88.31 min - epoch state 36.52% (6 KB/s)
+Time: 88.38 min - epoch state 39.08% (7 KB/s)
+Time: 88.44 min - epoch state 41.64% (7 KB/s)
+Epoch 40, Loss: 730.1466064453125
+Eval analogy questions 6196/17827 accuracy = 34.8%
+Time: 88.51 min - epoch state 44.20% (8 KB/s)
+Time: 88.58 min - epoch state 46.76% (8 KB/s)
+Time: 88.64 min - epoch state 49.32% (9 KB/s)
+Time: 88.70 min - epoch state 51.88% (9 KB/s)
+Time: 88.77 min - epoch state 54.44% (10 KB/s)
+Time: 88.83 min - epoch state 57.00% (10 KB/s)
+Time: 88.89 min - epoch state 59.56% (11 KB/s)
+Time: 88.95 min - epoch state 62.12% (11 KB/s)
+Time: 89.01 min - epoch state 64.68% (12 KB/s)
+Epoch 40, Loss: 867.9349365234375
+Eval analogy questions 6212/17827 accuracy = 34.8%
+Time: 89.08 min - epoch state 67.24% (12 KB/s)
+Time: 89.15 min - epoch state 69.80% (13 KB/s)
+Time: 89.21 min - epoch state 72.36% (13 KB/s)
+Time: 89.27 min - epoch state 74.92% (13 KB/s)
+Time: 89.34 min - epoch state 77.48% (14 KB/s)
+Time: 89.40 min - epoch state 80.04% (14 KB/s)
+Time: 89.46 min - epoch state 82.60% (15 KB/s)
+Starting epoch: 41
+Epoch 41, Loss: 970.1243896484375
+Eval analogy questions 6239/17827 accuracy = 35.0%
+Time: 89.54 min - epoch state 0.44% (0 KB/s)
+Time: 89.61 min - epoch state 3.00% (0 KB/s)
+Time: 89.67 min - epoch state 5.56% (1 KB/s)
+Time: 89.74 min - epoch state 8.12% (1 KB/s)
+Time: 89.80 min - epoch state 10.68% (1 KB/s)
+Time: 89.86 min - epoch state 13.24% (2 KB/s)
+Time: 89.92 min - epoch state 15.80% (2 KB/s)
+Time: 89.99 min - epoch state 18.36% (3 KB/s)
+Time: 90.05 min - epoch state 20.92% (3 KB/s)
+Epoch 41, Loss: 924.651123046875
+Eval analogy questions 6211/17827 accuracy = 34.8%
+Time: 90.12 min - epoch state 23.48% (4 KB/s)
+Time: 90.18 min - epoch state 26.04% (4 KB/s)
+Time: 90.25 min - epoch state 28.60% (5 KB/s)
+Time: 90.31 min - epoch state 31.16% (5 KB/s)
+Time: 90.37 min - epoch state 33.72% (6 KB/s)
+Time: 90.43 min - epoch state 36.28% (6 KB/s)
+Time: 90.49 min - epoch state 38.84% (7 KB/s)
+Time: 90.56 min - epoch state 41.40% (7 KB/s)
+Epoch 41, Loss: 643.2493896484375
+Eval analogy questions 6208/17827 accuracy = 34.8%
+Time: 90.63 min - epoch state 43.96% (8 KB/s)
+Time: 90.69 min - epoch state 46.52% (8 KB/s)
+Time: 90.75 min - epoch state 49.08% (9 KB/s)
+Time: 90.81 min - epoch state 51.64% (9 KB/s)
+Time: 90.88 min - epoch state 54.20% (9 KB/s)
+Time: 90.94 min - epoch state 56.76% (10 KB/s)
+Time: 91.00 min - epoch state 59.32% (10 KB/s)
+Time: 91.07 min - epoch state 61.88% (11 KB/s)
+Time: 91.13 min - epoch state 64.44% (11 KB/s)
+Epoch 41, Loss: 890.3756103515625
+Eval analogy questions 6251/17827 accuracy = 35.1%
+Time: 91.20 min - epoch state 67.00% (12 KB/s)
+Time: 91.27 min - epoch state 69.56% (12 KB/s)
+Time: 91.33 min - epoch state 72.12% (13 KB/s)
+Time: 91.39 min - epoch state 74.68% (13 KB/s)
+Time: 91.45 min - epoch state 77.24% (14 KB/s)
+Time: 91.51 min - epoch state 79.80% (14 KB/s)
+Time: 91.57 min - epoch state 82.36% (14 KB/s)
+Starting epoch: 42
+Epoch 42, Loss: 1037.1727294921875
+Eval analogy questions 6236/17827 accuracy = 35.0%
+Time: 91.65 min - epoch state 0.20% (0 KB/s)
+Time: 91.71 min - epoch state 2.76% (0 KB/s)
+Time: 91.77 min - epoch state 5.32% (0 KB/s)
+Time: 91.83 min - epoch state 7.88% (1 KB/s)
+Time: 91.89 min - epoch state 10.44% (1 KB/s)
+Time: 91.96 min - epoch state 13.00% (2 KB/s)
+Time: 92.02 min - epoch state 15.56% (2 KB/s)
+Time: 92.08 min - epoch state 18.12% (3 KB/s)
+Time: 92.15 min - epoch state 20.68% (3 KB/s)
+Epoch 42, Loss: 931.3824462890625
+Eval analogy questions 6205/17827 accuracy = 34.8%
+Time: 92.22 min - epoch state 23.24% (4 KB/s)
+Time: 92.28 min - epoch state 25.80% (4 KB/s)
+Time: 92.34 min - epoch state 28.36% (5 KB/s)
+Time: 92.41 min - epoch state 30.92% (5 KB/s)
+Time: 92.47 min - epoch state 33.48% (6 KB/s)
+Time: 92.53 min - epoch state 36.04% (6 KB/s)
+Time: 92.59 min - epoch state 38.60% (6 KB/s)
+Time: 92.65 min - epoch state 41.16% (7 KB/s)
+Epoch 42, Loss: 706.3876953125
+Eval analogy questions 6194/17827 accuracy = 34.7%
+Time: 92.72 min - epoch state 43.72% (7 KB/s)
+Time: 92.79 min - epoch state 46.28% (8 KB/s)
+Time: 92.85 min - epoch state 48.84% (8 KB/s)
+Time: 92.91 min - epoch state 51.40% (9 KB/s)
+Time: 92.97 min - epoch state 53.96% (9 KB/s)
+Time: 93.04 min - epoch state 56.52% (10 KB/s)
+Time: 93.10 min - epoch state 59.08% (10 KB/s)
+Time: 93.16 min - epoch state 61.64% (11 KB/s)
+Time: 93.22 min - epoch state 64.20% (11 KB/s)
+Epoch 42, Loss: 933.5713500976562
+Eval analogy questions 6187/17827 accuracy = 34.7%
+Time: 93.29 min - epoch state 66.76% (11 KB/s)
+Time: 93.35 min - epoch state 69.32% (12 KB/s)
+Time: 93.42 min - epoch state 71.88% (12 KB/s)
+Time: 93.48 min - epoch state 74.44% (13 KB/s)
+Time: 93.54 min - epoch state 77.00% (13 KB/s)
+Time: 93.60 min - epoch state 79.56% (14 KB/s)
+Time: 93.66 min - epoch state 82.12% (14 KB/s)
+Time: 93.72 min - epoch state 84.68% (15 KB/s)
+Starting epoch: 43
+Epoch 43, Loss: 979.114990234375
+Eval analogy questions 6204/17827 accuracy = 34.8%
+Time: 93.80 min - epoch state 2.52% (0 KB/s)
+Time: 93.86 min - epoch state 5.08% (0 KB/s)
+Time: 93.92 min - epoch state 7.64% (1 KB/s)
+Time: 93.98 min - epoch state 10.20% (1 KB/s)
+Time: 94.04 min - epoch state 12.76% (2 KB/s)
+Time: 94.10 min - epoch state 15.32% (2 KB/s)
+Time: 94.17 min - epoch state 17.88% (3 KB/s)
+Time: 94.23 min - epoch state 20.44% (3 KB/s)
+Epoch 43, Loss: 1141.0032958984375
+Eval analogy questions 6193/17827 accuracy = 34.7%
+Time: 94.30 min - epoch state 23.00% (4 KB/s)
+Time: 94.36 min - epoch state 25.56% (4 KB/s)
+Time: 94.43 min - epoch state 28.12% (4 KB/s)
+Time: 94.49 min - epoch state 30.68% (5 KB/s)
+Time: 94.55 min - epoch state 33.24% (5 KB/s)
+Time: 94.61 min - epoch state 35.80% (6 KB/s)
+Time: 94.68 min - epoch state 38.36% (6 KB/s)
+Time: 94.74 min - epoch state 40.92% (7 KB/s)
+Time: 94.80 min - epoch state 43.48% (7 KB/s)
+Epoch 43, Loss: 794.997314453125
+Eval analogy questions 6184/17827 accuracy = 34.7%
+Time: 94.88 min - epoch state 46.04% (8 KB/s)
+Time: 94.94 min - epoch state 48.60% (8 KB/s)
+Time: 95.00 min - epoch state 51.16% (8 KB/s)
+Time: 95.06 min - epoch state 53.72% (9 KB/s)
+Time: 95.12 min - epoch state 56.28% (9 KB/s)
+Time: 95.19 min - epoch state 58.84% (10 KB/s)
+Time: 95.25 min - epoch state 61.40% (10 KB/s)
+Time: 95.31 min - epoch state 63.96% (11 KB/s)
+Epoch 43, Loss: 891.5669555664062
+Eval analogy questions 6193/17827 accuracy = 34.7%
+Time: 95.38 min - epoch state 66.52% (11 KB/s)
+Time: 95.44 min - epoch state 69.08% (12 KB/s)
+Time: 95.50 min - epoch state 71.64% (12 KB/s)
+Time: 95.57 min - epoch state 74.20% (12 KB/s)
+Time: 95.63 min - epoch state 76.76% (13 KB/s)
+Time: 95.69 min - epoch state 79.32% (13 KB/s)
+Time: 95.75 min - epoch state 81.88% (14 KB/s)
+Time: 95.81 min - epoch state 84.44% (14 KB/s)
+Starting epoch: 44
+Epoch 44, Loss: 1008.731689453125
+Eval analogy questions 6217/17827 accuracy = 34.9%
+Time: 95.88 min - epoch state 2.28% (0 KB/s)
+Time: 95.94 min - epoch state 4.84% (0 KB/s)
+Time: 96.00 min - epoch state 7.40% (1 KB/s)
+Time: 96.06 min - epoch state 9.96% (1 KB/s)
+Time: 96.12 min - epoch state 12.52% (2 KB/s)
+Time: 96.19 min - epoch state 15.08% (2 KB/s)
+Time: 96.25 min - epoch state 17.64% (3 KB/s)
+Time: 96.31 min - epoch state 20.20% (3 KB/s)
+Epoch 44, Loss: 1027.9310302734375
+Eval analogy questions 6210/17827 accuracy = 34.8%
+Time: 96.39 min - epoch state 22.76% (3 KB/s)
+Time: 96.45 min - epoch state 25.32% (4 KB/s)
+Time: 96.51 min - epoch state 27.88% (4 KB/s)
+Time: 96.58 min - epoch state 30.44% (5 KB/s)
+Time: 96.65 min - epoch state 33.00% (5 KB/s)
+Time: 96.71 min - epoch state 35.56% (6 KB/s)
+Time: 96.78 min - epoch state 38.12% (6 KB/s)
+Time: 96.84 min - epoch state 40.68% (7 KB/s)
+Time: 96.90 min - epoch state 43.24% (7 KB/s)
+Epoch 44, Loss: 836.9697265625
+Eval analogy questions 6185/17827 accuracy = 34.7%
+Time: 96.97 min - epoch state 45.80% (7 KB/s)
+Time: 97.03 min - epoch state 48.36% (8 KB/s)
+Time: 97.10 min - epoch state 50.92% (8 KB/s)
+Time: 97.16 min - epoch state 53.48% (9 KB/s)
+Time: 97.22 min - epoch state 56.04% (9 KB/s)
+Time: 97.28 min - epoch state 58.60% (10 KB/s)
+Time: 97.34 min - epoch state 61.16% (10 KB/s)
+Time: 97.41 min - epoch state 63.72% (10 KB/s)
+Epoch 44, Loss: 871.5592041015625
+Eval analogy questions 6195/17827 accuracy = 34.8%
+Time: 97.48 min - epoch state 66.28% (11 KB/s)
+Time: 97.54 min - epoch state 68.84% (11 KB/s)
+Time: 97.60 min - epoch state 71.40% (12 KB/s)
+Time: 97.66 min - epoch state 73.96% (12 KB/s)
+Time: 97.72 min - epoch state 76.52% (13 KB/s)
+Time: 97.79 min - epoch state 79.08% (13 KB/s)
+Time: 97.85 min - epoch state 81.64% (13 KB/s)
+Time: 97.91 min - epoch state 84.20% (14 KB/s)
+Starting epoch: 45
+Epoch 45, Loss: 967.1800537109375
+Eval analogy questions 6202/17827 accuracy = 34.8%
+Time: 97.98 min - epoch state 2.04% (0 KB/s)
+Time: 98.04 min - epoch state 4.60% (0 KB/s)
+Time: 98.11 min - epoch state 7.16% (1 KB/s)
+Time: 98.17 min - epoch state 9.72% (1 KB/s)
+Time: 98.23 min - epoch state 12.28% (2 KB/s)
+Time: 98.29 min - epoch state 14.84% (2 KB/s)
+Time: 98.35 min - epoch state 17.40% (2 KB/s)
+Time: 98.42 min - epoch state 19.96% (3 KB/s)
+Epoch 45, Loss: 1087.2427978515625
+Eval analogy questions 6215/17827 accuracy = 34.9%
+Time: 98.49 min - epoch state 22.52% (3 KB/s)
+Time: 98.55 min - epoch state 25.08% (4 KB/s)
+Time: 98.61 min - epoch state 27.64% (4 KB/s)
+Time: 98.67 min - epoch state 30.20% (5 KB/s)
+Time: 98.74 min - epoch state 32.76% (5 KB/s)
+Time: 98.80 min - epoch state 35.32% (5 KB/s)
+Time: 98.86 min - epoch state 37.88% (6 KB/s)
+Time: 98.92 min - epoch state 40.44% (6 KB/s)
+Time: 98.99 min - epoch state 43.00% (7 KB/s)
+Epoch 45, Loss: 726.5889892578125
+Eval analogy questions 6176/17827 accuracy = 34.6%
+Time: 99.06 min - epoch state 45.56% (7 KB/s)
+Time: 99.12 min - epoch state 48.12% (8 KB/s)
+Time: 99.18 min - epoch state 50.68% (8 KB/s)
+Time: 99.24 min - epoch state 53.24% (8 KB/s)
+Time: 99.31 min - epoch state 55.80% (9 KB/s)
+Time: 99.37 min - epoch state 58.36% (9 KB/s)
+Time: 99.43 min - epoch state 60.92% (10 KB/s)
+Time: 99.49 min - epoch state 63.48% (10 KB/s)
+Epoch 45, Loss: 721.6051025390625
+Eval analogy questions 6182/17827 accuracy = 34.7%
+Time: 99.57 min - epoch state 66.04% (11 KB/s)
+Time: 99.63 min - epoch state 68.60% (11 KB/s)
+Time: 99.69 min - epoch state 71.16% (11 KB/s)
+Time: 99.75 min - epoch state 73.72% (12 KB/s)
+Time: 99.81 min - epoch state 76.28% (12 KB/s)
+Time: 99.87 min - epoch state 78.84% (13 KB/s)
+Time: 99.94 min - epoch state 81.40% (13 KB/s)
+Time: 100.00 min - epoch state 83.96% (13 KB/s)
+Starting epoch: 46
+Epoch 46, Loss: 982.81591796875
+Eval analogy questions 6190/17827 accuracy = 34.7%
+Time: 100.07 min - epoch state 1.80% (0 KB/s)
+Time: 100.13 min - epoch state 4.36% (0 KB/s)
+Time: 100.19 min - epoch state 6.92% (1 KB/s)
+Time: 100.25 min - epoch state 9.48% (1 KB/s)
+Time: 100.31 min - epoch state 12.04% (2 KB/s)
+Time: 100.38 min - epoch state 14.60% (2 KB/s)
+Time: 100.44 min - epoch state 17.16% (2 KB/s)
+Time: 100.50 min - epoch state 19.72% (3 KB/s)
+Epoch 46, Loss: 990.0872192382812
+Eval analogy questions 6199/17827 accuracy = 34.8%
+Time: 100.57 min - epoch state 22.28% (3 KB/s)
+Time: 100.63 min - epoch state 24.84% (4 KB/s)
+Time: 100.70 min - epoch state 27.40% (4 KB/s)
+Time: 100.76 min - epoch state 29.96% (4 KB/s)
+Time: 100.82 min - epoch state 32.52% (5 KB/s)
+Time: 100.89 min - epoch state 35.08% (5 KB/s)
+Time: 100.95 min - epoch state 37.64% (6 KB/s)
+Time: 101.01 min - epoch state 40.20% (6 KB/s)
+Time: 101.08 min - epoch state 42.76% (7 KB/s)
+Epoch 46, Loss: 987.882080078125
+Eval analogy questions 6204/17827 accuracy = 34.8%
+Time: 101.15 min - epoch state 45.32% (7 KB/s)
+Time: 101.21 min - epoch state 47.88% (7 KB/s)
+Time: 101.28 min - epoch state 50.44% (8 KB/s)
+Time: 101.34 min - epoch state 53.00% (8 KB/s)
+Time: 101.40 min - epoch state 55.56% (9 KB/s)
+Time: 101.47 min - epoch state 58.12% (9 KB/s)
+Time: 101.53 min - epoch state 60.68% (9 KB/s)
+Time: 101.59 min - epoch state 63.24% (10 KB/s)
+Epoch 46, Loss: 1048.097900390625
+Eval analogy questions 6179/17827 accuracy = 34.7%
+Time: 101.67 min - epoch state 65.80% (10 KB/s)
+Time: 101.73 min - epoch state 68.36% (11 KB/s)
+Time: 101.79 min - epoch state 70.92% (11 KB/s)
+Time: 101.86 min - epoch state 73.48% (12 KB/s)
+Time: 101.92 min - epoch state 76.04% (12 KB/s)
+Time: 101.98 min - epoch state 78.60% (12 KB/s)
+Time: 102.05 min - epoch state 81.16% (13 KB/s)
+Time: 102.11 min - epoch state 83.72% (13 KB/s)
+Starting epoch: 47
+Epoch 47, Loss: 973.58447265625
+Eval analogy questions 6176/17827 accuracy = 34.6%
+Time: 102.18 min - epoch state 1.56% (0 KB/s)
+Time: 102.24 min - epoch state 4.12% (0 KB/s)
+Time: 102.30 min - epoch state 6.68% (1 KB/s)
+Time: 102.37 min - epoch state 9.24% (1 KB/s)
+Time: 102.43 min - epoch state 11.80% (1 KB/s)
+Time: 102.49 min - epoch state 14.36% (2 KB/s)
+Time: 102.55 min - epoch state 16.92% (2 KB/s)
+Time: 102.61 min - epoch state 19.48% (3 KB/s)
+Epoch 47, Loss: 940.9847412109375
+Eval analogy questions 6176/17827 accuracy = 34.6%
+Time: 102.68 min - epoch state 22.04% (3 KB/s)
+Time: 102.75 min - epoch state 24.60% (3 KB/s)
+Time: 102.81 min - epoch state 27.16% (4 KB/s)
+Time: 102.87 min - epoch state 29.72% (4 KB/s)
+Time: 102.93 min - epoch state 32.28% (5 KB/s)
+Time: 103.00 min - epoch state 34.84% (5 KB/s)
+Time: 103.07 min - epoch state 37.40% (6 KB/s)
+Time: 103.14 min - epoch state 39.96% (6 KB/s)
+Time: 103.21 min - epoch state 42.52% (6 KB/s)
+Epoch 47, Loss: 728.442626953125
+Eval analogy questions 6180/17827 accuracy = 34.7%
+Time: 103.28 min - epoch state 45.08% (7 KB/s)
+Time: 103.34 min - epoch state 47.64% (7 KB/s)
+Time: 103.40 min - epoch state 50.20% (8 KB/s)
+Time: 103.47 min - epoch state 52.76% (8 KB/s)
+Time: 103.54 min - epoch state 55.32% (8 KB/s)
+Time: 103.61 min - epoch state 57.88% (9 KB/s)
+Time: 103.69 min - epoch state 60.44% (9 KB/s)
+Time: 103.76 min - epoch state 63.00% (10 KB/s)
+Epoch 47, Loss: 938.2344970703125
+Eval analogy questions 6208/17827 accuracy = 34.8%
+Time: 103.84 min - epoch state 65.56% (10 KB/s)
+Time: 103.92 min - epoch state 68.12% (10 KB/s)
+Time: 103.99 min - epoch state 70.68% (11 KB/s)
+Time: 104.06 min - epoch state 73.24% (11 KB/s)
+Time: 104.13 min - epoch state 75.80% (12 KB/s)
+Time: 104.20 min - epoch state 78.36% (12 KB/s)
+Time: 104.28 min - epoch state 80.92% (12 KB/s)
+Time: 104.35 min - epoch state 83.48% (13 KB/s)
+Starting epoch: 48
+Epoch 48, Loss: 992.018798828125
+Eval analogy questions 6207/17827 accuracy = 34.8%
+Time: 104.43 min - epoch state 1.32% (0 KB/s)
+Time: 104.49 min - epoch state 3.88% (0 KB/s)
+Time: 104.55 min - epoch state 6.44% (1 KB/s)
+Time: 104.61 min - epoch state 9.00% (1 KB/s)
+Time: 104.67 min - epoch state 11.56% (1 KB/s)
+Time: 104.74 min - epoch state 14.12% (2 KB/s)
+Time: 104.80 min - epoch state 16.68% (2 KB/s)
+Time: 104.86 min - epoch state 19.24% (3 KB/s)
+Time: 104.92 min - epoch state 21.80% (3 KB/s)
+Epoch 48, Loss: 967.3778076171875
+Eval analogy questions 6181/17827 accuracy = 34.7%
+Time: 104.99 min - epoch state 24.36% (3 KB/s)
+Time: 105.06 min - epoch state 26.92% (4 KB/s)
+Time: 105.12 min - epoch state 29.48% (4 KB/s)
+Time: 105.18 min - epoch state 32.04% (5 KB/s)
+Time: 105.24 min - epoch state 34.60% (5 KB/s)
+Time: 105.30 min - epoch state 37.16% (5 KB/s)
+Time: 105.37 min - epoch state 39.72% (6 KB/s)
+Time: 105.43 min - epoch state 42.28% (6 KB/s)
+Epoch 48, Loss: 738.53564453125
+Eval analogy questions 6158/17827 accuracy = 34.5%
+Time: 105.50 min - epoch state 44.84% (7 KB/s)
+Time: 105.56 min - epoch state 47.40% (7 KB/s)
+Time: 105.62 min - epoch state 49.96% (7 KB/s)
+Time: 105.68 min - epoch state 52.52% (8 KB/s)
+Time: 105.74 min - epoch state 55.08% (8 KB/s)
+Time: 105.81 min - epoch state 57.64% (9 KB/s)
+Time: 105.87 min - epoch state 60.20% (9 KB/s)
+Time: 105.93 min - epoch state 62.76% (9 KB/s)
+Epoch 48, Loss: 854.8090209960938
+Eval analogy questions 6170/17827 accuracy = 34.6%
+Time: 106.00 min - epoch state 65.32% (10 KB/s)
+Time: 106.06 min - epoch state 67.88% (10 KB/s)
+Time: 106.13 min - epoch state 70.44% (11 KB/s)
+Time: 106.19 min - epoch state 73.00% (11 KB/s)
+Time: 106.25 min - epoch state 75.56% (11 KB/s)
+Time: 106.30 min - epoch state 78.12% (12 KB/s)
+Time: 106.37 min - epoch state 80.68% (12 KB/s)
+Time: 106.43 min - epoch state 83.24% (13 KB/s)
+Starting epoch: 49
+Epoch 49, Loss: 935.4931030273438
+Eval analogy questions 6171/17827 accuracy = 34.6%
+Time: 106.50 min - epoch state 1.08% (0 KB/s)
+Time: 106.56 min - epoch state 3.64% (0 KB/s)
+Time: 106.62 min - epoch state 6.20% (0 KB/s)
+Time: 106.68 min - epoch state 8.76% (1 KB/s)
+Time: 106.74 min - epoch state 11.32% (1 KB/s)
+Time: 106.81 min - epoch state 13.88% (2 KB/s)
+Time: 106.87 min - epoch state 16.44% (2 KB/s)
+Time: 106.93 min - epoch state 19.00% (2 KB/s)
+Time: 106.99 min - epoch state 21.56% (3 KB/s)
+Epoch 49, Loss: 1005.38330078125
+Eval analogy questions 6200/17827 accuracy = 34.8%
+Time: 107.07 min - epoch state 24.12% (3 KB/s)
+Time: 107.14 min - epoch state 26.68% (4 KB/s)
+Time: 107.22 min - epoch state 29.24% (4 KB/s)
+Time: 107.29 min - epoch state 31.80% (4 KB/s)
+Time: 107.37 min - epoch state 34.36% (5 KB/s)
+Time: 107.44 min - epoch state 36.92% (5 KB/s)
+Time: 107.51 min - epoch state 39.48% (6 KB/s)
+Time: 107.59 min - epoch state 42.04% (6 KB/s)
+Epoch 49, Loss: 862.836181640625
+Eval analogy questions 6173/17827 accuracy = 34.6%
+Time: 107.67 min - epoch state 44.60% (6 KB/s)
+Time: 107.74 min - epoch state 47.16% (7 KB/s)
+Time: 107.81 min - epoch state 49.72% (7 KB/s)
+Time: 107.89 min - epoch state 52.28% (8 KB/s)
+Time: 107.95 min - epoch state 54.84% (8 KB/s)
+Time: 108.02 min - epoch state 57.40% (8 KB/s)
+Time: 108.10 min - epoch state 59.96% (9 KB/s)
+Time: 108.17 min - epoch state 62.52% (9 KB/s)
+Time: 108.24 min - epoch state 65.08% (10 KB/s)
+Epoch 49, Loss: 998.1875610351562
+Eval analogy questions 6181/17827 accuracy = 34.7%
+Time: 108.33 min - epoch state 67.64% (10 KB/s)
+Time: 108.40 min - epoch state 70.20% (10 KB/s)
+Time: 108.47 min - epoch state 72.76% (11 KB/s)
+Time: 108.54 min - epoch state 75.32% (11 KB/s)
+Time: 108.61 min - epoch state 77.88% (11 KB/s)
+Time: 108.68 min - epoch state 80.44% (12 KB/s)
+Time: 108.76 min - epoch state 83.00% (12 KB/s)
+Starting epoch: 50
+Epoch 50, Loss: 935.341552734375
+Eval analogy questions 6188/17827 accuracy = 34.7%
+Time: 108.86 min - epoch state 0.84% (0 KB/s)
+Time: 108.92 min - epoch state 3.40% (0 KB/s)
+Time: 108.98 min - epoch state 5.96% (0 KB/s)
+Time: 109.05 min - epoch state 8.52% (1 KB/s)
+Time: 109.11 min - epoch state 11.08% (1 KB/s)
+Time: 109.17 min - epoch state 13.64% (2 KB/s)
+Time: 109.24 min - epoch state 16.20% (2 KB/s)
+Time: 109.30 min - epoch state 18.76% (2 KB/s)
+Time: 109.36 min - epoch state 21.32% (3 KB/s)
+Epoch 50, Loss: 1102.6241455078125
+Eval analogy questions 6178/17827 accuracy = 34.7%
+Time: 109.44 min - epoch state 23.88% (3 KB/s)
+Time: 109.50 min - epoch state 26.44% (4 KB/s)
+Time: 109.57 min - epoch state 29.00% (4 KB/s)
+Time: 109.63 min - epoch state 31.56% (4 KB/s)
+Time: 109.70 min - epoch state 34.12% (5 KB/s)
+Time: 109.76 min - epoch state 36.68% (5 KB/s)
+Time: 109.82 min - epoch state 39.24% (5 KB/s)
+Time: 109.89 min - epoch state 41.80% (6 KB/s)
+Epoch 50, Loss: 735.012939453125
+Eval analogy questions 6151/17827 accuracy = 34.5%
+Time: 109.96 min - epoch state 44.36% (6 KB/s)
+Time: 110.02 min - epoch state 46.92% (7 KB/s)
+Time: 110.09 min - epoch state 49.48% (7 KB/s)
+Time: 110.15 min - epoch state 52.04% (7 KB/s)
+Time: 110.21 min - epoch state 54.60% (8 KB/s)
+Time: 110.27 min - epoch state 57.16% (8 KB/s)
+Time: 110.34 min - epoch state 59.72% (9 KB/s)
+Time: 110.41 min - epoch state 62.28% (9 KB/s)
+Time: 110.48 min - epoch state 64.84% (9 KB/s)
+Epoch 50, Loss: 872.516357421875
+Eval analogy questions 6180/17827 accuracy = 34.7%
+Time: 110.57 min - epoch state 67.40% (10 KB/s)
+Time: 110.65 min - epoch state 69.96% (10 KB/s)
+Time: 110.73 min - epoch state 72.52% (10 KB/s)
+Time: 110.80 min - epoch state 75.08% (11 KB/s)
+Time: 110.87 min - epoch state 77.64% (11 KB/s)
+Time: 110.95 min - epoch state 80.20% (12 KB/s)
+Time: 111.02 min - epoch state 82.76% (12 KB/s)
+Starting epoch: 51
+Epoch 51, Loss: 963.490234375
+Eval analogy questions 6176/17827 accuracy = 34.6%
+Time: 111.11 min - epoch state 0.61% (0 KB/s)
+Time: 111.18 min - epoch state 3.17% (0 KB/s)
+Time: 111.26 min - epoch state 5.73% (0 KB/s)
+Time: 111.34 min - epoch state 8.29% (1 KB/s)
+Time: 111.41 min - epoch state 10.85% (1 KB/s)
+Time: 111.48 min - epoch state 13.41% (2 KB/s)
+Time: 111.56 min - epoch state 15.97% (2 KB/s)
+Time: 111.63 min - epoch state 18.53% (2 KB/s)
+Time: 111.69 min - epoch state 21.09% (3 KB/s)
+Epoch 51, Loss: 883.5813598632812
+Eval analogy questions 6171/17827 accuracy = 34.6%
+Time: 111.77 min - epoch state 23.65% (3 KB/s)
+Time: 111.83 min - epoch state 26.21% (3 KB/s)
+Time: 111.89 min - epoch state 28.77% (4 KB/s)
+Time: 111.96 min - epoch state 31.33% (4 KB/s)
+Time: 112.02 min - epoch state 33.89% (5 KB/s)
+Time: 112.08 min - epoch state 36.45% (5 KB/s)
+Time: 112.15 min - epoch state 39.01% (5 KB/s)
+Time: 112.21 min - epoch state 41.57% (6 KB/s)
+Epoch 51, Loss: 913.578369140625
+Eval analogy questions 6170/17827 accuracy = 34.6%
+Time: 112.28 min - epoch state 44.13% (6 KB/s)
+Time: 112.35 min - epoch state 46.69% (6 KB/s)
+Time: 112.42 min - epoch state 49.25% (7 KB/s)
+Time: 112.50 min - epoch state 51.81% (7 KB/s)
+Time: 112.57 min - epoch state 54.37% (8 KB/s)
+Time: 112.64 min - epoch state 56.93% (8 KB/s)
+Time: 112.73 min - epoch state 59.49% (8 KB/s)
+Time: 112.82 min - epoch state 62.05% (9 KB/s)
+Time: 112.89 min - epoch state 64.61% (9 KB/s)
+Epoch 51, Loss: 1021.1944580078125
+Eval analogy questions 6203/17827 accuracy = 34.8%
+Time: 112.97 min - epoch state 67.17% (9 KB/s)
+Time: 113.05 min - epoch state 69.73% (10 KB/s)
+Time: 113.12 min - epoch state 72.29% (10 KB/s)
+Time: 113.19 min - epoch state 74.85% (11 KB/s)
+Time: 113.25 min - epoch state 77.41% (11 KB/s)
+Time: 113.32 min - epoch state 79.97% (11 KB/s)
+Time: 113.39 min - epoch state 82.53% (12 KB/s)
+Starting epoch: 52
+Epoch 52, Loss: 1001.3499755859375
+Eval analogy questions 6220/17827 accuracy = 34.9%
+Time: 113.46 min - epoch state 0.37% (0 KB/s)
+Time: 113.52 min - epoch state 2.93% (0 KB/s)
+Time: 113.58 min - epoch state 5.49% (0 KB/s)
+Time: 113.65 min - epoch state 8.05% (1 KB/s)
+Time: 113.71 min - epoch state 10.61% (1 KB/s)
+Time: 113.77 min - epoch state 13.17% (1 KB/s)
+Time: 113.83 min - epoch state 15.73% (2 KB/s)
+Time: 113.90 min - epoch state 18.29% (2 KB/s)
+Time: 113.96 min - epoch state 20.85% (3 KB/s)
+Epoch 52, Loss: 882.8984985351562
+Eval analogy questions 6206/17827 accuracy = 34.8%
+Time: 114.03 min - epoch state 23.41% (3 KB/s)
+Time: 114.09 min - epoch state 25.97% (3 KB/s)
+Time: 114.15 min - epoch state 28.53% (4 KB/s)
+Time: 114.21 min - epoch state 31.09% (4 KB/s)
+Time: 114.28 min - epoch state 33.65% (4 KB/s)
+Time: 114.34 min - epoch state 36.21% (5 KB/s)
+Time: 114.40 min - epoch state 38.77% (5 KB/s)
+Time: 114.46 min - epoch state 41.33% (6 KB/s)
+Epoch 52, Loss: 609.7802124023438
+Eval analogy questions 6211/17827 accuracy = 34.8%
+Time: 114.53 min - epoch state 43.89% (6 KB/s)
+Time: 114.59 min - epoch state 46.45% (6 KB/s)
+Time: 114.65 min - epoch state 49.01% (7 KB/s)
+Time: 114.72 min - epoch state 51.57% (7 KB/s)
+Time: 114.78 min - epoch state 54.13% (7 KB/s)
+Time: 114.84 min - epoch state 56.69% (8 KB/s)
+Time: 114.90 min - epoch state 59.25% (8 KB/s)
+Time: 114.96 min - epoch state 61.81% (8 KB/s)
+Time: 115.03 min - epoch state 64.37% (9 KB/s)
+Epoch 52, Loss: 773.4356079101562
+Eval analogy questions 6199/17827 accuracy = 34.8%
+Time: 115.10 min - epoch state 66.93% (9 KB/s)
+Time: 115.16 min - epoch state 69.49% (10 KB/s)
+Time: 115.22 min - epoch state 72.05% (10 KB/s)
+Time: 115.28 min - epoch state 74.61% (10 KB/s)
+Time: 115.34 min - epoch state 77.17% (11 KB/s)
+Time: 115.40 min - epoch state 79.73% (11 KB/s)
+Time: 115.46 min - epoch state 82.29% (11 KB/s)
+Starting epoch: 53
+Epoch 53, Loss: 976.7620849609375
+Eval analogy questions 6223/17827 accuracy = 34.9%
+Time: 115.54 min - epoch state 0.13% (0 KB/s)
+Time: 115.60 min - epoch state 2.69% (0 KB/s)
+Time: 115.66 min - epoch state 5.25% (0 KB/s)
+Time: 115.72 min - epoch state 7.81% (1 KB/s)
+Time: 115.78 min - epoch state 10.37% (1 KB/s)
+Time: 115.84 min - epoch state 12.93% (1 KB/s)
+Time: 115.91 min - epoch state 15.49% (2 KB/s)
+Time: 115.97 min - epoch state 18.05% (2 KB/s)
+Time: 116.03 min - epoch state 20.61% (2 KB/s)
+Epoch 53, Loss: 802.6803588867188
+Eval analogy questions 6179/17827 accuracy = 34.7%
+Time: 116.10 min - epoch state 23.17% (3 KB/s)
+Time: 116.16 min - epoch state 25.73% (3 KB/s)
+Time: 116.22 min - epoch state 28.29% (4 KB/s)
+Time: 116.29 min - epoch state 30.85% (4 KB/s)
+Time: 116.35 min - epoch state 33.41% (4 KB/s)
+Time: 116.41 min - epoch state 35.97% (5 KB/s)
+Time: 116.47 min - epoch state 38.53% (5 KB/s)
+Time: 116.53 min - epoch state 41.09% (5 KB/s)
+Epoch 53, Loss: 978.1857299804688
+Eval analogy questions 6169/17827 accuracy = 34.6%
+Time: 116.61 min - epoch state 43.65% (6 KB/s)
+Time: 116.67 min - epoch state 46.21% (6 KB/s)
+Time: 116.73 min - epoch state 48.77% (6 KB/s)
+Time: 116.79 min - epoch state 51.33% (7 KB/s)
+Time: 116.85 min - epoch state 53.89% (7 KB/s)
+Time: 116.92 min - epoch state 56.45% (8 KB/s)
+Time: 116.98 min - epoch state 59.01% (8 KB/s)
+Time: 117.04 min - epoch state 61.57% (8 KB/s)
+Time: 117.10 min - epoch state 64.13% (9 KB/s)
+Epoch 53, Loss: 1036.5517578125
+Eval analogy questions 6165/17827 accuracy = 34.6%
+Time: 117.17 min - epoch state 66.69% (9 KB/s)
+Time: 117.23 min - epoch state 69.25% (9 KB/s)
+Time: 117.29 min - epoch state 71.81% (10 KB/s)
+Time: 117.36 min - epoch state 74.37% (10 KB/s)
+Time: 117.42 min - epoch state 76.93% (10 KB/s)
+Time: 117.48 min - epoch state 79.49% (11 KB/s)
+Time: 117.54 min - epoch state 82.05% (11 KB/s)
+Time: 117.60 min - epoch state 84.61% (11 KB/s)
+Starting epoch: 54
+Epoch 54, Loss: 983.2322998046875
+Eval analogy questions 6160/17827 accuracy = 34.6%
+Time: 117.67 min - epoch state 2.45% (0 KB/s)
+Time: 117.74 min - epoch state 5.01% (0 KB/s)
+Time: 117.80 min - epoch state 7.57% (1 KB/s)
+Time: 117.86 min - epoch state 10.13% (1 KB/s)
+Time: 117.92 min - epoch state 12.69% (1 KB/s)
+Time: 117.98 min - epoch state 15.25% (2 KB/s)
+Time: 118.05 min - epoch state 17.81% (2 KB/s)
+Time: 118.11 min - epoch state 20.37% (2 KB/s)
+Epoch 54, Loss: 986.81005859375
+Eval analogy questions 6172/17827 accuracy = 34.6%
+Time: 118.18 min - epoch state 22.93% (3 KB/s)
+Time: 118.25 min - epoch state 25.49% (3 KB/s)
+Time: 118.32 min - epoch state 28.05% (3 KB/s)
+Time: 118.38 min - epoch state 30.61% (4 KB/s)
+Time: 118.45 min - epoch state 33.17% (4 KB/s)
+Time: 118.51 min - epoch state 35.73% (5 KB/s)
+Time: 118.57 min - epoch state 38.29% (5 KB/s)
+Time: 118.64 min - epoch state 40.85% (5 KB/s)
+Time: 118.71 min - epoch state 43.41% (6 KB/s)
+Epoch 54, Loss: 792.8944702148438
+Eval analogy questions 6129/17827 accuracy = 34.4%
+Time: 118.78 min - epoch state 45.97% (6 KB/s)
+Time: 118.84 min - epoch state 48.53% (6 KB/s)
+Time: 118.90 min - epoch state 51.09% (7 KB/s)
+Time: 118.97 min - epoch state 53.65% (7 KB/s)
+Time: 119.03 min - epoch state 56.21% (7 KB/s)
+Time: 119.10 min - epoch state 58.77% (8 KB/s)
+Time: 119.16 min - epoch state 61.33% (8 KB/s)
+Time: 119.22 min - epoch state 63.89% (8 KB/s)
+Epoch 54, Loss: 967.715087890625
+Eval analogy questions 6126/17827 accuracy = 34.4%
+Time: 119.29 min - epoch state 66.45% (9 KB/s)
+Time: 119.36 min - epoch state 69.01% (9 KB/s)
+Time: 119.42 min - epoch state 71.57% (9 KB/s)
+Time: 119.49 min - epoch state 74.13% (10 KB/s)
+Time: 119.55 min - epoch state 76.69% (10 KB/s)
+Time: 119.61 min - epoch state 79.25% (11 KB/s)
+Time: 119.68 min - epoch state 81.81% (11 KB/s)
+Time: 119.75 min - epoch state 84.37% (11 KB/s)
+Starting epoch: 55
+Epoch 55, Loss: 954.6021728515625
+Eval analogy questions 6131/17827 accuracy = 34.4%
+Time: 119.82 min - epoch state 2.21% (0 KB/s)
+Time: 119.89 min - epoch state 4.77% (0 KB/s)
+Time: 119.95 min - epoch state 7.33% (1 KB/s)
+Time: 120.01 min - epoch state 9.89% (1 KB/s)
+Time: 120.08 min - epoch state 12.45% (1 KB/s)
+Time: 120.14 min - epoch state 15.01% (2 KB/s)
+Time: 120.20 min - epoch state 17.57% (2 KB/s)
+Time: 120.26 min - epoch state 20.13% (2 KB/s)
+Epoch 55, Loss: 1004.6593017578125
+Eval analogy questions 6146/17827 accuracy = 34.5%
+Time: 120.33 min - epoch state 22.69% (3 KB/s)
+Time: 120.39 min - epoch state 25.25% (3 KB/s)
+Time: 120.45 min - epoch state 27.81% (3 KB/s)
+Time: 120.51 min - epoch state 30.37% (4 KB/s)
+Time: 120.58 min - epoch state 32.93% (4 KB/s)
+Time: 120.64 min - epoch state 35.49% (4 KB/s)
+Time: 120.70 min - epoch state 38.05% (5 KB/s)
+Time: 120.76 min - epoch state 40.61% (5 KB/s)
+Time: 120.83 min - epoch state 43.17% (5 KB/s)
+Epoch 55, Loss: 710.45556640625
+Eval analogy questions 6121/17827 accuracy = 34.3%
+Time: 120.90 min - epoch state 45.73% (6 KB/s)
+Time: 120.96 min - epoch state 48.29% (6 KB/s)
+Time: 121.02 min - epoch state 50.85% (7 KB/s)
+Time: 121.08 min - epoch state 53.41% (7 KB/s)
+Time: 121.14 min - epoch state 55.97% (7 KB/s)
+Time: 121.20 min - epoch state 58.53% (8 KB/s)
+Time: 121.27 min - epoch state 61.09% (8 KB/s)
+Time: 121.33 min - epoch state 63.65% (8 KB/s)
+Epoch 55, Loss: 773.4287719726562
+Eval analogy questions 6144/17827 accuracy = 34.5%
+Time: 121.40 min - epoch state 66.21% (9 KB/s)
+Time: 121.46 min - epoch state 68.77% (9 KB/s)
+Time: 121.52 min - epoch state 71.33% (9 KB/s)
+Time: 121.58 min - epoch state 73.89% (10 KB/s)
+Time: 121.64 min - epoch state 76.45% (10 KB/s)
+Time: 121.70 min - epoch state 79.01% (10 KB/s)
+Time: 121.76 min - epoch state 81.57% (11 KB/s)
+Time: 121.82 min - epoch state 84.13% (11 KB/s)
+Starting epoch: 56
+Epoch 56, Loss: 931.2147827148438
+Eval analogy questions 6166/17827 accuracy = 34.6%
+Time: 121.90 min - epoch state 1.97% (0 KB/s)
+Time: 121.97 min - epoch state 4.53% (0 KB/s)
+Time: 122.04 min - epoch state 7.09% (0 KB/s)
+Time: 122.11 min - epoch state 9.65% (1 KB/s)
+Time: 122.18 min - epoch state 12.21% (1 KB/s)
+Time: 122.24 min - epoch state 14.77% (2 KB/s)
+Time: 122.31 min - epoch state 17.33% (2 KB/s)
+Time: 122.39 min - epoch state 19.89% (2 KB/s)
+Epoch 56, Loss: 1031.1287841796875
+Eval analogy questions 6134/17827 accuracy = 34.4%
+Time: 122.48 min - epoch state 22.45% (3 KB/s)
+Time: 122.56 min - epoch state 25.01% (3 KB/s)
+Time: 122.64 min - epoch state 27.57% (3 KB/s)
+Time: 122.72 min - epoch state 30.13% (4 KB/s)
+Time: 122.80 min - epoch state 32.69% (4 KB/s)
+Time: 122.88 min - epoch state 35.25% (4 KB/s)
+Time: 122.96 min - epoch state 37.81% (5 KB/s)
+Time: 123.03 min - epoch state 40.37% (5 KB/s)
+Time: 123.11 min - epoch state 42.93% (5 KB/s)
+Epoch 56, Loss: 698.0296630859375
+Eval analogy questions 6109/17827 accuracy = 34.3%
+Time: 123.19 min - epoch state 45.49% (6 KB/s)
+Time: 123.27 min - epoch state 48.05% (6 KB/s)
+Time: 123.34 min - epoch state 50.61% (6 KB/s)
+Time: 123.40 min - epoch state 53.17% (7 KB/s)
+Time: 123.47 min - epoch state 55.73% (7 KB/s)
+Time: 123.53 min - epoch state 58.29% (7 KB/s)
+Time: 123.59 min - epoch state 60.85% (8 KB/s)
+Time: 123.65 min - epoch state 63.41% (8 KB/s)
+Epoch 56, Loss: 888.3040771484375
+Eval analogy questions 6144/17827 accuracy = 34.5%
+Time: 123.72 min - epoch state 65.97% (8 KB/s)
+Time: 123.78 min - epoch state 68.53% (9 KB/s)
+Time: 123.85 min - epoch state 71.09% (9 KB/s)
+Time: 123.91 min - epoch state 73.65% (9 KB/s)
+Time: 123.97 min - epoch state 76.21% (10 KB/s)
+Time: 124.03 min - epoch state 78.77% (10 KB/s)
+Time: 124.09 min - epoch state 81.33% (10 KB/s)
+Time: 124.15 min - epoch state 83.89% (11 KB/s)
+Starting epoch: 57
+Epoch 57, Loss: 967.8552856445312
+Eval analogy questions 6154/17827 accuracy = 34.5%
+Time: 124.23 min - epoch state 1.73% (0 KB/s)
+Time: 124.29 min - epoch state 4.29% (0 KB/s)
+Time: 124.35 min - epoch state 6.85% (0 KB/s)
+Time: 124.41 min - epoch state 9.41% (1 KB/s)
+Time: 124.47 min - epoch state 11.97% (1 KB/s)
+Time: 124.53 min - epoch state 14.53% (1 KB/s)
+Time: 124.59 min - epoch state 17.09% (2 KB/s)
+Time: 124.65 min - epoch state 19.65% (2 KB/s)
+Epoch 57, Loss: 844.1759643554688
+Eval analogy questions 6155/17827 accuracy = 34.5%
+Time: 124.73 min - epoch state 22.21% (2 KB/s)
+Time: 124.79 min - epoch state 24.77% (3 KB/s)
+Time: 124.86 min - epoch state 27.33% (3 KB/s)
+Time: 124.94 min - epoch state 29.89% (3 KB/s)
+Time: 125.01 min - epoch state 32.45% (4 KB/s)
+Time: 125.09 min - epoch state 35.01% (4 KB/s)
+Time: 125.16 min - epoch state 37.57% (5 KB/s)
+Time: 125.23 min - epoch state 40.13% (5 KB/s)
+Time: 125.31 min - epoch state 42.69% (5 KB/s)
+Epoch 57, Loss: 739.5728759765625
+Eval analogy questions 6101/17827 accuracy = 34.2%
+Time: 125.39 min - epoch state 45.25% (6 KB/s)
+Time: 125.47 min - epoch state 47.81% (6 KB/s)
+Time: 125.54 min - epoch state 50.37% (6 KB/s)
+Time: 125.62 min - epoch state 52.93% (7 KB/s)
+Time: 125.70 min - epoch state 55.49% (7 KB/s)
+Time: 125.78 min - epoch state 58.05% (7 KB/s)
+Time: 125.85 min - epoch state 60.61% (8 KB/s)
+Time: 125.92 min - epoch state 63.17% (8 KB/s)
+Epoch 57, Loss: 918.4583129882812
+Eval analogy questions 6107/17827 accuracy = 34.3%
+Time: 126.00 min - epoch state 65.73% (8 KB/s)
+Time: 126.06 min - epoch state 68.29% (9 KB/s)
+Time: 126.13 min - epoch state 70.85% (9 KB/s)
+Time: 126.19 min - epoch state 73.41% (9 KB/s)
+Time: 126.25 min - epoch state 75.97% (10 KB/s)
+Time: 126.32 min - epoch state 78.53% (10 KB/s)
+Time: 126.38 min - epoch state 81.09% (10 KB/s)
+Time: 126.45 min - epoch state 83.65% (11 KB/s)
+Starting epoch: 58
+Epoch 58, Loss: 963.75390625
+Eval analogy questions 6108/17827 accuracy = 34.3%
+Time: 126.52 min - epoch state 1.49% (0 KB/s)
+Time: 126.59 min - epoch state 4.05% (0 KB/s)
+Time: 126.65 min - epoch state 6.61% (0 KB/s)
+Time: 126.71 min - epoch state 9.17% (1 KB/s)
+Time: 126.78 min - epoch state 11.73% (1 KB/s)
+Time: 126.84 min - epoch state 14.29% (1 KB/s)
+Time: 126.91 min - epoch state 16.85% (2 KB/s)
+Time: 126.97 min - epoch state 19.41% (2 KB/s)
+Epoch 58, Loss: 852.8506469726562
+Eval analogy questions 6106/17827 accuracy = 34.3%
+Time: 127.04 min - epoch state 21.97% (2 KB/s)
+Time: 127.11 min - epoch state 24.53% (3 KB/s)
+Time: 127.17 min - epoch state 27.09% (3 KB/s)
+Time: 127.23 min - epoch state 29.65% (3 KB/s)
+Time: 127.29 min - epoch state 32.21% (4 KB/s)
+Time: 127.36 min - epoch state 34.77% (4 KB/s)
+Time: 127.42 min - epoch state 37.33% (4 KB/s)
+Time: 127.48 min - epoch state 39.89% (5 KB/s)
+Time: 127.54 min - epoch state 42.45% (5 KB/s)
+Epoch 58, Loss: 826.89111328125
+Eval analogy questions 6081/17827 accuracy = 34.1%
+Time: 127.62 min - epoch state 45.01% (5 KB/s)
+Time: 127.68 min - epoch state 47.57% (6 KB/s)
+Time: 127.74 min - epoch state 50.13% (6 KB/s)
+Time: 127.80 min - epoch state 52.69% (6 KB/s)
+Time: 127.87 min - epoch state 55.25% (7 KB/s)
+Time: 127.93 min - epoch state 57.81% (7 KB/s)
+Time: 128.00 min - epoch state 60.37% (7 KB/s)
+Time: 128.06 min - epoch state 62.93% (8 KB/s)
+Epoch 58, Loss: 708.8681640625
+Eval analogy questions 6094/17827 accuracy = 34.2%
+Time: 128.13 min - epoch state 65.49% (8 KB/s)
+Time: 128.19 min - epoch state 68.05% (8 KB/s)
+Time: 128.25 min - epoch state 70.61% (9 KB/s)
+Time: 128.31 min - epoch state 73.17% (9 KB/s)
+Time: 128.37 min - epoch state 75.73% (9 KB/s)
+Time: 128.43 min - epoch state 78.29% (10 KB/s)
+Time: 128.50 min - epoch state 80.85% (10 KB/s)
+Time: 128.56 min - epoch state 83.41% (10 KB/s)
+Starting epoch: 59
+Epoch 59, Loss: 934.8271484375
+Eval analogy questions 6120/17827 accuracy = 34.3%
+Time: 128.63 min - epoch state 1.25% (0 KB/s)
+Time: 128.69 min - epoch state 3.81% (0 KB/s)
+Time: 128.75 min - epoch state 6.37% (0 KB/s)
+Time: 128.81 min - epoch state 8.93% (1 KB/s)
+Time: 128.87 min - epoch state 11.49% (1 KB/s)
+Time: 128.93 min - epoch state 14.05% (1 KB/s)
+Time: 128.99 min - epoch state 16.61% (2 KB/s)
+Time: 129.05 min - epoch state 19.17% (2 KB/s)
+Time: 129.11 min - epoch state 21.73% (2 KB/s)
+Epoch 59, Loss: 887.7481689453125
+Eval analogy questions 6102/17827 accuracy = 34.2%
+Time: 129.18 min - epoch state 24.29% (3 KB/s)
+Time: 129.24 min - epoch state 26.85% (3 KB/s)
+Time: 129.31 min - epoch state 29.41% (3 KB/s)
+Time: 129.37 min - epoch state 31.97% (4 KB/s)
+Time: 129.43 min - epoch state 34.53% (4 KB/s)
+Time: 129.50 min - epoch state 37.09% (4 KB/s)
+Time: 129.56 min - epoch state 39.65% (5 KB/s)
+Time: 129.62 min - epoch state 42.21% (5 KB/s)
+Epoch 59, Loss: 853.2381591796875
+Eval analogy questions 6105/17827 accuracy = 34.2%
+Time: 129.70 min - epoch state 44.77% (5 KB/s)
+Time: 129.76 min - epoch state 47.33% (6 KB/s)
+Time: 129.83 min - epoch state 49.89% (6 KB/s)
+Time: 129.89 min - epoch state 52.45% (6 KB/s)
+Time: 129.95 min - epoch state 55.01% (7 KB/s)
+Time: 130.01 min - epoch state 57.57% (7 KB/s)
+Time: 130.07 min - epoch state 60.13% (7 KB/s)
+Time: 130.13 min - epoch state 62.69% (8 KB/s)
+Epoch 59, Loss: 1008.7435302734375
+Eval analogy questions 6102/17827 accuracy = 34.2%
+Time: 130.20 min - epoch state 65.25% (8 KB/s)
+Time: 130.26 min - epoch state 67.81% (8 KB/s)
+Time: 130.33 min - epoch state 70.37% (8 KB/s)
+Time: 130.39 min - epoch state 72.93% (9 KB/s)
+Time: 130.45 min - epoch state 75.49% (9 KB/s)
+Time: 130.51 min - epoch state 78.05% (9 KB/s)
+Time: 130.57 min - epoch state 80.61% (10 KB/s)
+Time: 130.63 min - epoch state 83.17% (10 KB/s)
+Starting epoch: 60
+Epoch 60, Loss: 952.4090576171875
+Eval analogy questions 6087/17827 accuracy = 34.1%
+Time: 130.71 min - epoch state 1.01% (0 KB/s)
+Time: 130.77 min - epoch state 3.57% (0 KB/s)
+Time: 130.83 min - epoch state 6.13% (0 KB/s)
+Time: 130.89 min - epoch state 8.69% (1 KB/s)
+Time: 130.96 min - epoch state 11.25% (1 KB/s)
+Time: 131.03 min - epoch state 13.81% (1 KB/s)
+Time: 131.10 min - epoch state 16.37% (2 KB/s)
+Time: 131.18 min - epoch state 18.93% (2 KB/s)
+Time: 131.25 min - epoch state 21.49% (2 KB/s)
+Epoch 60, Loss: 925.3646240234375
+Eval analogy questions 6086/17827 accuracy = 34.1%
+Time: 131.33 min - epoch state 24.05% (3 KB/s)
+Time: 131.41 min - epoch state 26.61% (3 KB/s)
+Time: 131.48 min - epoch state 29.17% (3 KB/s)
+Time: 131.55 min - epoch state 31.73% (4 KB/s)
+Time: 131.62 min - epoch state 34.29% (4 KB/s)
+Time: 131.70 min - epoch state 36.85% (4 KB/s)
+Time: 131.77 min - epoch state 39.41% (4 KB/s)
+Time: 131.83 min - epoch state 41.97% (5 KB/s)
+Epoch 60, Loss: 703.6046142578125
+Eval analogy questions 6057/17827 accuracy = 34.0%
+Time: 131.91 min - epoch state 44.53% (5 KB/s)
+Time: 131.97 min - epoch state 47.09% (5 KB/s)
+Time: 132.03 min - epoch state 49.65% (6 KB/s)
+Time: 132.09 min - epoch state 52.21% (6 KB/s)
+Time: 132.15 min - epoch state 54.77% (6 KB/s)
+Time: 132.21 min - epoch state 57.33% (7 KB/s)
+Time: 132.28 min - epoch state 59.89% (7 KB/s)
+Time: 132.34 min - epoch state 62.45% (7 KB/s)
+Time: 132.40 min - epoch state 65.01% (8 KB/s)
+Epoch 60, Loss: 909.5421142578125
+Eval analogy questions 6093/17827 accuracy = 34.2%
+Time: 132.47 min - epoch state 67.57% (8 KB/s)
+Time: 132.53 min - epoch state 70.13% (8 KB/s)
+Time: 132.59 min - epoch state 72.69% (9 KB/s)
+Time: 132.65 min - epoch state 75.25% (9 KB/s)
+Time: 132.71 min - epoch state 77.81% (9 KB/s)
+Time: 132.77 min - epoch state 80.37% (10 KB/s)
+Time: 132.83 min - epoch state 82.93% (10 KB/s)
+Starting epoch: 61
+Epoch 61, Loss: 958.4805908203125
+Eval analogy questions 6114/17827 accuracy = 34.3%
+Time: 132.90 min - epoch state 0.77% (0 KB/s)
+Time: 132.96 min - epoch state 3.33% (0 KB/s)
+Time: 133.02 min - epoch state 5.89% (0 KB/s)
+Time: 133.08 min - epoch state 8.45% (1 KB/s)
+Time: 133.14 min - epoch state 11.01% (1 KB/s)
+Time: 133.20 min - epoch state 13.57% (1 KB/s)
+Time: 133.27 min - epoch state 16.13% (2 KB/s)
+Time: 133.33 min - epoch state 18.69% (2 KB/s)
+Time: 133.39 min - epoch state 21.25% (2 KB/s)
+Epoch 61, Loss: 888.2124633789062
+Eval analogy questions 6090/17827 accuracy = 34.2%
+Time: 133.46 min - epoch state 23.81% (2 KB/s)
+Time: 133.52 min - epoch state 26.37% (3 KB/s)
+Time: 133.58 min - epoch state 28.93% (3 KB/s)
+Time: 133.64 min - epoch state 31.49% (3 KB/s)
+Time: 133.70 min - epoch state 34.05% (4 KB/s)
+Time: 133.76 min - epoch state 36.61% (4 KB/s)
+Time: 133.83 min - epoch state 39.17% (4 KB/s)
+Time: 133.89 min - epoch state 41.73% (5 KB/s)
+Epoch 61, Loss: 962.7503662109375
+Eval analogy questions 6056/17827 accuracy = 34.0%
+Time: 133.96 min - epoch state 44.29% (5 KB/s)
+Time: 134.02 min - epoch state 46.85% (5 KB/s)
+Time: 134.08 min - epoch state 49.41% (6 KB/s)
+Time: 134.14 min - epoch state 51.97% (6 KB/s)
+Time: 134.20 min - epoch state 54.53% (6 KB/s)
+Time: 134.26 min - epoch state 57.09% (7 KB/s)
+Time: 134.32 min - epoch state 59.65% (7 KB/s)
+Time: 134.38 min - epoch state 62.21% (7 KB/s)
+Time: 134.45 min - epoch state 64.77% (8 KB/s)
+Epoch 61, Loss: 922.1442260742188
+Eval analogy questions 6072/17827 accuracy = 34.1%
+Time: 134.52 min - epoch state 67.33% (8 KB/s)
+Time: 134.58 min - epoch state 69.89% (8 KB/s)
+Time: 134.64 min - epoch state 72.45% (8 KB/s)
+Time: 134.70 min - epoch state 75.01% (9 KB/s)
+Time: 134.76 min - epoch state 77.57% (9 KB/s)
+Time: 134.82 min - epoch state 80.13% (9 KB/s)
+Time: 134.88 min - epoch state 82.69% (10 KB/s)
+Starting epoch: 62
+Epoch 62, Loss: 997.0116577148438
+Eval analogy questions 6063/17827 accuracy = 34.0%
+Time: 134.95 min - epoch state 0.54% (0 KB/s)
+Time: 135.01 min - epoch state 3.10% (0 KB/s)
+Time: 135.07 min - epoch state 5.66% (0 KB/s)
+Time: 135.13 min - epoch state 8.22% (1 KB/s)
+Time: 135.19 min - epoch state 10.78% (1 KB/s)
+Time: 135.25 min - epoch state 13.34% (1 KB/s)
+Time: 135.31 min - epoch state 15.90% (1 KB/s)
+Time: 135.38 min - epoch state 18.46% (2 KB/s)
+Time: 135.44 min - epoch state 21.02% (2 KB/s)
+Epoch 62, Loss: 908.2230224609375
+Eval analogy questions 6062/17827 accuracy = 34.0%
+Time: 135.51 min - epoch state 23.58% (2 KB/s)
+Time: 135.57 min - epoch state 26.14% (3 KB/s)
+Time: 135.64 min - epoch state 28.70% (3 KB/s)
+Time: 135.70 min - epoch state 31.26% (3 KB/s)
+Time: 135.76 min - epoch state 33.82% (4 KB/s)
+Time: 135.83 min - epoch state 36.38% (4 KB/s)
+Time: 135.89 min - epoch state 38.94% (4 KB/s)
+Time: 135.95 min - epoch state 41.50% (5 KB/s)
+Epoch 62, Loss: 688.0445556640625
+Eval analogy questions 6049/17827 accuracy = 33.9%
+Time: 136.02 min - epoch state 44.06% (5 KB/s)
+Time: 136.09 min - epoch state 46.62% (5 KB/s)
+Time: 136.15 min - epoch state 49.18% (6 KB/s)
+Time: 136.21 min - epoch state 51.74% (6 KB/s)
+Time: 136.27 min - epoch state 54.30% (6 KB/s)
+Time: 136.33 min - epoch state 56.86% (6 KB/s)
+Time: 136.40 min - epoch state 59.42% (7 KB/s)
+Time: 136.46 min - epoch state 61.98% (7 KB/s)
+Time: 136.52 min - epoch state 64.54% (7 KB/s)
+Epoch 62, Loss: 927.543701171875
+Eval analogy questions 6058/17827 accuracy = 34.0%
+Time: 136.59 min - epoch state 67.10% (8 KB/s)
+Time: 136.65 min - epoch state 69.66% (8 KB/s)
+Time: 136.71 min - epoch state 72.22% (8 KB/s)
+Time: 136.77 min - epoch state 74.78% (9 KB/s)
+Time: 136.83 min - epoch state 77.34% (9 KB/s)
+Time: 136.89 min - epoch state 79.90% (9 KB/s)
+Time: 136.95 min - epoch state 82.46% (10 KB/s)
+Starting epoch: 63
+Epoch 63, Loss: 947.058349609375
+Eval analogy questions 6073/17827 accuracy = 34.1%
+Time: 137.02 min - epoch state 0.30% (0 KB/s)
+Time: 137.09 min - epoch state 2.86% (0 KB/s)
+Time: 137.15 min - epoch state 5.42% (0 KB/s)
+Time: 137.22 min - epoch state 7.98% (0 KB/s)
+Time: 137.30 min - epoch state 10.54% (1 KB/s)
+Time: 137.37 min - epoch state 13.10% (1 KB/s)
+Time: 137.44 min - epoch state 15.66% (1 KB/s)
+Time: 137.51 min - epoch state 18.22% (2 KB/s)
+Time: 137.59 min - epoch state 20.78% (2 KB/s)
+Epoch 63, Loss: 1022.59375
+Eval analogy questions 6063/17827 accuracy = 34.0%
+Time: 137.67 min - epoch state 23.34% (2 KB/s)
+Time: 137.74 min - epoch state 25.90% (3 KB/s)
+Time: 137.83 min - epoch state 28.46% (3 KB/s)
+Time: 137.91 min - epoch state 31.02% (3 KB/s)
+Time: 138.01 min - epoch state 33.58% (4 KB/s)
+Time: 138.08 min - epoch state 36.14% (4 KB/s)
+Time: 138.16 min - epoch state 38.70% (4 KB/s)
+Time: 138.23 min - epoch state 41.26% (4 KB/s)
+Epoch 63, Loss: 640.523681640625
+Eval analogy questions 6038/17827 accuracy = 33.9%
+Time: 138.32 min - epoch state 43.82% (5 KB/s)
+Time: 138.40 min - epoch state 46.38% (5 KB/s)
+Time: 138.46 min - epoch state 48.94% (5 KB/s)
+Time: 138.53 min - epoch state 51.50% (6 KB/s)
+Time: 138.60 min - epoch state 54.06% (6 KB/s)
+Time: 138.67 min - epoch state 56.62% (6 KB/s)
+Time: 138.73 min - epoch state 59.18% (7 KB/s)
+Time: 138.80 min - epoch state 61.74% (7 KB/s)
+Time: 138.86 min - epoch state 64.30% (7 KB/s)
+Epoch 63, Loss: 884.4132080078125
+Eval analogy questions 6068/17827 accuracy = 34.0%
+Time: 138.94 min - epoch state 66.86% (8 KB/s)
+Time: 139.00 min - epoch state 69.42% (8 KB/s)
+Time: 139.06 min - epoch state 71.98% (8 KB/s)
+Time: 139.13 min - epoch state 74.54% (8 KB/s)
+Time: 139.19 min - epoch state 77.10% (9 KB/s)
+Time: 139.25 min - epoch state 79.66% (9 KB/s)
+Time: 139.32 min - epoch state 82.22% (9 KB/s)
+Starting epoch: 64
+Epoch 64, Loss: 924.6649169921875
+Eval analogy questions 6067/17827 accuracy = 34.0%
+Time: 139.39 min - epoch state 0.06% (0 KB/s)
+Time: 139.46 min - epoch state 2.62% (0 KB/s)
+Time: 139.52 min - epoch state 5.18% (0 KB/s)
+Time: 139.59 min - epoch state 7.74% (0 KB/s)
+Time: 139.65 min - epoch state 10.30% (1 KB/s)
+Time: 139.71 min - epoch state 12.86% (1 KB/s)
+Time: 139.78 min - epoch state 15.42% (1 KB/s)
+Time: 139.84 min - epoch state 17.98% (2 KB/s)
+Time: 139.91 min - epoch state 20.54% (2 KB/s)
+Epoch 64, Loss: 841.6048583984375
+Eval analogy questions 6044/17827 accuracy = 33.9%
+Time: 139.98 min - epoch state 23.10% (2 KB/s)
+Time: 140.05 min - epoch state 25.66% (3 KB/s)
+Time: 140.11 min - epoch state 28.22% (3 KB/s)
+Time: 140.17 min - epoch state 30.78% (3 KB/s)
+Time: 140.24 min - epoch state 33.34% (3 KB/s)
+Time: 140.30 min - epoch state 35.90% (4 KB/s)
+Time: 140.37 min - epoch state 38.46% (4 KB/s)
+Time: 140.45 min - epoch state 41.02% (4 KB/s)
+Epoch 64, Loss: 739.49755859375
+Eval analogy questions 6024/17827 accuracy = 33.8%
+Time: 140.52 min - epoch state 43.58% (5 KB/s)
+Time: 140.59 min - epoch state 46.14% (5 KB/s)
+Time: 140.66 min - epoch state 48.70% (5 KB/s)
+Time: 140.72 min - epoch state 51.26% (6 KB/s)
+Time: 140.79 min - epoch state 53.82% (6 KB/s)
+Time: 140.86 min - epoch state 56.38% (6 KB/s)
+Time: 140.92 min - epoch state 58.94% (6 KB/s)
+Time: 140.99 min - epoch state 61.50% (7 KB/s)
+Time: 141.05 min - epoch state 64.06% (7 KB/s)
+Epoch 64, Loss: 883.2859497070312
+Eval analogy questions 6037/17827 accuracy = 33.9%
+Time: 141.12 min - epoch state 66.62% (7 KB/s)
+Time: 141.18 min - epoch state 69.18% (8 KB/s)
+Time: 141.24 min - epoch state 71.74% (8 KB/s)
+Time: 141.31 min - epoch state 74.30% (8 KB/s)
+Time: 141.36 min - epoch state 76.86% (9 KB/s)
+Time: 141.42 min - epoch state 79.42% (9 KB/s)
+Time: 141.49 min - epoch state 81.98% (9 KB/s)
+Time: 141.55 min - epoch state 84.54% (9 KB/s)
+Starting epoch: 65
+Epoch 65, Loss: 977.824462890625
+Eval analogy questions 6057/17827 accuracy = 34.0%
+Time: 141.62 min - epoch state 2.38% (0 KB/s)
+Time: 141.68 min - epoch state 4.94% (0 KB/s)
+Time: 141.74 min - epoch state 7.50% (0 KB/s)
+Time: 141.80 min - epoch state 10.06% (1 KB/s)
+Time: 141.86 min - epoch state 12.62% (1 KB/s)
+Time: 141.92 min - epoch state 15.18% (1 KB/s)
+Time: 141.98 min - epoch state 17.74% (2 KB/s)
+Time: 142.05 min - epoch state 20.30% (2 KB/s)
+Epoch 65, Loss: 1003.7562255859375
+Eval analogy questions 6031/17827 accuracy = 33.8%
+Time: 142.12 min - epoch state 22.86% (2 KB/s)
+Time: 142.18 min - epoch state 25.42% (2 KB/s)
+Time: 142.24 min - epoch state 27.98% (3 KB/s)
+Time: 142.30 min - epoch state 30.54% (3 KB/s)
+Time: 142.37 min - epoch state 33.10% (3 KB/s)
+Time: 142.43 min - epoch state 35.66% (4 KB/s)
+Time: 142.49 min - epoch state 38.22% (4 KB/s)
+Time: 142.55 min - epoch state 40.78% (4 KB/s)
+Time: 142.61 min - epoch state 43.34% (5 KB/s)
+Epoch 65, Loss: 685.283203125
+Eval analogy questions 6040/17827 accuracy = 33.9%
+Time: 142.68 min - epoch state 45.90% (5 KB/s)
+Time: 142.74 min - epoch state 48.46% (5 KB/s)
+Time: 142.80 min - epoch state 51.02% (5 KB/s)
+Time: 142.87 min - epoch state 53.58% (6 KB/s)
+Time: 142.93 min - epoch state 56.14% (6 KB/s)
+Time: 142.99 min - epoch state 58.70% (6 KB/s)
+Time: 143.05 min - epoch state 61.26% (7 KB/s)
+Time: 143.11 min - epoch state 63.82% (7 KB/s)
+Epoch 65, Loss: 759.23486328125
+Eval analogy questions 6048/17827 accuracy = 33.9%
+Time: 143.18 min - epoch state 66.38% (7 KB/s)
+Time: 143.24 min - epoch state 68.94% (8 KB/s)
+Time: 143.30 min - epoch state 71.50% (8 KB/s)
+Time: 143.36 min - epoch state 74.06% (8 KB/s)
+Time: 143.42 min - epoch state 76.62% (8 KB/s)
+Time: 143.48 min - epoch state 79.18% (9 KB/s)
+Time: 143.54 min - epoch state 81.74% (9 KB/s)
+Time: 143.61 min - epoch state 84.30% (9 KB/s)
+Starting epoch: 66
+Epoch 66, Loss: 932.3939208984375
+Eval analogy questions 6053/17827 accuracy = 34.0%
+Time: 143.68 min - epoch state 2.14% (0 KB/s)
+Time: 143.74 min - epoch state 4.70% (0 KB/s)
+Time: 143.80 min - epoch state 7.26% (0 KB/s)
+Time: 143.86 min - epoch state 9.82% (1 KB/s)
+Time: 143.92 min - epoch state 12.38% (1 KB/s)
+Time: 143.98 min - epoch state 14.94% (1 KB/s)
+Time: 144.04 min - epoch state 17.50% (2 KB/s)
+Time: 144.10 min - epoch state 20.06% (2 KB/s)
+Epoch 66, Loss: 888.354736328125
+Eval analogy questions 6058/17827 accuracy = 34.0%
+Time: 144.17 min - epoch state 22.62% (2 KB/s)
+Time: 144.23 min - epoch state 25.18% (2 KB/s)
+Time: 144.30 min - epoch state 27.74% (3 KB/s)
+Time: 144.36 min - epoch state 30.30% (3 KB/s)
+Time: 144.42 min - epoch state 32.86% (3 KB/s)
+Time: 144.48 min - epoch state 35.42% (4 KB/s)
+Time: 144.54 min - epoch state 37.98% (4 KB/s)
+Time: 144.61 min - epoch state 40.54% (4 KB/s)
+Time: 144.67 min - epoch state 43.10% (4 KB/s)
+Epoch 66, Loss: 905.5675048828125
+Eval analogy questions 6036/17827 accuracy = 33.9%
+Time: 144.74 min - epoch state 45.66% (5 KB/s)
+Time: 144.80 min - epoch state 48.22% (5 KB/s)
+Time: 144.87 min - epoch state 50.78% (5 KB/s)
+Time: 144.93 min - epoch state 53.34% (6 KB/s)
+Time: 144.99 min - epoch state 55.90% (6 KB/s)
+Time: 145.05 min - epoch state 58.46% (6 KB/s)
+Time: 145.12 min - epoch state 61.02% (7 KB/s)
+Time: 145.18 min - epoch state 63.58% (7 KB/s)
+Epoch 66, Loss: 953.496826171875
+Eval analogy questions 6049/17827 accuracy = 33.9%
+Time: 145.24 min - epoch state 66.14% (7 KB/s)
+Time: 145.31 min - epoch state 68.70% (7 KB/s)
+Time: 145.37 min - epoch state 71.26% (8 KB/s)
+Time: 145.43 min - epoch state 73.82% (8 KB/s)
+Time: 145.48 min - epoch state 76.38% (8 KB/s)
+Time: 145.54 min - epoch state 78.94% (9 KB/s)
+Time: 145.61 min - epoch state 81.50% (9 KB/s)
+Time: 145.67 min - epoch state 84.06% (9 KB/s)
+Starting epoch: 67
+Epoch 67, Loss: 945.9886474609375
+Eval analogy questions 6067/17827 accuracy = 34.0%
+Time: 145.74 min - epoch state 1.90% (0 KB/s)
+Time: 145.80 min - epoch state 4.46% (0 KB/s)
+Time: 145.86 min - epoch state 7.02% (0 KB/s)
+Time: 145.92 min - epoch state 9.58% (1 KB/s)
+Time: 145.99 min - epoch state 12.14% (1 KB/s)
+Time: 146.05 min - epoch state 14.70% (1 KB/s)
+Time: 146.12 min - epoch state 17.26% (1 KB/s)
+Time: 146.18 min - epoch state 19.82% (2 KB/s)
+Epoch 67, Loss: 944.4337158203125
+Eval analogy questions 6059/17827 accuracy = 34.0%
+Time: 146.25 min - epoch state 22.38% (2 KB/s)
+Time: 146.31 min - epoch state 24.94% (2 KB/s)
+Time: 146.37 min - epoch state 27.50% (3 KB/s)
+Time: 146.44 min - epoch state 30.06% (3 KB/s)
+Time: 146.50 min - epoch state 32.62% (3 KB/s)
+Time: 146.56 min - epoch state 35.18% (4 KB/s)
+Time: 146.62 min - epoch state 37.74% (4 KB/s)
+Time: 146.69 min - epoch state 40.30% (4 KB/s)
+Time: 146.75 min - epoch state 42.86% (4 KB/s)
+Epoch 67, Loss: 677.4776000976562
+Eval analogy questions 6027/17827 accuracy = 33.8%
+Time: 146.82 min - epoch state 45.42% (5 KB/s)
+Time: 146.88 min - epoch state 47.98% (5 KB/s)
+Time: 146.95 min - epoch state 50.54% (5 KB/s)
+Time: 147.01 min - epoch state 53.10% (6 KB/s)
+Time: 147.09 min - epoch state 55.66% (6 KB/s)
+Time: 147.16 min - epoch state 58.22% (6 KB/s)
+Time: 147.23 min - epoch state 60.78% (6 KB/s)
+Time: 147.30 min - epoch state 63.34% (7 KB/s)
+Epoch 67, Loss: 910.8514404296875
+Eval analogy questions 6035/17827 accuracy = 33.9%
+Time: 147.38 min - epoch state 65.90% (7 KB/s)
+Time: 147.46 min - epoch state 68.46% (7 KB/s)
+Time: 147.53 min - epoch state 71.02% (8 KB/s)
+Time: 147.60 min - epoch state 73.58% (8 KB/s)
+Time: 147.67 min - epoch state 76.14% (8 KB/s)
+Time: 147.75 min - epoch state 78.70% (8 KB/s)
+Time: 147.82 min - epoch state 81.26% (9 KB/s)
+Time: 147.89 min - epoch state 83.82% (9 KB/s)
+Starting epoch: 68
+Epoch 68, Loss: 961.2676391601562
+Eval analogy questions 6026/17827 accuracy = 33.8%
+Time: 147.96 min - epoch state 1.66% (0 KB/s)
+Time: 148.03 min - epoch state 4.22% (0 KB/s)
+Time: 148.09 min - epoch state 6.78% (0 KB/s)
+Time: 148.15 min - epoch state 9.34% (1 KB/s)
+Time: 148.21 min - epoch state 11.90% (1 KB/s)
+Time: 148.27 min - epoch state 14.46% (1 KB/s)
+Time: 148.34 min - epoch state 17.02% (1 KB/s)
+Time: 148.40 min - epoch state 19.58% (2 KB/s)
+Epoch 68, Loss: 803.7500610351562
+Eval analogy questions 6042/17827 accuracy = 33.9%
+Time: 148.47 min - epoch state 22.14% (2 KB/s)
+Time: 148.53 min - epoch state 24.70% (2 KB/s)
+Time: 148.60 min - epoch state 27.26% (3 KB/s)
+Time: 148.66 min - epoch state 29.82% (3 KB/s)
+Time: 148.72 min - epoch state 32.38% (3 KB/s)
+Time: 148.78 min - epoch state 34.94% (3 KB/s)
+Time: 148.84 min - epoch state 37.50% (4 KB/s)
+Time: 148.91 min - epoch state 40.06% (4 KB/s)
+Time: 148.97 min - epoch state 42.62% (4 KB/s)
+Epoch 68, Loss: 710.3103637695312
+Eval analogy questions 6000/17827 accuracy = 33.7%
+Time: 149.04 min - epoch state 45.18% (5 KB/s)
+Time: 149.10 min - epoch state 47.74% (5 KB/s)
+Time: 149.16 min - epoch state 50.30% (5 KB/s)
+Time: 149.22 min - epoch state 52.86% (5 KB/s)
+Time: 149.29 min - epoch state 55.42% (6 KB/s)
+Time: 149.35 min - epoch state 57.98% (6 KB/s)
+Time: 149.41 min - epoch state 60.54% (6 KB/s)
+Time: 149.47 min - epoch state 63.10% (7 KB/s)
+Epoch 68, Loss: 836.4368286132812
+Eval analogy questions 6031/17827 accuracy = 33.8%
+Time: 149.54 min - epoch state 65.66% (7 KB/s)
+Time: 149.61 min - epoch state 68.22% (7 KB/s)
+Time: 149.67 min - epoch state 70.78% (7 KB/s)
+Time: 149.73 min - epoch state 73.34% (8 KB/s)
+Time: 149.80 min - epoch state 75.90% (8 KB/s)
+Time: 149.87 min - epoch state 78.46% (8 KB/s)
+Time: 149.94 min - epoch state 81.02% (9 KB/s)
+Time: 150.02 min - epoch state 83.58% (9 KB/s)
+Starting epoch: 69
+Epoch 69, Loss: 923.4700927734375
+Eval analogy questions 6036/17827 accuracy = 33.9%
+Time: 150.10 min - epoch state 1.42% (0 KB/s)
+Time: 150.18 min - epoch state 3.98% (0 KB/s)
+Time: 150.25 min - epoch state 6.54% (0 KB/s)
+Time: 150.33 min - epoch state 9.10% (1 KB/s)
+Time: 150.40 min - epoch state 11.66% (1 KB/s)
+Time: 150.47 min - epoch state 14.22% (1 KB/s)
+Time: 150.55 min - epoch state 16.78% (1 KB/s)
+Time: 150.63 min - epoch state 19.34% (2 KB/s)
+Epoch 69, Loss: 969.4230346679688
+Eval analogy questions 6019/17827 accuracy = 33.8%
+Time: 150.72 min - epoch state 21.90% (2 KB/s)
+Time: 150.78 min - epoch state 24.46% (2 KB/s)
+Time: 150.85 min - epoch state 27.02% (2 KB/s)
+Time: 150.91 min - epoch state 29.58% (3 KB/s)
+Time: 150.97 min - epoch state 32.14% (3 KB/s)
+Time: 151.04 min - epoch state 34.70% (3 KB/s)
+Time: 151.11 min - epoch state 37.26% (4 KB/s)
+Time: 151.17 min - epoch state 39.82% (4 KB/s)
+Time: 151.23 min - epoch state 42.38% (4 KB/s)
+Epoch 69, Loss: 745.4086303710938
+Eval analogy questions 5987/17827 accuracy = 33.6%
+Time: 151.30 min - epoch state 44.94% (4 KB/s)
+Time: 151.36 min - epoch state 47.50% (5 KB/s)
+Time: 151.43 min - epoch state 50.06% (5 KB/s)
+Time: 151.49 min - epoch state 52.62% (5 KB/s)
+Time: 151.55 min - epoch state 55.18% (6 KB/s)
+Time: 151.61 min - epoch state 57.74% (6 KB/s)
+Time: 151.68 min - epoch state 60.30% (6 KB/s)
+Time: 151.75 min - epoch state 62.86% (6 KB/s)
+Epoch 69, Loss: 849.0789794921875
+Eval analogy questions 6008/17827 accuracy = 33.7%
+Time: 151.82 min - epoch state 65.42% (7 KB/s)
+Time: 151.88 min - epoch state 67.98% (7 KB/s)
+Time: 151.95 min - epoch state 70.54% (7 KB/s)
+Time: 152.01 min - epoch state 73.10% (8 KB/s)
+Time: 152.07 min - epoch state 75.66% (8 KB/s)
+Time: 152.13 min - epoch state 78.22% (8 KB/s)
+Time: 152.19 min - epoch state 80.78% (8 KB/s)
+Time: 152.25 min - epoch state 83.34% (9 KB/s)
+Starting epoch: 70
+Epoch 70, Loss: 907.211181640625
+Eval analogy questions 6004/17827 accuracy = 33.7%
+Time: 152.32 min - epoch state 1.18% (0 KB/s)
+Time: 152.38 min - epoch state 3.74% (0 KB/s)
+Time: 152.44 min - epoch state 6.30% (0 KB/s)
+Time: 152.51 min - epoch state 8.86% (0 KB/s)
+Time: 152.57 min - epoch state 11.42% (1 KB/s)
+Time: 152.63 min - epoch state 13.98% (1 KB/s)
+Time: 152.69 min - epoch state 16.54% (1 KB/s)
+Time: 152.75 min - epoch state 19.10% (2 KB/s)
+Time: 152.82 min - epoch state 21.66% (2 KB/s)
+Epoch 70, Loss: 857.0086669921875
+Eval analogy questions 6039/17827 accuracy = 33.9%
+Time: 152.89 min - epoch state 24.22% (2 KB/s)
+Time: 152.95 min - epoch state 26.78% (2 KB/s)
+Time: 153.01 min - epoch state 29.34% (3 KB/s)
+Time: 153.07 min - epoch state 31.90% (3 KB/s)
+Time: 153.13 min - epoch state 34.46% (3 KB/s)
+Time: 153.19 min - epoch state 37.02% (4 KB/s)
+Time: 153.26 min - epoch state 39.58% (4 KB/s)
+Time: 153.32 min - epoch state 42.14% (4 KB/s)
+Epoch 70, Loss: 725.6703491210938
+Eval analogy questions 6013/17827 accuracy = 33.7%
+Time: 153.39 min - epoch state 44.70% (4 KB/s)
+Time: 153.45 min - epoch state 47.26% (5 KB/s)
+Time: 153.52 min - epoch state 49.82% (5 KB/s)
+Time: 153.58 min - epoch state 52.38% (5 KB/s)
+Time: 153.64 min - epoch state 54.94% (5 KB/s)
+Time: 153.70 min - epoch state 57.50% (6 KB/s)
+Time: 153.76 min - epoch state 60.06% (6 KB/s)
+Time: 153.83 min - epoch state 62.62% (6 KB/s)
+Epoch 70, Loss: 715.71533203125
+Eval analogy questions 6033/17827 accuracy = 33.8%
+Time: 153.90 min - epoch state 65.18% (7 KB/s)
+Time: 153.96 min - epoch state 67.74% (7 KB/s)
+Time: 154.03 min - epoch state 70.30% (7 KB/s)
+Time: 154.09 min - epoch state 72.86% (7 KB/s)
+Time: 154.15 min - epoch state 75.42% (8 KB/s)
+Time: 154.21 min - epoch state 77.98% (8 KB/s)
+Time: 154.27 min - epoch state 80.54% (8 KB/s)
+Time: 154.33 min - epoch state 83.10% (8 KB/s)
+Starting epoch: 71
+Epoch 71, Loss: 942.5856323242188
+Eval analogy questions 6049/17827 accuracy = 33.9%
+Time: 154.40 min - epoch state 0.94% (0 KB/s)
+Time: 154.46 min - epoch state 3.50% (0 KB/s)
+Time: 154.52 min - epoch state 6.06% (0 KB/s)
+Time: 154.58 min - epoch state 8.62% (0 KB/s)
+Time: 154.64 min - epoch state 11.18% (1 KB/s)
+Time: 154.70 min - epoch state 13.74% (1 KB/s)
+Time: 154.76 min - epoch state 16.30% (1 KB/s)
+Time: 154.83 min - epoch state 18.86% (2 KB/s)
+Time: 154.89 min - epoch state 21.42% (2 KB/s)
+Epoch 71, Loss: 944.3729248046875
+Eval analogy questions 6039/17827 accuracy = 33.9%
+Time: 154.96 min - epoch state 23.98% (2 KB/s)
+Time: 155.02 min - epoch state 26.54% (2 KB/s)
+Time: 155.08 min - epoch state 29.10% (3 KB/s)
+Time: 155.14 min - epoch state 31.66% (3 KB/s)
+Time: 155.20 min - epoch state 34.22% (3 KB/s)
+Time: 155.26 min - epoch state 36.78% (3 KB/s)
+Time: 155.33 min - epoch state 39.34% (4 KB/s)
+Time: 155.39 min - epoch state 41.90% (4 KB/s)
+Epoch 71, Loss: 792.1937866210938
+Eval analogy questions 6001/17827 accuracy = 33.7%
+Time: 155.46 min - epoch state 44.46% (4 KB/s)
+Time: 155.52 min - epoch state 47.02% (5 KB/s)
+Time: 155.58 min - epoch state 49.58% (5 KB/s)
+Time: 155.64 min - epoch state 52.14% (5 KB/s)
+Time: 155.70 min - epoch state 54.70% (5 KB/s)
+Time: 155.76 min - epoch state 57.26% (6 KB/s)
+Time: 155.83 min - epoch state 59.82% (6 KB/s)
+Time: 155.89 min - epoch state 62.38% (6 KB/s)
+Time: 155.95 min - epoch state 64.94% (6 KB/s)
+Epoch 71, Loss: 773.203125
+Eval analogy questions 6031/17827 accuracy = 33.8%
+Time: 156.02 min - epoch state 67.50% (7 KB/s)
+Time: 156.08 min - epoch state 70.06% (7 KB/s)
+Time: 156.14 min - epoch state 72.62% (7 KB/s)
+Time: 156.20 min - epoch state 75.18% (8 KB/s)
+Time: 156.26 min - epoch state 77.74% (8 KB/s)
+Time: 156.33 min - epoch state 80.30% (8 KB/s)
+Time: 156.39 min - epoch state 82.86% (8 KB/s)
+Starting epoch: 72
+Epoch 72, Loss: 929.362548828125
+Eval analogy questions 6006/17827 accuracy = 33.7%
+Time: 156.46 min - epoch state 0.70% (0 KB/s)
+Time: 156.52 min - epoch state 3.26% (0 KB/s)
+Time: 156.58 min - epoch state 5.82% (0 KB/s)
+Time: 156.64 min - epoch state 8.38% (0 KB/s)
+Time: 156.70 min - epoch state 10.94% (1 KB/s)
+Time: 156.77 min - epoch state 13.50% (1 KB/s)
+Time: 156.83 min - epoch state 16.06% (1 KB/s)
+Time: 156.89 min - epoch state 18.62% (1 KB/s)
+Time: 156.95 min - epoch state 21.18% (2 KB/s)
+Epoch 72, Loss: 751.6629638671875
+Eval analogy questions 6002/17827 accuracy = 33.7%
+Time: 157.02 min - epoch state 23.74% (2 KB/s)
+Time: 157.08 min - epoch state 26.30% (2 KB/s)
+Time: 157.15 min - epoch state 28.86% (3 KB/s)
+Time: 157.21 min - epoch state 31.42% (3 KB/s)
+Time: 157.27 min - epoch state 33.98% (3 KB/s)
+Time: 157.33 min - epoch state 36.54% (3 KB/s)
+Time: 157.39 min - epoch state 39.10% (4 KB/s)
+Time: 157.45 min - epoch state 41.66% (4 KB/s)
+Epoch 72, Loss: 900.51025390625
+Eval analogy questions 5954/17827 accuracy = 33.4%
+Time: 157.53 min - epoch state 44.22% (4 KB/s)
+Time: 157.59 min - epoch state 46.78% (4 KB/s)
+Time: 157.65 min - epoch state 49.34% (5 KB/s)
+Time: 157.71 min - epoch state 51.90% (5 KB/s)
+Time: 157.77 min - epoch state 54.46% (5 KB/s)
+Time: 157.83 min - epoch state 57.02% (6 KB/s)
+Time: 157.89 min - epoch state 59.58% (6 KB/s)
+Time: 157.95 min - epoch state 62.14% (6 KB/s)
+Time: 158.01 min - epoch state 64.70% (6 KB/s)
+Epoch 72, Loss: 988.1741333007812
+Eval analogy questions 5999/17827 accuracy = 33.7%
+Time: 158.09 min - epoch state 67.26% (7 KB/s)
+Time: 158.15 min - epoch state 69.82% (7 KB/s)
+Time: 158.21 min - epoch state 72.38% (7 KB/s)
+Time: 158.27 min - epoch state 74.94% (7 KB/s)
+Time: 158.33 min - epoch state 77.50% (8 KB/s)
+Time: 158.39 min - epoch state 80.06% (8 KB/s)
+Time: 158.45 min - epoch state 82.62% (8 KB/s)
+Starting epoch: 73
+Epoch 73, Loss: 973.2520141601562
+Eval analogy questions 5960/17827 accuracy = 33.4%
+Time: 158.52 min - epoch state 0.47% (0 KB/s)
+Time: 158.59 min - epoch state 3.03% (0 KB/s)
+Time: 158.65 min - epoch state 5.59% (0 KB/s)
+Time: 158.71 min - epoch state 8.15% (0 KB/s)
+Time: 158.77 min - epoch state 10.71% (1 KB/s)
+Time: 158.83 min - epoch state 13.27% (1 KB/s)
+Time: 158.89 min - epoch state 15.83% (1 KB/s)
+Time: 158.96 min - epoch state 18.39% (1 KB/s)
+Time: 159.02 min - epoch state 20.95% (2 KB/s)
+Epoch 73, Loss: 1030.1409912109375
+Eval analogy questions 5978/17827 accuracy = 33.5%
+Time: 159.09 min - epoch state 23.51% (2 KB/s)
+Time: 159.15 min - epoch state 26.07% (2 KB/s)
+Time: 159.21 min - epoch state 28.63% (2 KB/s)
+Time: 159.27 min - epoch state 31.19% (3 KB/s)
+Time: 159.34 min - epoch state 33.75% (3 KB/s)
+Time: 159.40 min - epoch state 36.31% (3 KB/s)
+Time: 159.46 min - epoch state 38.87% (4 KB/s)
+Time: 159.52 min - epoch state 41.43% (4 KB/s)
+Epoch 73, Loss: 735.0387573242188
+Eval analogy questions 5978/17827 accuracy = 33.5%
+Time: 159.59 min - epoch state 43.99% (4 KB/s)
+Time: 159.65 min - epoch state 46.55% (4 KB/s)
+Time: 159.71 min - epoch state 49.11% (5 KB/s)
+Time: 159.77 min - epoch state 51.67% (5 KB/s)
+Time: 159.84 min - epoch state 54.23% (5 KB/s)
+Time: 159.90 min - epoch state 56.79% (5 KB/s)
+Time: 159.96 min - epoch state 59.35% (6 KB/s)
+Time: 160.02 min - epoch state 61.91% (6 KB/s)
+Time: 160.08 min - epoch state 64.47% (6 KB/s)
+Epoch 73, Loss: 898.718505859375
+Eval analogy questions 5988/17827 accuracy = 33.6%
+Time: 160.15 min - epoch state 67.03% (6 KB/s)
+Time: 160.22 min - epoch state 69.59% (7 KB/s)
+Time: 160.28 min - epoch state 72.15% (7 KB/s)
+Time: 160.34 min - epoch state 74.71% (7 KB/s)
+Time: 160.39 min - epoch state 77.27% (8 KB/s)
+Time: 160.46 min - epoch state 79.83% (8 KB/s)
+Time: 160.52 min - epoch state 82.39% (8 KB/s)
+Starting epoch: 74
+Epoch 74, Loss: 981.95703125
+Eval analogy questions 5994/17827 accuracy = 33.6%
+Time: 160.59 min - epoch state 0.23% (0 KB/s)
+Time: 160.65 min - epoch state 2.79% (0 KB/s)
+Time: 160.71 min - epoch state 5.35% (0 KB/s)
+Time: 160.77 min - epoch state 7.91% (0 KB/s)
+Time: 160.83 min - epoch state 10.47% (1 KB/s)
+Time: 160.89 min - epoch state 13.03% (1 KB/s)
+Time: 160.96 min - epoch state 15.59% (1 KB/s)
+Time: 161.02 min - epoch state 18.15% (1 KB/s)
+Time: 161.08 min - epoch state 20.71% (2 KB/s)
+Epoch 74, Loss: 969.7809448242188
+Eval analogy questions 6002/17827 accuracy = 33.7%
+Time: 161.15 min - epoch state 23.27% (2 KB/s)
+Time: 161.21 min - epoch state 25.83% (2 KB/s)
+Time: 161.27 min - epoch state 28.39% (2 KB/s)
+Time: 161.33 min - epoch state 30.95% (3 KB/s)
+Time: 161.39 min - epoch state 33.51% (3 KB/s)
+Time: 161.46 min - epoch state 36.07% (3 KB/s)
+Time: 161.52 min - epoch state 38.63% (3 KB/s)
+Time: 161.58 min - epoch state 41.19% (4 KB/s)
+Epoch 74, Loss: 833.8963623046875
+Eval analogy questions 5972/17827 accuracy = 33.5%
+Time: 161.65 min - epoch state 43.75% (4 KB/s)
+Time: 161.71 min - epoch state 46.31% (4 KB/s)
+Time: 161.77 min - epoch state 48.87% (5 KB/s)
+Time: 161.83 min - epoch state 51.43% (5 KB/s)
+Time: 161.89 min - epoch state 53.99% (5 KB/s)
+Time: 161.95 min - epoch state 56.55% (5 KB/s)
+Time: 162.01 min - epoch state 59.11% (6 KB/s)
+Time: 162.08 min - epoch state 61.67% (6 KB/s)
+Time: 162.14 min - epoch state 64.23% (6 KB/s)
+Epoch 74, Loss: 923.4854736328125
+Eval analogy questions 5975/17827 accuracy = 33.5%
+Time: 162.21 min - epoch state 66.79% (6 KB/s)
+Time: 162.27 min - epoch state 69.35% (7 KB/s)
+Time: 162.33 min - epoch state 71.91% (7 KB/s)
+Time: 162.39 min - epoch state 74.47% (7 KB/s)
+Time: 162.45 min - epoch state 77.03% (7 KB/s)
+Time: 162.51 min - epoch state 79.59% (8 KB/s)
+Time: 162.58 min - epoch state 82.15% (8 KB/s)
+Time: 162.64 min - epoch state 84.71% (8 KB/s)
+Starting epoch: 75
+Epoch 75, Loss: 929.9853515625
+Eval analogy questions 5990/17827 accuracy = 33.6%
+Time: 162.71 min - epoch state 2.55% (0 KB/s)
+Time: 162.77 min - epoch state 5.11% (0 KB/s)
+Time: 162.83 min - epoch state 7.67% (0 KB/s)
+Time: 162.89 min - epoch state 10.23% (1 KB/s)
+Time: 162.95 min - epoch state 12.79% (1 KB/s)
+Time: 163.01 min - epoch state 15.35% (1 KB/s)
+Time: 163.08 min - epoch state 17.91% (1 KB/s)
+Time: 163.14 min - epoch state 20.47% (2 KB/s)
+Epoch 75, Loss: 892.2811279296875
+Eval analogy questions 6007/17827 accuracy = 33.7%
+Time: 163.21 min - epoch state 23.03% (2 KB/s)
+Time: 163.27 min - epoch state 25.59% (2 KB/s)
+Time: 163.33 min - epoch state 28.15% (2 KB/s)
+Time: 163.40 min - epoch state 30.71% (3 KB/s)
+Time: 163.46 min - epoch state 33.27% (3 KB/s)
+Time: 163.52 min - epoch state 35.83% (3 KB/s)
+Time: 163.58 min - epoch state 38.39% (3 KB/s)
+Time: 163.65 min - epoch state 40.95% (4 KB/s)
+Epoch 75, Loss: 591.7098999023438
+Eval analogy questions 5992/17827 accuracy = 33.6%
+Time: 163.72 min - epoch state 43.51% (4 KB/s)
+Time: 163.78 min - epoch state 46.07% (4 KB/s)
+Time: 163.84 min - epoch state 48.63% (4 KB/s)
+Time: 163.90 min - epoch state 51.19% (5 KB/s)
+Time: 163.97 min - epoch state 53.75% (5 KB/s)
+Time: 164.03 min - epoch state 56.31% (5 KB/s)
+Time: 164.10 min - epoch state 58.87% (5 KB/s)
+Time: 164.16 min - epoch state 61.43% (6 KB/s)
+Time: 164.23 min - epoch state 63.99% (6 KB/s)
+Epoch 75, Loss: 874.8406982421875
+Eval analogy questions 6005/17827 accuracy = 33.7%
+Time: 164.30 min - epoch state 66.55% (6 KB/s)
+Time: 164.36 min - epoch state 69.11% (7 KB/s)
+Time: 164.44 min - epoch state 71.67% (7 KB/s)
+Time: 164.50 min - epoch state 74.23% (7 KB/s)
+Time: 164.56 min - epoch state 76.79% (7 KB/s)
+Time: 164.62 min - epoch state 79.35% (8 KB/s)
+Time: 164.68 min - epoch state 81.91% (8 KB/s)
+Time: 164.75 min - epoch state 84.47% (8 KB/s)
+Starting epoch: 76
+Epoch 76, Loss: 936.370849609375
+Eval analogy questions 6015/17827 accuracy = 33.7%
+Time: 164.82 min - epoch state 2.31% (0 KB/s)
+Time: 164.88 min - epoch state 4.87% (0 KB/s)
+Time: 164.94 min - epoch state 7.43% (0 KB/s)
+Time: 165.00 min - epoch state 9.99% (1 KB/s)
+Time: 165.06 min - epoch state 12.55% (1 KB/s)
+Time: 165.13 min - epoch state 15.11% (1 KB/s)
+Time: 165.19 min - epoch state 17.67% (1 KB/s)
+Time: 165.25 min - epoch state 20.23% (2 KB/s)
+Epoch 76, Loss: 727.9442138671875
+Eval analogy questions 5977/17827 accuracy = 33.5%
+Time: 165.32 min - epoch state 22.79% (2 KB/s)
+Time: 165.38 min - epoch state 25.35% (2 KB/s)
+Time: 165.44 min - epoch state 27.91% (2 KB/s)
+Time: 165.51 min - epoch state 30.47% (3 KB/s)
+Time: 165.57 min - epoch state 33.03% (3 KB/s)
+Time: 165.63 min - epoch state 35.59% (3 KB/s)
+Time: 165.69 min - epoch state 38.15% (3 KB/s)
+Time: 165.75 min - epoch state 40.71% (4 KB/s)
+Time: 165.81 min - epoch state 43.27% (4 KB/s)
+Epoch 76, Loss: 805.597900390625
+Eval analogy questions 5970/17827 accuracy = 33.5%
+Time: 165.88 min - epoch state 45.83% (4 KB/s)
+Time: 165.94 min - epoch state 48.39% (4 KB/s)
+Time: 166.01 min - epoch state 50.95% (5 KB/s)
+Time: 166.07 min - epoch state 53.51% (5 KB/s)
+Time: 166.13 min - epoch state 56.07% (5 KB/s)
+Time: 166.19 min - epoch state 58.63% (5 KB/s)
+Time: 166.25 min - epoch state 61.19% (6 KB/s)
+Time: 166.31 min - epoch state 63.75% (6 KB/s)
+Epoch 76, Loss: 1013.3814697265625
+Eval analogy questions 5989/17827 accuracy = 33.6%
+Time: 166.38 min - epoch state 66.31% (6 KB/s)
+Time: 166.44 min - epoch state 68.87% (6 KB/s)
+Time: 166.51 min - epoch state 71.43% (7 KB/s)
+Time: 166.57 min - epoch state 73.99% (7 KB/s)
+Time: 166.62 min - epoch state 76.55% (7 KB/s)
+Time: 166.69 min - epoch state 79.11% (7 KB/s)
+Time: 166.75 min - epoch state 81.67% (8 KB/s)
+Time: 166.81 min - epoch state 84.23% (8 KB/s)
+Starting epoch: 77
+Epoch 77, Loss: 921.49169921875
+Eval analogy questions 5996/17827 accuracy = 33.6%
+Time: 166.88 min - epoch state 2.07% (0 KB/s)
+Time: 166.94 min - epoch state 4.63% (0 KB/s)
+Time: 167.00 min - epoch state 7.19% (0 KB/s)
+Time: 167.06 min - epoch state 9.75% (0 KB/s)
+Time: 167.12 min - epoch state 12.31% (1 KB/s)
+Time: 167.19 min - epoch state 14.87% (1 KB/s)
+Time: 167.25 min - epoch state 17.43% (1 KB/s)
+Time: 167.31 min - epoch state 19.99% (1 KB/s)
+Epoch 77, Loss: 716.533447265625
+Eval analogy questions 5967/17827 accuracy = 33.5%
+Time: 167.38 min - epoch state 22.55% (2 KB/s)
+Time: 167.44 min - epoch state 25.11% (2 KB/s)
+Time: 167.50 min - epoch state 27.67% (2 KB/s)
+Time: 167.56 min - epoch state 30.23% (3 KB/s)
+Time: 167.63 min - epoch state 32.79% (3 KB/s)
+Time: 167.69 min - epoch state 35.35% (3 KB/s)
+Time: 167.75 min - epoch state 37.91% (3 KB/s)
+Time: 167.81 min - epoch state 40.47% (4 KB/s)
+Time: 167.87 min - epoch state 43.03% (4 KB/s)
+Epoch 77, Loss: 875.5772705078125
+Eval analogy questions 5975/17827 accuracy = 33.5%
+Time: 167.94 min - epoch state 45.59% (4 KB/s)
+Time: 168.00 min - epoch state 48.15% (4 KB/s)
+Time: 168.06 min - epoch state 50.71% (5 KB/s)
+Time: 168.12 min - epoch state 53.27% (5 KB/s)
+Time: 168.18 min - epoch state 55.83% (5 KB/s)
+Time: 168.24 min - epoch state 58.39% (5 KB/s)
+Time: 168.30 min - epoch state 60.95% (6 KB/s)
+Time: 168.36 min - epoch state 63.51% (6 KB/s)
+Epoch 77, Loss: 963.0853271484375
+Eval analogy questions 5983/17827 accuracy = 33.6%
+Time: 168.43 min - epoch state 66.07% (6 KB/s)
+Time: 168.49 min - epoch state 68.63% (6 KB/s)
+Time: 168.56 min - epoch state 71.19% (7 KB/s)
+Time: 168.62 min - epoch state 73.75% (7 KB/s)
+Time: 168.67 min - epoch state 76.31% (7 KB/s)
+Time: 168.73 min - epoch state 78.87% (7 KB/s)
+Time: 168.79 min - epoch state 81.43% (8 KB/s)
+Time: 168.86 min - epoch state 83.99% (8 KB/s)
+Starting epoch: 78
+Epoch 78, Loss: 906.0955810546875
+Eval analogy questions 5977/17827 accuracy = 33.5%
+Time: 168.93 min - epoch state 1.83% (0 KB/s)
+Time: 168.99 min - epoch state 4.39% (0 KB/s)
+Time: 169.05 min - epoch state 6.95% (0 KB/s)
+Time: 169.11 min - epoch state 9.51% (0 KB/s)
+Time: 169.17 min - epoch state 12.07% (1 KB/s)
+Time: 169.23 min - epoch state 14.63% (1 KB/s)
+Time: 169.29 min - epoch state 17.19% (1 KB/s)
+Time: 169.35 min - epoch state 19.75% (1 KB/s)
+Epoch 78, Loss: 1040.6690673828125
+Eval analogy questions 5981/17827 accuracy = 33.6%
+Time: 169.42 min - epoch state 22.31% (2 KB/s)
+Time: 169.48 min - epoch state 24.87% (2 KB/s)
+Time: 169.54 min - epoch state 27.43% (2 KB/s)
+Time: 169.60 min - epoch state 29.99% (2 KB/s)
+Time: 169.66 min - epoch state 32.55% (3 KB/s)
+Time: 169.72 min - epoch state 35.11% (3 KB/s)
+Time: 169.78 min - epoch state 37.67% (3 KB/s)
+Time: 169.84 min - epoch state 40.23% (3 KB/s)
+Time: 169.90 min - epoch state 42.79% (4 KB/s)
+Epoch 78, Loss: 773.37255859375
+Eval analogy questions 5937/17827 accuracy = 33.3%
+Time: 169.97 min - epoch state 45.35% (4 KB/s)
+Time: 170.03 min - epoch state 47.91% (4 KB/s)
+Time: 170.09 min - epoch state 50.47% (4 KB/s)
+Time: 170.15 min - epoch state 53.03% (5 KB/s)
+Time: 170.21 min - epoch state 55.59% (5 KB/s)
+Time: 170.27 min - epoch state 58.15% (5 KB/s)
+Time: 170.34 min - epoch state 60.71% (5 KB/s)
+Time: 170.40 min - epoch state 63.27% (6 KB/s)
+Epoch 78, Loss: 737.58447265625
+Eval analogy questions 5971/17827 accuracy = 33.5%
+Time: 170.46 min - epoch state 65.83% (6 KB/s)
+Time: 170.53 min - epoch state 68.39% (6 KB/s)
+Time: 170.59 min - epoch state 70.95% (6 KB/s)
+Time: 170.65 min - epoch state 73.51% (7 KB/s)
+Time: 170.71 min - epoch state 76.07% (7 KB/s)
+Time: 170.76 min - epoch state 78.63% (7 KB/s)
+Time: 170.83 min - epoch state 81.19% (7 KB/s)
+Time: 170.89 min - epoch state 83.75% (8 KB/s)
+Starting epoch: 79
+Epoch 79, Loss: 943.5274658203125
+Eval analogy questions 5988/17827 accuracy = 33.6%
+Time: 170.96 min - epoch state 1.59% (0 KB/s)
+Time: 171.02 min - epoch state 4.15% (0 KB/s)
+Time: 171.08 min - epoch state 6.71% (0 KB/s)
+Time: 171.14 min - epoch state 9.27% (0 KB/s)
+Time: 171.20 min - epoch state 11.83% (1 KB/s)
+Time: 171.26 min - epoch state 14.39% (1 KB/s)
+Time: 171.32 min - epoch state 16.95% (1 KB/s)
+Time: 171.38 min - epoch state 19.51% (1 KB/s)
+Epoch 79, Loss: 888.8072509765625
+Eval analogy questions 5958/17827 accuracy = 33.4%
+Time: 171.45 min - epoch state 22.07% (2 KB/s)
+Time: 171.51 min - epoch state 24.63% (2 KB/s)
+Time: 171.57 min - epoch state 27.19% (2 KB/s)
+Time: 171.63 min - epoch state 29.75% (2 KB/s)
+Time: 171.69 min - epoch state 32.31% (3 KB/s)
+Time: 171.75 min - epoch state 34.87% (3 KB/s)
+Time: 171.81 min - epoch state 37.43% (3 KB/s)
+Time: 171.87 min - epoch state 39.99% (3 KB/s)
+Time: 171.93 min - epoch state 42.55% (4 KB/s)
+Epoch 79, Loss: 693.8826904296875
+Eval analogy questions 5959/17827 accuracy = 33.4%
+Time: 172.00 min - epoch state 45.11% (4 KB/s)
+Time: 172.06 min - epoch state 47.67% (4 KB/s)
+Time: 172.12 min - epoch state 50.23% (4 KB/s)
+Time: 172.18 min - epoch state 52.79% (5 KB/s)
+Time: 172.24 min - epoch state 55.35% (5 KB/s)
+Time: 172.30 min - epoch state 57.91% (5 KB/s)
+Time: 172.37 min - epoch state 60.47% (5 KB/s)
+Time: 172.43 min - epoch state 63.03% (6 KB/s)
+Epoch 79, Loss: 881.935791015625
+Eval analogy questions 5969/17827 accuracy = 33.5%
+Time: 172.50 min - epoch state 65.59% (6 KB/s)
+Time: 172.56 min - epoch state 68.15% (6 KB/s)
+Time: 172.62 min - epoch state 70.71% (6 KB/s)
+Time: 172.68 min - epoch state 73.27% (7 KB/s)
+Time: 172.74 min - epoch state 75.83% (7 KB/s)
+Time: 172.80 min - epoch state 78.39% (7 KB/s)
+Time: 172.86 min - epoch state 80.95% (7 KB/s)
+Time: 172.92 min - epoch state 83.51% (8 KB/s)
+Starting epoch: 80
+Epoch 80, Loss: 937.0913696289062
+Eval analogy questions 6001/17827 accuracy = 33.7%
+Time: 172.99 min - epoch state 1.35% (0 KB/s)
+Time: 173.05 min - epoch state 3.91% (0 KB/s)
+Time: 173.11 min - epoch state 6.47% (0 KB/s)
+Time: 173.17 min - epoch state 9.03% (0 KB/s)
+Time: 173.23 min - epoch state 11.59% (1 KB/s)
+Time: 173.30 min - epoch state 14.15% (1 KB/s)
+Time: 173.36 min - epoch state 16.71% (1 KB/s)
+Time: 173.42 min - epoch state 19.27% (1 KB/s)
+Time: 173.48 min - epoch state 21.83% (2 KB/s)
+Epoch 80, Loss: 809.023681640625
+Eval analogy questions 5969/17827 accuracy = 33.5%
+Time: 173.55 min - epoch state 24.39% (2 KB/s)
+Time: 173.61 min - epoch state 26.95% (2 KB/s)
+Time: 173.67 min - epoch state 29.51% (2 KB/s)
+Time: 173.73 min - epoch state 32.07% (3 KB/s)
+Time: 173.79 min - epoch state 34.63% (3 KB/s)
+Time: 173.85 min - epoch state 37.19% (3 KB/s)
+Time: 173.92 min - epoch state 39.75% (3 KB/s)
+Time: 173.98 min - epoch state 42.31% (4 KB/s)
+Epoch 80, Loss: 712.501708984375
+Eval analogy questions 5933/17827 accuracy = 33.3%
+Time: 174.05 min - epoch state 44.87% (4 KB/s)
+Time: 174.11 min - epoch state 47.43% (4 KB/s)
+Time: 174.17 min - epoch state 49.99% (4 KB/s)
+Time: 174.23 min - epoch state 52.55% (5 KB/s)
+Time: 174.29 min - epoch state 55.11% (5 KB/s)
+Time: 174.35 min - epoch state 57.67% (5 KB/s)
+Time: 174.41 min - epoch state 60.23% (5 KB/s)
+Time: 174.47 min - epoch state 62.79% (5 KB/s)
+Epoch 80, Loss: 818.4713134765625
+Eval analogy questions 5962/17827 accuracy = 33.4%
+Time: 174.54 min - epoch state 65.35% (6 KB/s)
+Time: 174.60 min - epoch state 67.91% (6 KB/s)
+Time: 174.66 min - epoch state 70.47% (6 KB/s)
+Time: 174.72 min - epoch state 73.03% (6 KB/s)
+Time: 174.78 min - epoch state 75.59% (7 KB/s)
+Time: 174.84 min - epoch state 78.15% (7 KB/s)
+Time: 174.90 min - epoch state 80.71% (7 KB/s)
+Time: 174.96 min - epoch state 83.27% (7 KB/s)
+Starting epoch: 81
+Epoch 81, Loss: 886.913818359375
+Eval analogy questions 5942/17827 accuracy = 33.3%
+Time: 175.03 min - epoch state 1.11% (0 KB/s)
+Time: 175.09 min - epoch state 3.67% (0 KB/s)
+Time: 175.15 min - epoch state 6.23% (0 KB/s)
+Time: 175.21 min - epoch state 8.79% (0 KB/s)
+Time: 175.27 min - epoch state 11.35% (1 KB/s)
+Time: 175.33 min - epoch state 13.91% (1 KB/s)
+Time: 175.39 min - epoch state 16.47% (1 KB/s)
+Time: 175.45 min - epoch state 19.03% (1 KB/s)
+Time: 175.52 min - epoch state 21.59% (2 KB/s)
+Epoch 81, Loss: 963.0565185546875
+Eval analogy questions 5937/17827 accuracy = 33.3%
+Time: 175.58 min - epoch state 24.15% (2 KB/s)
+Time: 175.64 min - epoch state 26.71% (2 KB/s)
+Time: 175.71 min - epoch state 29.27% (2 KB/s)
+Time: 175.77 min - epoch state 31.83% (3 KB/s)
+Time: 175.83 min - epoch state 34.39% (3 KB/s)
+Time: 175.89 min - epoch state 36.95% (3 KB/s)
+Time: 175.95 min - epoch state 39.51% (3 KB/s)
+Time: 176.01 min - epoch state 42.07% (3 KB/s)
+Epoch 81, Loss: 715.9105224609375
+Eval analogy questions 5908/17827 accuracy = 33.1%
+Time: 176.08 min - epoch state 44.63% (4 KB/s)
+Time: 176.14 min - epoch state 47.19% (4 KB/s)
+Time: 176.20 min - epoch state 49.75% (4 KB/s)
+Time: 176.26 min - epoch state 52.31% (4 KB/s)
+Time: 176.32 min - epoch state 54.87% (5 KB/s)
+Time: 176.38 min - epoch state 57.43% (5 KB/s)
+Time: 176.44 min - epoch state 59.99% (5 KB/s)
+Time: 176.51 min - epoch state 62.55% (5 KB/s)
+Time: 176.57 min - epoch state 65.11% (6 KB/s)
+Epoch 81, Loss: 892.3123779296875
+Eval analogy questions 5941/17827 accuracy = 33.3%
+Time: 176.64 min - epoch state 67.67% (6 KB/s)
+Time: 176.70 min - epoch state 70.23% (6 KB/s)
+Time: 176.76 min - epoch state 72.79% (6 KB/s)
+Time: 176.82 min - epoch state 75.35% (7 KB/s)
+Time: 176.87 min - epoch state 77.91% (7 KB/s)
+Time: 176.94 min - epoch state 80.47% (7 KB/s)
+Time: 177.00 min - epoch state 83.03% (7 KB/s)
+Starting epoch: 82
+Epoch 82, Loss: 944.8818359375
+Eval analogy questions 5923/17827 accuracy = 33.2%
+Time: 177.07 min - epoch state 0.87% (0 KB/s)
+Time: 177.13 min - epoch state 3.43% (0 KB/s)
+Time: 177.19 min - epoch state 5.99% (0 KB/s)
+Time: 177.25 min - epoch state 8.55% (0 KB/s)
+Time: 177.31 min - epoch state 11.11% (1 KB/s)
+Time: 177.37 min - epoch state 13.67% (1 KB/s)
+Time: 177.43 min - epoch state 16.23% (1 KB/s)
+Time: 177.49 min - epoch state 18.79% (1 KB/s)
+Time: 177.55 min - epoch state 21.35% (2 KB/s)
+Epoch 82, Loss: 751.6253662109375
+Eval analogy questions 5923/17827 accuracy = 33.2%
+Time: 177.62 min - epoch state 23.91% (2 KB/s)
+Time: 177.68 min - epoch state 26.47% (2 KB/s)
+Time: 177.74 min - epoch state 29.03% (2 KB/s)
+Time: 177.80 min - epoch state 31.59% (2 KB/s)
+Time: 177.86 min - epoch state 34.15% (3 KB/s)
+Time: 177.92 min - epoch state 36.71% (3 KB/s)
+Time: 177.98 min - epoch state 39.27% (3 KB/s)
+Time: 178.05 min - epoch state 41.83% (3 KB/s)
+Epoch 82, Loss: 703.22998046875
+Eval analogy questions 5899/17827 accuracy = 33.1%
+Time: 178.11 min - epoch state 44.39% (4 KB/s)
+Time: 178.18 min - epoch state 46.95% (4 KB/s)
+Time: 178.24 min - epoch state 49.51% (4 KB/s)
+Time: 178.30 min - epoch state 52.07% (4 KB/s)
+Time: 178.36 min - epoch state 54.63% (5 KB/s)
+Time: 178.42 min - epoch state 57.19% (5 KB/s)
+Time: 178.48 min - epoch state 59.75% (5 KB/s)
+Time: 178.54 min - epoch state 62.31% (5 KB/s)
+Time: 178.60 min - epoch state 64.87% (6 KB/s)
+Epoch 82, Loss: 760.1801147460938
+Eval analogy questions 5907/17827 accuracy = 33.1%
+Time: 178.67 min - epoch state 67.43% (6 KB/s)
+Time: 178.73 min - epoch state 69.99% (6 KB/s)
+Time: 178.79 min - epoch state 72.55% (6 KB/s)
+Time: 178.85 min - epoch state 75.11% (6 KB/s)
+Time: 178.91 min - epoch state 77.67% (7 KB/s)
+Time: 178.97 min - epoch state 80.23% (7 KB/s)
+Time: 179.03 min - epoch state 82.79% (7 KB/s)
+Starting epoch: 83
+Epoch 83, Loss: 889.2793579101562
+Eval analogy questions 5919/17827 accuracy = 33.2%
+Time: 179.11 min - epoch state 0.63% (0 KB/s)
+Time: 179.17 min - epoch state 3.19% (0 KB/s)
+Time: 179.23 min - epoch state 5.75% (0 KB/s)
+Time: 179.29 min - epoch state 8.31% (0 KB/s)
+Time: 179.35 min - epoch state 10.87% (1 KB/s)
+Time: 179.41 min - epoch state 13.43% (1 KB/s)
+Time: 179.47 min - epoch state 15.99% (1 KB/s)
+Time: 179.53 min - epoch state 18.55% (1 KB/s)
+Time: 179.59 min - epoch state 21.11% (1 KB/s)
+Epoch 83, Loss: 878.2421875
+Eval analogy questions 5945/17827 accuracy = 33.3%
+Time: 179.66 min - epoch state 23.67% (2 KB/s)
+Time: 179.72 min - epoch state 26.23% (2 KB/s)
+Time: 179.78 min - epoch state 28.79% (2 KB/s)
+Time: 179.84 min - epoch state 31.35% (2 KB/s)
+Time: 179.90 min - epoch state 33.91% (3 KB/s)
+Time: 179.96 min - epoch state 36.47% (3 KB/s)
+Time: 180.02 min - epoch state 39.03% (3 KB/s)
+Time: 180.09 min - epoch state 41.59% (3 KB/s)
+Epoch 83, Loss: 634.113525390625
+Eval analogy questions 5893/17827 accuracy = 33.1%
+Time: 180.16 min - epoch state 44.15% (4 KB/s)
+Time: 180.22 min - epoch state 46.71% (4 KB/s)
+Time: 180.28 min - epoch state 49.27% (4 KB/s)
+Time: 180.34 min - epoch state 51.83% (4 KB/s)
+Time: 180.40 min - epoch state 54.39% (5 KB/s)
+Time: 180.46 min - epoch state 56.95% (5 KB/s)
+Time: 180.52 min - epoch state 59.51% (5 KB/s)
+Time: 180.58 min - epoch state 62.07% (5 KB/s)
+Time: 180.64 min - epoch state 64.63% (5 KB/s)
+Epoch 83, Loss: 723.9439697265625
+Eval analogy questions 5907/17827 accuracy = 33.1%
+Time: 180.71 min - epoch state 67.19% (6 KB/s)
+Time: 180.77 min - epoch state 69.75% (6 KB/s)
+Time: 180.83 min - epoch state 72.31% (6 KB/s)
+Time: 180.89 min - epoch state 74.87% (6 KB/s)
+Time: 180.95 min - epoch state 77.43% (7 KB/s)
+Time: 181.01 min - epoch state 79.99% (7 KB/s)
+Time: 181.07 min - epoch state 82.55% (7 KB/s)
+Starting epoch: 84
+Epoch 84, Loss: 961.9714965820312
+Eval analogy questions 5907/17827 accuracy = 33.1%
+Time: 181.14 min - epoch state 0.40% (0 KB/s)
+Time: 181.20 min - epoch state 2.96% (0 KB/s)
+Time: 181.26 min - epoch state 5.52% (0 KB/s)
+Time: 181.32 min - epoch state 8.08% (0 KB/s)
+Time: 181.38 min - epoch state 10.64% (0 KB/s)
+Time: 181.44 min - epoch state 13.20% (1 KB/s)
+Time: 181.50 min - epoch state 15.76% (1 KB/s)
+Time: 181.56 min - epoch state 18.32% (1 KB/s)
+Time: 181.63 min - epoch state 20.88% (1 KB/s)
+Epoch 84, Loss: 999.17529296875
+Eval analogy questions 5914/17827 accuracy = 33.2%
+Time: 181.70 min - epoch state 23.44% (2 KB/s)
+Time: 181.76 min - epoch state 26.00% (2 KB/s)
+Time: 181.82 min - epoch state 28.56% (2 KB/s)
+Time: 181.88 min - epoch state 31.12% (2 KB/s)
+Time: 181.94 min - epoch state 33.68% (3 KB/s)
+Time: 182.00 min - epoch state 36.24% (3 KB/s)
+Time: 182.06 min - epoch state 38.80% (3 KB/s)
+Time: 182.12 min - epoch state 41.36% (3 KB/s)
+Epoch 84, Loss: 658.2060546875
+Eval analogy questions 5876/17827 accuracy = 33.0%
+Time: 182.19 min - epoch state 43.92% (4 KB/s)
+Time: 182.25 min - epoch state 46.48% (4 KB/s)
+Time: 182.31 min - epoch state 49.04% (4 KB/s)
+Time: 182.37 min - epoch state 51.60% (4 KB/s)
+Time: 182.43 min - epoch state 54.16% (4 KB/s)
+Time: 182.50 min - epoch state 56.72% (5 KB/s)
+Time: 182.56 min - epoch state 59.28% (5 KB/s)
+Time: 182.62 min - epoch state 61.84% (5 KB/s)
+Time: 182.68 min - epoch state 64.40% (5 KB/s)
+Epoch 84, Loss: 812.5680541992188
+Eval analogy questions 5887/17827 accuracy = 33.0%
+Time: 182.75 min - epoch state 66.96% (6 KB/s)
+Time: 182.81 min - epoch state 69.52% (6 KB/s)
+Time: 182.87 min - epoch state 72.08% (6 KB/s)
+Time: 182.93 min - epoch state 74.64% (6 KB/s)
+Time: 182.99 min - epoch state 77.20% (7 KB/s)
+Time: 183.05 min - epoch state 79.76% (7 KB/s)
+Time: 183.11 min - epoch state 82.32% (7 KB/s)
+Starting epoch: 85
+Epoch 85, Loss: 862.2697143554688
+Eval analogy questions 5919/17827 accuracy = 33.2%
+Time: 183.18 min - epoch state 0.16% (0 KB/s)
+Time: 183.24 min - epoch state 2.72% (0 KB/s)
+Time: 183.30 min - epoch state 5.28% (0 KB/s)
+Time: 183.36 min - epoch state 7.84% (0 KB/s)
+Time: 183.42 min - epoch state 10.40% (0 KB/s)
+Time: 183.48 min - epoch state 12.96% (1 KB/s)
+Time: 183.54 min - epoch state 15.52% (1 KB/s)
+Time: 183.60 min - epoch state 18.08% (1 KB/s)
+Time: 183.66 min - epoch state 20.64% (1 KB/s)
+Epoch 85, Loss: 1025.184326171875
+Eval analogy questions 5917/17827 accuracy = 33.2%
+Time: 183.73 min - epoch state 23.20% (2 KB/s)
+Time: 183.79 min - epoch state 25.76% (2 KB/s)
+Time: 183.85 min - epoch state 28.32% (2 KB/s)
+Time: 183.91 min - epoch state 30.88% (2 KB/s)
+Time: 183.97 min - epoch state 33.44% (3 KB/s)
+Time: 184.04 min - epoch state 36.00% (3 KB/s)
+Time: 184.10 min - epoch state 38.56% (3 KB/s)
+Time: 184.16 min - epoch state 41.12% (3 KB/s)
+Epoch 85, Loss: 737.0186767578125
+Eval analogy questions 5895/17827 accuracy = 33.1%
+Time: 184.23 min - epoch state 43.68% (3 KB/s)
+Time: 184.29 min - epoch state 46.24% (4 KB/s)
+Time: 184.35 min - epoch state 48.80% (4 KB/s)
+Time: 184.41 min - epoch state 51.36% (4 KB/s)
+Time: 184.47 min - epoch state 53.92% (4 KB/s)
+Time: 184.54 min - epoch state 56.48% (5 KB/s)
+Time: 184.60 min - epoch state 59.04% (5 KB/s)
+Time: 184.66 min - epoch state 61.60% (5 KB/s)
+Time: 184.72 min - epoch state 64.16% (5 KB/s)
+Epoch 85, Loss: 857.19189453125
+Eval analogy questions 5904/17827 accuracy = 33.1%
+Time: 184.79 min - epoch state 66.72% (6 KB/s)
+Time: 184.85 min - epoch state 69.28% (6 KB/s)
+Time: 184.92 min - epoch state 71.84% (6 KB/s)
+Time: 184.98 min - epoch state 74.40% (6 KB/s)
+Time: 185.04 min - epoch state 76.96% (6 KB/s)
+Time: 185.10 min - epoch state 79.52% (7 KB/s)
+Time: 185.16 min - epoch state 82.08% (7 KB/s)
+Time: 185.23 min - epoch state 84.64% (7 KB/s)
+Starting epoch: 86
+Epoch 86, Loss: 942.607666015625
+Eval analogy questions 5901/17827 accuracy = 33.1%
+Time: 185.30 min - epoch state 2.48% (0 KB/s)
+Time: 185.36 min - epoch state 5.04% (0 KB/s)
+Time: 185.42 min - epoch state 7.60% (0 KB/s)
+Time: 185.48 min - epoch state 10.16% (0 KB/s)
+Time: 185.54 min - epoch state 12.72% (1 KB/s)
+Time: 185.60 min - epoch state 15.28% (1 KB/s)
+Time: 185.66 min - epoch state 17.84% (1 KB/s)
+Time: 185.72 min - epoch state 20.40% (1 KB/s)
+Epoch 86, Loss: 891.6976928710938
+Eval analogy questions 5884/17827 accuracy = 33.0%
+Time: 185.79 min - epoch state 22.96% (2 KB/s)
+Time: 185.85 min - epoch state 25.52% (2 KB/s)
+Time: 185.91 min - epoch state 28.08% (2 KB/s)
+Time: 185.97 min - epoch state 30.64% (2 KB/s)
+Time: 186.04 min - epoch state 33.20% (2 KB/s)
+Time: 186.10 min - epoch state 35.76% (3 KB/s)
+Time: 186.17 min - epoch state 38.32% (3 KB/s)
+Time: 186.24 min - epoch state 40.88% (3 KB/s)
+Time: 186.30 min - epoch state 43.44% (3 KB/s)
+Epoch 86, Loss: 612.8430786132812
+Eval analogy questions 5863/17827 accuracy = 32.9%
+Time: 186.37 min - epoch state 46.00% (4 KB/s)
+Time: 186.43 min - epoch state 48.56% (4 KB/s)
+Time: 186.50 min - epoch state 51.12% (4 KB/s)
+Time: 186.56 min - epoch state 53.68% (4 KB/s)
+Time: 186.62 min - epoch state 56.24% (5 KB/s)
+Time: 186.68 min - epoch state 58.80% (5 KB/s)
+Time: 186.75 min - epoch state 61.36% (5 KB/s)
+Time: 186.81 min - epoch state 63.92% (5 KB/s)
+Epoch 86, Loss: 733.4094848632812
+Eval analogy questions 5872/17827 accuracy = 32.9%
+Time: 186.88 min - epoch state 66.48% (5 KB/s)
+Time: 186.94 min - epoch state 69.04% (6 KB/s)
+Time: 187.00 min - epoch state 71.60% (6 KB/s)
+Time: 187.07 min - epoch state 74.16% (6 KB/s)
+Time: 187.13 min - epoch state 76.72% (6 KB/s)
+Time: 187.19 min - epoch state 79.28% (7 KB/s)
+Time: 187.25 min - epoch state 81.84% (7 KB/s)
+Time: 187.31 min - epoch state 84.40% (7 KB/s)
+Starting epoch: 87
+Epoch 87, Loss: 943.5297241210938
+Eval analogy questions 5865/17827 accuracy = 32.9%
+Time: 187.39 min - epoch state 2.24% (0 KB/s)
+Time: 187.45 min - epoch state 4.80% (0 KB/s)
+Time: 187.51 min - epoch state 7.36% (0 KB/s)
+Time: 187.57 min - epoch state 9.92% (0 KB/s)
+Time: 187.63 min - epoch state 12.48% (1 KB/s)
+Time: 187.69 min - epoch state 15.04% (1 KB/s)
+Time: 187.75 min - epoch state 17.60% (1 KB/s)
+Time: 187.81 min - epoch state 20.16% (1 KB/s)
+Epoch 87, Loss: 861.9459228515625
+Eval analogy questions 5869/17827 accuracy = 32.9%
+Time: 187.89 min - epoch state 22.72% (2 KB/s)
+Time: 187.95 min - epoch state 25.28% (2 KB/s)
+Time: 188.01 min - epoch state 27.84% (2 KB/s)
+Time: 188.07 min - epoch state 30.40% (2 KB/s)
+Time: 188.13 min - epoch state 32.96% (2 KB/s)
+Time: 188.19 min - epoch state 35.52% (3 KB/s)
+Time: 188.26 min - epoch state 38.08% (3 KB/s)
+Time: 188.32 min - epoch state 40.64% (3 KB/s)
+Time: 188.38 min - epoch state 43.20% (3 KB/s)
+Epoch 87, Loss: 748.5782470703125
+Eval analogy questions 5860/17827 accuracy = 32.9%
+Time: 188.45 min - epoch state 45.76% (4 KB/s)
+Time: 188.51 min - epoch state 48.32% (4 KB/s)
+Time: 188.57 min - epoch state 50.88% (4 KB/s)
+Time: 188.63 min - epoch state 53.44% (4 KB/s)
+Time: 188.69 min - epoch state 56.00% (4 KB/s)
+Time: 188.75 min - epoch state 58.56% (5 KB/s)
+Time: 188.81 min - epoch state 61.12% (5 KB/s)
+Time: 188.87 min - epoch state 63.68% (5 KB/s)
+Epoch 87, Loss: 899.8776245117188
+Eval analogy questions 5867/17827 accuracy = 32.9%
+Time: 188.94 min - epoch state 66.24% (5 KB/s)
+Time: 189.01 min - epoch state 68.80% (6 KB/s)
+Time: 189.07 min - epoch state 71.36% (6 KB/s)
+Time: 189.13 min - epoch state 73.92% (6 KB/s)
+Time: 189.19 min - epoch state 76.48% (6 KB/s)
+Time: 189.25 min - epoch state 79.04% (6 KB/s)
+Time: 189.31 min - epoch state 81.60% (7 KB/s)
+Time: 189.37 min - epoch state 84.16% (7 KB/s)
+Starting epoch: 88
+Epoch 88, Loss: 937.901611328125
+Eval analogy questions 5889/17827 accuracy = 33.0%
+Time: 189.44 min - epoch state 2.00% (0 KB/s)
+Time: 189.50 min - epoch state 4.56% (0 KB/s)
+Time: 189.56 min - epoch state 7.12% (0 KB/s)
+Time: 189.62 min - epoch state 9.68% (0 KB/s)
+Time: 189.68 min - epoch state 12.24% (1 KB/s)
+Time: 189.74 min - epoch state 14.80% (1 KB/s)
+Time: 189.81 min - epoch state 17.36% (1 KB/s)
+Time: 189.87 min - epoch state 19.92% (1 KB/s)
+Epoch 88, Loss: 708.4889526367188
+Eval analogy questions 5863/17827 accuracy = 32.9%
+Time: 189.94 min - epoch state 22.48% (1 KB/s)
+Time: 190.00 min - epoch state 25.04% (2 KB/s)
+Time: 190.06 min - epoch state 27.60% (2 KB/s)
+Time: 190.13 min - epoch state 30.16% (2 KB/s)
+Time: 190.19 min - epoch state 32.72% (2 KB/s)
+Time: 190.25 min - epoch state 35.28% (3 KB/s)
+Time: 190.31 min - epoch state 37.84% (3 KB/s)
+Time: 190.38 min - epoch state 40.40% (3 KB/s)
+Time: 190.44 min - epoch state 42.96% (3 KB/s)
+Epoch 88, Loss: 973.6185302734375
+Eval analogy questions 5858/17827 accuracy = 32.9%
+Time: 190.51 min - epoch state 45.52% (3 KB/s)
+Time: 190.57 min - epoch state 48.08% (4 KB/s)
+Time: 190.63 min - epoch state 50.64% (4 KB/s)
+Time: 190.69 min - epoch state 53.20% (4 KB/s)
+Time: 190.75 min - epoch state 55.76% (4 KB/s)
+Time: 190.82 min - epoch state 58.32% (5 KB/s)
+Time: 190.88 min - epoch state 60.88% (5 KB/s)
+Time: 190.94 min - epoch state 63.44% (5 KB/s)
+Epoch 88, Loss: 825.5744018554688
+Eval analogy questions 5876/17827 accuracy = 33.0%
+Time: 191.01 min - epoch state 66.00% (5 KB/s)
+Time: 191.07 min - epoch state 68.56% (5 KB/s)
+Time: 191.13 min - epoch state 71.12% (6 KB/s)
+Time: 191.19 min - epoch state 73.68% (6 KB/s)
+Time: 191.25 min - epoch state 76.24% (6 KB/s)
+Time: 191.31 min - epoch state 78.80% (6 KB/s)
+Time: 191.37 min - epoch state 81.36% (7 KB/s)
+Time: 191.43 min - epoch state 83.92% (7 KB/s)
+Starting epoch: 89
+Epoch 89, Loss: 925.7493286132812
+Eval analogy questions 5895/17827 accuracy = 33.1%
+Time: 191.50 min - epoch state 1.76% (0 KB/s)
+Time: 191.56 min - epoch state 4.32% (0 KB/s)
+Time: 191.63 min - epoch state 6.88% (0 KB/s)
+Time: 191.69 min - epoch state 9.44% (0 KB/s)
+Time: 191.75 min - epoch state 12.00% (1 KB/s)
+Time: 191.81 min - epoch state 14.56% (1 KB/s)
+Time: 191.87 min - epoch state 17.12% (1 KB/s)
+Time: 191.94 min - epoch state 19.68% (1 KB/s)
+Epoch 89, Loss: 928.816650390625
+Eval analogy questions 5873/17827 accuracy = 32.9%
+Time: 192.01 min - epoch state 22.24% (1 KB/s)
+Time: 192.07 min - epoch state 24.80% (2 KB/s)
+Time: 192.13 min - epoch state 27.36% (2 KB/s)
+Time: 192.20 min - epoch state 29.92% (2 KB/s)
+Time: 192.26 min - epoch state 32.48% (2 KB/s)
+Time: 192.32 min - epoch state 35.04% (3 KB/s)
+Time: 192.38 min - epoch state 37.60% (3 KB/s)
+Time: 192.44 min - epoch state 40.16% (3 KB/s)
+Time: 192.51 min - epoch state 42.72% (3 KB/s)
+Epoch 89, Loss: 691.5860595703125
+Eval analogy questions 5826/17827 accuracy = 32.7%
+Time: 192.57 min - epoch state 45.28% (3 KB/s)
+Time: 192.64 min - epoch state 47.84% (4 KB/s)
+Time: 192.70 min - epoch state 50.40% (4 KB/s)
+Time: 192.76 min - epoch state 52.96% (4 KB/s)
+Time: 192.82 min - epoch state 55.52% (4 KB/s)
+Time: 192.88 min - epoch state 58.08% (5 KB/s)
+Time: 192.94 min - epoch state 60.64% (5 KB/s)
+Time: 193.00 min - epoch state 63.20% (5 KB/s)
+Epoch 89, Loss: 855.7028198242188
+Eval analogy questions 5844/17827 accuracy = 32.8%
+Time: 193.07 min - epoch state 65.76% (5 KB/s)
+Time: 193.14 min - epoch state 68.32% (5 KB/s)
+Time: 193.20 min - epoch state 70.88% (6 KB/s)
+Time: 193.26 min - epoch state 73.44% (6 KB/s)
+Time: 193.32 min - epoch state 76.00% (6 KB/s)
+Time: 193.38 min - epoch state 78.56% (6 KB/s)
+Time: 193.44 min - epoch state 81.12% (6 KB/s)
+Time: 193.50 min - epoch state 83.68% (7 KB/s)
+Starting epoch: 90
+Epoch 90, Loss: 921.3622436523438
+Eval analogy questions 5874/17827 accuracy = 33.0%
+Time: 193.58 min - epoch state 1.52% (0 KB/s)
+Time: 193.64 min - epoch state 4.08% (0 KB/s)
+Time: 193.70 min - epoch state 6.64% (0 KB/s)
+Time: 193.76 min - epoch state 9.20% (0 KB/s)
+Time: 193.82 min - epoch state 11.76% (1 KB/s)
+Time: 193.88 min - epoch state 14.32% (1 KB/s)
+Time: 193.94 min - epoch state 16.88% (1 KB/s)
+Time: 194.00 min - epoch state 19.44% (1 KB/s)
+Epoch 90, Loss: 987.7492065429688
+Eval analogy questions 5847/17827 accuracy = 32.8%
+Time: 194.07 min - epoch state 22.00% (1 KB/s)
+Time: 194.13 min - epoch state 24.56% (2 KB/s)
+Time: 194.19 min - epoch state 27.12% (2 KB/s)
+Time: 194.25 min - epoch state 29.68% (2 KB/s)
+Time: 194.31 min - epoch state 32.24% (2 KB/s)
+Time: 194.37 min - epoch state 34.80% (2 KB/s)
+Time: 194.43 min - epoch state 37.36% (3 KB/s)
+Time: 194.50 min - epoch state 39.92% (3 KB/s)
+Time: 194.56 min - epoch state 42.48% (3 KB/s)
+Epoch 90, Loss: 771.5139770507812
+Eval analogy questions 5853/17827 accuracy = 32.8%
+Time: 194.63 min - epoch state 45.04% (3 KB/s)
+Time: 194.69 min - epoch state 47.60% (4 KB/s)
+Time: 194.75 min - epoch state 50.16% (4 KB/s)
+Time: 194.82 min - epoch state 52.72% (4 KB/s)
+Time: 194.88 min - epoch state 55.28% (4 KB/s)
+Time: 194.94 min - epoch state 57.84% (4 KB/s)
+Time: 195.00 min - epoch state 60.40% (5 KB/s)
+Time: 195.06 min - epoch state 62.96% (5 KB/s)
+Epoch 90, Loss: 912.0453491210938
+Eval analogy questions 5840/17827 accuracy = 32.8%
+Time: 195.14 min - epoch state 65.52% (5 KB/s)
+Time: 195.20 min - epoch state 68.08% (5 KB/s)
+Time: 195.26 min - epoch state 70.64% (6 KB/s)
+Time: 195.32 min - epoch state 73.20% (6 KB/s)
+Time: 195.38 min - epoch state 75.76% (6 KB/s)
+Time: 195.44 min - epoch state 78.32% (6 KB/s)
+Time: 195.50 min - epoch state 80.88% (6 KB/s)
+Time: 195.56 min - epoch state 83.44% (7 KB/s)
+Starting epoch: 91
+Epoch 91, Loss: 870.6267700195312
+Eval analogy questions 5839/17827 accuracy = 32.8%
+Time: 195.63 min - epoch state 1.28% (0 KB/s)
+Time: 195.69 min - epoch state 3.84% (0 KB/s)
+Time: 195.75 min - epoch state 6.40% (0 KB/s)
+Time: 195.81 min - epoch state 8.96% (0 KB/s)
+Time: 195.87 min - epoch state 11.52% (0 KB/s)
+Time: 195.93 min - epoch state 14.08% (1 KB/s)
+Time: 195.99 min - epoch state 16.64% (1 KB/s)
+Time: 196.05 min - epoch state 19.20% (1 KB/s)
+Time: 196.11 min - epoch state 21.76% (1 KB/s)
+Epoch 91, Loss: 877.178955078125
+Eval analogy questions 5835/17827 accuracy = 32.7%
+Time: 196.18 min - epoch state 24.32% (2 KB/s)
+Time: 196.24 min - epoch state 26.88% (2 KB/s)
+Time: 196.30 min - epoch state 29.44% (2 KB/s)
+Time: 196.37 min - epoch state 32.00% (2 KB/s)
+Time: 196.43 min - epoch state 34.56% (2 KB/s)
+Time: 196.49 min - epoch state 37.12% (3 KB/s)
+Time: 196.55 min - epoch state 39.68% (3 KB/s)
+Time: 196.62 min - epoch state 42.24% (3 KB/s)
+Epoch 91, Loss: 796.77783203125
+Eval analogy questions 5839/17827 accuracy = 32.8%
+Time: 196.69 min - epoch state 44.80% (3 KB/s)
+Time: 196.76 min - epoch state 47.36% (4 KB/s)
+Time: 196.83 min - epoch state 49.92% (4 KB/s)
+Time: 196.90 min - epoch state 52.48% (4 KB/s)
+Time: 196.98 min - epoch state 55.04% (4 KB/s)
+Time: 197.06 min - epoch state 57.60% (4 KB/s)
+Time: 197.14 min - epoch state 60.16% (5 KB/s)
+Time: 197.21 min - epoch state 62.72% (5 KB/s)
+Epoch 91, Loss: 937.1119384765625
+Eval analogy questions 5854/17827 accuracy = 32.8%
+Time: 197.29 min - epoch state 65.28% (5 KB/s)
+Time: 197.36 min - epoch state 67.84% (5 KB/s)
+Time: 197.44 min - epoch state 70.40% (5 KB/s)
+Time: 197.51 min - epoch state 72.96% (6 KB/s)
+Time: 197.58 min - epoch state 75.52% (6 KB/s)
+Time: 197.65 min - epoch state 78.08% (6 KB/s)
+Time: 197.72 min - epoch state 80.64% (6 KB/s)
+Time: 197.79 min - epoch state 83.20% (7 KB/s)
+Starting epoch: 92
+Epoch 92, Loss: 932.78759765625
+Eval analogy questions 5847/17827 accuracy = 32.8%
+Time: 197.87 min - epoch state 1.04% (0 KB/s)
+Time: 197.94 min - epoch state 3.60% (0 KB/s)
+Time: 198.00 min - epoch state 6.16% (0 KB/s)
+Time: 198.06 min - epoch state 8.72% (0 KB/s)
+Time: 198.12 min - epoch state 11.28% (0 KB/s)
+Time: 198.18 min - epoch state 13.84% (1 KB/s)
+Time: 198.25 min - epoch state 16.40% (1 KB/s)
+Time: 198.31 min - epoch state 18.96% (1 KB/s)
+Time: 198.38 min - epoch state 21.52% (1 KB/s)
+Epoch 92, Loss: 950.6641845703125
+Eval analogy questions 5845/17827 accuracy = 32.8%
+Time: 198.46 min - epoch state 24.08% (2 KB/s)
+Time: 198.52 min - epoch state 26.64% (2 KB/s)
+Time: 198.59 min - epoch state 29.20% (2 KB/s)
+Time: 198.66 min - epoch state 31.76% (2 KB/s)
+Time: 198.72 min - epoch state 34.32% (2 KB/s)
+Time: 198.79 min - epoch state 36.88% (3 KB/s)
+Time: 198.85 min - epoch state 39.44% (3 KB/s)
+Time: 198.91 min - epoch state 42.00% (3 KB/s)
+Epoch 92, Loss: 903.96435546875
+Eval analogy questions 5834/17827 accuracy = 32.7%
+Time: 198.99 min - epoch state 44.56% (3 KB/s)
+Time: 199.05 min - epoch state 47.12% (3 KB/s)
+Time: 199.11 min - epoch state 49.68% (4 KB/s)
+Time: 199.18 min - epoch state 52.24% (4 KB/s)
+Time: 199.24 min - epoch state 54.80% (4 KB/s)
+Time: 199.30 min - epoch state 57.36% (4 KB/s)
+Time: 199.36 min - epoch state 59.92% (5 KB/s)
+Time: 199.42 min - epoch state 62.48% (5 KB/s)
+Time: 199.48 min - epoch state 65.04% (5 KB/s)
+Epoch 92, Loss: 1023.82568359375
+Eval analogy questions 5843/17827 accuracy = 32.8%
+Time: 199.55 min - epoch state 67.60% (5 KB/s)
+Time: 199.62 min - epoch state 70.16% (5 KB/s)
+Time: 199.68 min - epoch state 72.72% (6 KB/s)
+Time: 199.74 min - epoch state 75.28% (6 KB/s)
+Time: 199.80 min - epoch state 77.84% (6 KB/s)
+Time: 199.86 min - epoch state 80.40% (6 KB/s)
+Time: 199.93 min - epoch state 82.96% (6 KB/s)
+Starting epoch: 93
+Epoch 93, Loss: 892.671875
+Eval analogy questions 5845/17827 accuracy = 32.8%
+Time: 200.00 min - epoch state 0.80% (0 KB/s)
+Time: 200.06 min - epoch state 3.36% (0 KB/s)
+Time: 200.12 min - epoch state 5.92% (0 KB/s)
+Time: 200.18 min - epoch state 8.48% (0 KB/s)
+Time: 200.25 min - epoch state 11.04% (0 KB/s)
+Time: 200.31 min - epoch state 13.60% (1 KB/s)
+Time: 200.38 min - epoch state 16.16% (1 KB/s)
+Time: 200.44 min - epoch state 18.72% (1 KB/s)
+Time: 200.50 min - epoch state 21.28% (1 KB/s)
+Epoch 93, Loss: 911.3456420898438
+Eval analogy questions 5834/17827 accuracy = 32.7%
+Time: 200.57 min - epoch state 23.84% (1 KB/s)
+Time: 200.63 min - epoch state 26.40% (2 KB/s)
+Time: 200.69 min - epoch state 28.96% (2 KB/s)
+Time: 200.76 min - epoch state 31.52% (2 KB/s)
+Time: 200.82 min - epoch state 34.08% (2 KB/s)
+Time: 200.88 min - epoch state 36.64% (3 KB/s)
+Time: 200.94 min - epoch state 39.20% (3 KB/s)
+Time: 201.01 min - epoch state 41.76% (3 KB/s)
+Epoch 93, Loss: 762.1975708007812
+Eval analogy questions 5846/17827 accuracy = 32.8%
+Time: 201.08 min - epoch state 44.32% (3 KB/s)
+Time: 201.15 min - epoch state 46.88% (3 KB/s)
+Time: 201.21 min - epoch state 49.44% (4 KB/s)
+Time: 201.27 min - epoch state 52.00% (4 KB/s)
+Time: 201.33 min - epoch state 54.56% (4 KB/s)
+Time: 201.40 min - epoch state 57.12% (4 KB/s)
+Time: 201.46 min - epoch state 59.68% (4 KB/s)
+Time: 201.52 min - epoch state 62.24% (5 KB/s)
+Time: 201.58 min - epoch state 64.80% (5 KB/s)
+Epoch 93, Loss: 689.57421875
+Eval analogy questions 5830/17827 accuracy = 32.7%
+Time: 201.65 min - epoch state 67.36% (5 KB/s)
+Time: 201.72 min - epoch state 69.92% (5 KB/s)
+Time: 201.78 min - epoch state 72.48% (5 KB/s)
+Time: 201.84 min - epoch state 75.04% (6 KB/s)
+Time: 201.90 min - epoch state 77.60% (6 KB/s)
+Time: 201.96 min - epoch state 80.16% (6 KB/s)
+Time: 202.03 min - epoch state 82.72% (6 KB/s)
+Starting epoch: 94
+Epoch 94, Loss: 931.341796875
+Eval analogy questions 5855/17827 accuracy = 32.8%
+Time: 202.10 min - epoch state 0.56% (0 KB/s)
+Time: 202.16 min - epoch state 3.12% (0 KB/s)
+Time: 202.22 min - epoch state 5.68% (0 KB/s)
+Time: 202.28 min - epoch state 8.24% (0 KB/s)
+Time: 202.34 min - epoch state 10.80% (0 KB/s)
+Time: 202.40 min - epoch state 13.36% (1 KB/s)
+Time: 202.47 min - epoch state 15.92% (1 KB/s)
+Time: 202.53 min - epoch state 18.48% (1 KB/s)
+Time: 202.59 min - epoch state 21.04% (1 KB/s)
+Epoch 94, Loss: 1011.0177001953125
+Eval analogy questions 5860/17827 accuracy = 32.9%
+Time: 202.66 min - epoch state 23.60% (1 KB/s)
+Time: 202.72 min - epoch state 26.16% (2 KB/s)
+Time: 202.78 min - epoch state 28.72% (2 KB/s)
+Time: 202.84 min - epoch state 31.28% (2 KB/s)
+Time: 202.90 min - epoch state 33.84% (2 KB/s)
+Time: 202.97 min - epoch state 36.40% (2 KB/s)
+Time: 203.03 min - epoch state 38.96% (3 KB/s)
+Time: 203.09 min - epoch state 41.52% (3 KB/s)
+Epoch 94, Loss: 755.422119140625
+Eval analogy questions 5826/17827 accuracy = 32.7%
+Time: 203.16 min - epoch state 44.08% (3 KB/s)
+Time: 203.22 min - epoch state 46.64% (3 KB/s)
+Time: 203.28 min - epoch state 49.20% (4 KB/s)
+Time: 203.34 min - epoch state 51.76% (4 KB/s)
+Time: 203.41 min - epoch state 54.32% (4 KB/s)
+Time: 203.47 min - epoch state 56.88% (4 KB/s)
+Time: 203.53 min - epoch state 59.44% (4 KB/s)
+Time: 203.59 min - epoch state 62.00% (5 KB/s)
+Time: 203.65 min - epoch state 64.56% (5 KB/s)
+Epoch 94, Loss: 900.2645263671875
+Eval analogy questions 5789/17827 accuracy = 32.5%
+Time: 203.72 min - epoch state 67.12% (5 KB/s)
+Time: 203.79 min - epoch state 69.68% (5 KB/s)
+Time: 203.85 min - epoch state 72.24% (5 KB/s)
+Time: 203.91 min - epoch state 74.80% (6 KB/s)
+Time: 203.97 min - epoch state 77.36% (6 KB/s)
+Time: 204.03 min - epoch state 79.92% (6 KB/s)
+Time: 204.09 min - epoch state 82.48% (6 KB/s)
+Starting epoch: 95
+Epoch 95, Loss: 903.4656372070312
+Eval analogy questions 5804/17827 accuracy = 32.6%
+Time: 204.17 min - epoch state 0.33% (0 KB/s)
+Time: 204.23 min - epoch state 2.89% (0 KB/s)
+Time: 204.29 min - epoch state 5.45% (0 KB/s)
+Time: 204.35 min - epoch state 8.01% (0 KB/s)
+Time: 204.41 min - epoch state 10.57% (0 KB/s)
+Time: 204.48 min - epoch state 13.13% (1 KB/s)
+Time: 204.55 min - epoch state 15.69% (1 KB/s)
+Time: 204.62 min - epoch state 18.25% (1 KB/s)
+Time: 204.69 min - epoch state 20.81% (1 KB/s)
+Epoch 95, Loss: 715.8216552734375
+Eval analogy questions 5792/17827 accuracy = 32.5%
+Time: 204.76 min - epoch state 23.37% (1 KB/s)
+Time: 204.82 min - epoch state 25.93% (2 KB/s)
+Time: 204.88 min - epoch state 28.49% (2 KB/s)
+Time: 204.95 min - epoch state 31.05% (2 KB/s)
+Time: 205.01 min - epoch state 33.61% (2 KB/s)
+Time: 205.07 min - epoch state 36.17% (2 KB/s)
+Time: 205.14 min - epoch state 38.73% (3 KB/s)
+Time: 205.20 min - epoch state 41.29% (3 KB/s)
+Epoch 95, Loss: 976.0430908203125
+Eval analogy questions 5783/17827 accuracy = 32.4%
+Time: 205.27 min - epoch state 43.85% (3 KB/s)
+Time: 205.33 min - epoch state 46.41% (3 KB/s)
+Time: 205.40 min - epoch state 48.97% (3 KB/s)
+Time: 205.46 min - epoch state 51.53% (4 KB/s)
+Time: 205.52 min - epoch state 54.09% (4 KB/s)
+Time: 205.59 min - epoch state 56.65% (4 KB/s)
+Time: 205.65 min - epoch state 59.21% (4 KB/s)
+Time: 205.71 min - epoch state 61.77% (5 KB/s)
+Time: 205.78 min - epoch state 64.33% (5 KB/s)
+Epoch 95, Loss: 900.162841796875
+Eval analogy questions 5796/17827 accuracy = 32.5%
+Time: 205.85 min - epoch state 66.89% (5 KB/s)
+Time: 205.91 min - epoch state 69.45% (5 KB/s)
+Time: 205.97 min - epoch state 72.01% (5 KB/s)
+Time: 206.03 min - epoch state 74.57% (6 KB/s)
+Time: 206.09 min - epoch state 77.13% (6 KB/s)
+Time: 206.16 min - epoch state 79.69% (6 KB/s)
+Time: 206.22 min - epoch state 82.25% (6 KB/s)
+Starting epoch: 96
+Epoch 96, Loss: 939.8627319335938
+Eval analogy questions 5808/17827 accuracy = 32.6%
+Time: 206.29 min - epoch state 0.09% (0 KB/s)
+Time: 206.35 min - epoch state 2.65% (0 KB/s)
+Time: 206.42 min - epoch state 5.21% (0 KB/s)
+Time: 206.48 min - epoch state 7.77% (0 KB/s)
+Time: 206.54 min - epoch state 10.33% (0 KB/s)
+Time: 206.60 min - epoch state 12.89% (1 KB/s)
+Time: 206.66 min - epoch state 15.45% (1 KB/s)
+Time: 206.72 min - epoch state 18.01% (1 KB/s)
+Time: 206.78 min - epoch state 20.57% (1 KB/s)
+Epoch 96, Loss: 992.5406494140625
+Eval analogy questions 5796/17827 accuracy = 32.5%
+Time: 206.85 min - epoch state 23.13% (1 KB/s)
+Time: 206.91 min - epoch state 25.69% (2 KB/s)
+Time: 206.98 min - epoch state 28.25% (2 KB/s)
+Time: 207.04 min - epoch state 30.81% (2 KB/s)
+Time: 207.10 min - epoch state 33.37% (2 KB/s)
+Time: 207.16 min - epoch state 35.93% (2 KB/s)
+Time: 207.23 min - epoch state 38.49% (3 KB/s)
+Time: 207.29 min - epoch state 41.05% (3 KB/s)
+Epoch 96, Loss: 629.4021606445312
+Eval analogy questions 5771/17827 accuracy = 32.4%
+Time: 207.36 min - epoch state 43.61% (3 KB/s)
+Time: 207.42 min - epoch state 46.17% (3 KB/s)
+Time: 207.48 min - epoch state 48.73% (3 KB/s)
+Time: 207.54 min - epoch state 51.29% (4 KB/s)
+Time: 207.60 min - epoch state 53.85% (4 KB/s)
+Time: 207.67 min - epoch state 56.41% (4 KB/s)
+Time: 207.73 min - epoch state 58.97% (4 KB/s)
+Time: 207.79 min - epoch state 61.53% (4 KB/s)
+Time: 207.85 min - epoch state 64.09% (5 KB/s)
+Epoch 96, Loss: 832.6435546875
+Eval analogy questions 5786/17827 accuracy = 32.5%
+Time: 207.93 min - epoch state 66.65% (5 KB/s)
+Time: 207.99 min - epoch state 69.21% (5 KB/s)
+Time: 208.05 min - epoch state 71.77% (5 KB/s)
+Time: 208.12 min - epoch state 74.33% (5 KB/s)
+Time: 208.18 min - epoch state 76.89% (6 KB/s)
+Time: 208.24 min - epoch state 79.45% (6 KB/s)
+Time: 208.30 min - epoch state 82.01% (6 KB/s)
+Time: 208.36 min - epoch state 84.57% (6 KB/s)
+Starting epoch: 97
+Epoch 97, Loss: 936.8076171875
+Eval analogy questions 5792/17827 accuracy = 32.5%
+Time: 208.43 min - epoch state 2.41% (0 KB/s)
+Time: 208.49 min - epoch state 4.97% (0 KB/s)
+Time: 208.55 min - epoch state 7.53% (0 KB/s)
+Time: 208.61 min - epoch state 10.09% (0 KB/s)
+Time: 208.68 min - epoch state 12.65% (1 KB/s)
+Time: 208.74 min - epoch state 15.21% (1 KB/s)
+Time: 208.81 min - epoch state 17.77% (1 KB/s)
+Time: 208.88 min - epoch state 20.33% (1 KB/s)
+Epoch 97, Loss: 859.566162109375
+Eval analogy questions 5778/17827 accuracy = 32.4%
+Time: 208.96 min - epoch state 22.89% (1 KB/s)
+Time: 209.02 min - epoch state 25.45% (2 KB/s)
+Time: 209.09 min - epoch state 28.01% (2 KB/s)
+Time: 209.16 min - epoch state 30.57% (2 KB/s)
+Time: 209.23 min - epoch state 33.13% (2 KB/s)
+Time: 209.29 min - epoch state 35.69% (2 KB/s)
+Time: 209.35 min - epoch state 38.25% (3 KB/s)
+Time: 209.41 min - epoch state 40.81% (3 KB/s)
+Time: 209.48 min - epoch state 43.37% (3 KB/s)
+Epoch 97, Loss: 832.08544921875
+Eval analogy questions 5750/17827 accuracy = 32.3%
+Time: 209.55 min - epoch state 45.93% (3 KB/s)
+Time: 209.61 min - epoch state 48.49% (3 KB/s)
+Time: 209.67 min - epoch state 51.05% (4 KB/s)
+Time: 209.74 min - epoch state 53.61% (4 KB/s)
+Time: 209.80 min - epoch state 56.17% (4 KB/s)
+Time: 209.86 min - epoch state 58.73% (4 KB/s)
+Time: 209.92 min - epoch state 61.29% (4 KB/s)
+Time: 209.99 min - epoch state 63.85% (5 KB/s)
+Epoch 97, Loss: 979.8875732421875
+Eval analogy questions 5751/17827 accuracy = 32.3%
+Time: 210.06 min - epoch state 66.41% (5 KB/s)
+Time: 210.12 min - epoch state 68.97% (5 KB/s)
+Time: 210.19 min - epoch state 71.53% (5 KB/s)
+Time: 210.25 min - epoch state 74.09% (5 KB/s)
+Time: 210.31 min - epoch state 76.65% (6 KB/s)
+Time: 210.37 min - epoch state 79.21% (6 KB/s)
+Time: 210.43 min - epoch state 81.77% (6 KB/s)
+Time: 210.50 min - epoch state 84.33% (6 KB/s)
+Starting epoch: 98
+Epoch 98, Loss: 935.817138671875
+Eval analogy questions 5756/17827 accuracy = 32.3%
+Time: 210.57 min - epoch state 2.17% (0 KB/s)
+Time: 210.63 min - epoch state 4.73% (0 KB/s)
+Time: 210.69 min - epoch state 7.29% (0 KB/s)
+Time: 210.75 min - epoch state 9.85% (0 KB/s)
+Time: 210.82 min - epoch state 12.41% (0 KB/s)
+Time: 210.88 min - epoch state 14.97% (1 KB/s)
+Time: 210.94 min - epoch state 17.53% (1 KB/s)
+Time: 211.01 min - epoch state 20.09% (1 KB/s)
+Epoch 98, Loss: 865.2260131835938
+Eval analogy questions 5790/17827 accuracy = 32.5%
+Time: 211.08 min - epoch state 22.65% (1 KB/s)
+Time: 211.14 min - epoch state 25.21% (1 KB/s)
+Time: 211.20 min - epoch state 27.77% (2 KB/s)
+Time: 211.26 min - epoch state 30.33% (2 KB/s)
+Time: 211.32 min - epoch state 32.89% (2 KB/s)
+Time: 211.38 min - epoch state 35.45% (2 KB/s)
+Time: 211.45 min - epoch state 38.01% (2 KB/s)
+Time: 211.51 min - epoch state 40.57% (3 KB/s)
+Time: 211.57 min - epoch state 43.13% (3 KB/s)
+Epoch 98, Loss: 625.447021484375
+Eval analogy questions 5741/17827 accuracy = 32.2%
+Time: 211.64 min - epoch state 45.69% (3 KB/s)
+Time: 211.70 min - epoch state 48.25% (3 KB/s)
+Time: 211.77 min - epoch state 50.81% (3 KB/s)
+Time: 211.83 min - epoch state 53.37% (4 KB/s)
+Time: 211.89 min - epoch state 55.93% (4 KB/s)
+Time: 211.95 min - epoch state 58.49% (4 KB/s)
+Time: 212.02 min - epoch state 61.05% (4 KB/s)
+Time: 212.08 min - epoch state 63.61% (4 KB/s)
+Epoch 98, Loss: 874.595947265625
+Eval analogy questions 5764/17827 accuracy = 32.3%
+Time: 212.15 min - epoch state 66.17% (5 KB/s)
+Time: 212.22 min - epoch state 68.73% (5 KB/s)
+Time: 212.29 min - epoch state 71.29% (5 KB/s)
+Time: 212.36 min - epoch state 73.85% (5 KB/s)
+Time: 212.42 min - epoch state 76.41% (5 KB/s)
+Time: 212.48 min - epoch state 78.97% (6 KB/s)
+Time: 212.55 min - epoch state 81.53% (6 KB/s)
+Time: 212.62 min - epoch state 84.09% (6 KB/s)
+Starting epoch: 99
+Epoch 99, Loss: 973.779296875
+Eval analogy questions 5768/17827 accuracy = 32.4%
+Time: 212.69 min - epoch state 1.93% (0 KB/s)
+Time: 212.76 min - epoch state 4.49% (0 KB/s)
+Time: 212.82 min - epoch state 7.05% (0 KB/s)
+Time: 212.88 min - epoch state 9.61% (0 KB/s)
+Time: 212.94 min - epoch state 12.17% (0 KB/s)
+Time: 213.00 min - epoch state 14.73% (1 KB/s)
+Time: 213.06 min - epoch state 17.29% (1 KB/s)
+Time: 213.12 min - epoch state 19.85% (1 KB/s)
+Epoch 99, Loss: 927.4136962890625
+Eval analogy questions 5736/17827 accuracy = 32.2%
+Time: 213.20 min - epoch state 22.41% (1 KB/s)
+Time: 213.26 min - epoch state 24.97% (1 KB/s)
+Time: 213.32 min - epoch state 27.53% (2 KB/s)
+Time: 213.38 min - epoch state 30.09% (2 KB/s)
+Time: 213.44 min - epoch state 32.65% (2 KB/s)
+Time: 213.50 min - epoch state 35.21% (2 KB/s)
+Time: 213.57 min - epoch state 37.77% (2 KB/s)
+Time: 213.63 min - epoch state 40.33% (3 KB/s)
+Time: 213.69 min - epoch state 42.89% (3 KB/s)
+Epoch 99, Loss: 693.00390625
+Eval analogy questions 5736/17827 accuracy = 32.2%
+Time: 213.76 min - epoch state 45.45% (3 KB/s)
+Time: 213.83 min - epoch state 48.01% (3 KB/s)
+Time: 213.89 min - epoch state 50.57% (3 KB/s)
+Time: 213.95 min - epoch state 53.13% (4 KB/s)
+Time: 214.02 min - epoch state 55.69% (4 KB/s)
+Time: 214.08 min - epoch state 58.25% (4 KB/s)
+Time: 214.14 min - epoch state 60.81% (4 KB/s)
+Time: 214.20 min - epoch state 63.37% (4 KB/s)
+Epoch 99, Loss: 900.4876708984375
+Eval analogy questions 5779/17827 accuracy = 32.4%
+Time: 214.27 min - epoch state 65.93% (5 KB/s)
+Time: 214.34 min - epoch state 68.49% (5 KB/s)
+Time: 214.40 min - epoch state 71.05% (5 KB/s)
+Time: 214.46 min - epoch state 73.61% (5 KB/s)
+Time: 214.52 min - epoch state 76.17% (5 KB/s)
+Time: 214.58 min - epoch state 78.73% (6 KB/s)
+Time: 214.64 min - epoch state 81.29% (6 KB/s)
+Time: 214.71 min - epoch state 83.85% (6 KB/s)
