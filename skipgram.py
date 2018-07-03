@@ -171,7 +171,7 @@ class Skipgram(nn.Module):
             self.log_step(epoch, loss, iteration, previously_read=previously_read)
 
             iteration += 1
-        return self.dp.bytes_read
+        return self.dp.bytes_read + previously_read
 
     def validate_step(self, epoch, loss, iteration):
 
