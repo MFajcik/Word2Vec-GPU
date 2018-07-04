@@ -6,6 +6,7 @@ from collections import defaultdict
 
 import torch
 from scipy import linalg, mat, dot, stats
+from torch.nn import EmbeddingBag
 
 DATA_ROOT = os.path.dirname(os.path.abspath(__file__)) + "/data/"
 
@@ -92,9 +93,14 @@ class EmbeddingDict():
 
     def __getitem__(self, key):
         key = torch.LongTensor([self.w2id[key]])
+        rng = torch.LongTensor(range(len(key)))
         if self.use_cuda:
             key = key.cuda()
-        return self.emb(key).cpu().squeeze(0).detach().numpy()
+            rng = rng.cuda()
+        if type(self.emb) is EmbeddingBag:
+            return self.emb(key,rng).cpu().squeeze(0).detach().numpy()
+        else:
+            return self.emb(key).cpu().squeeze(0).detach().numpy()
 
     def keys(self):
         return self.w2id.keys()

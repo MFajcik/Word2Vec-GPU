@@ -4,6 +4,9 @@ import numpy as np
 import torch.nn.functional as F
 
 # Method taken from tensorflow/models skipgram
+from torch.nn import EmbeddingBag
+
+
 def read_analogies(file, w2id):
     """Reads through the analogy question file.
     Returns:
@@ -36,8 +39,10 @@ def read_analogies(file, w2id):
 # Each analogy task is to predict the 4th word (d) given three
 # words: a, b, c.  E.g., a=italy, b=rome, c=france, we should
 # predict d=paris
-def eval_analogy_questions(data_processor, embeddings, use_cuda, top_k=4,embedding_bag = False):
+def eval_analogy_questions(data_processor, embeddings, use_cuda, top_k=4):
     """Evaluate analogy questions and reports accuracy."""
+
+    embedding_bag = type(embeddings) is EmbeddingBag
     # How many questions we get right at precision@1.
     correct = 0
     aq = data_processor.analogy_questions
