@@ -13,7 +13,7 @@ DATA_ROOT = os.path.dirname(os.path.abspath(__file__)) + "/data/"
 
 class Wordsim:
     def __init__(self, lang):
-        logging.info("collecting datasets ..")
+        logging.debug("collecting datasets ..")
         self.files = [file_name.replace(".txt", "") for file_name in os.listdir(DATA_ROOT + lang) if
                       ".txt" in file_name]
         self.dataset = defaultdict(list)
