@@ -11,10 +11,9 @@ import torch
 import torch.nn as nn
 import logging
 
-from nlpfit.other.logging_config import init_logging
 from nlpfit.preprocessing.nlp_io import read_word_lists
 from collections import deque
-from word2vec import init_argparser_general, DataProcessor, Word2Vec
+from word2vec import init_argparser_general, DataProcessor, Word2Vec, init_logging
 
 
 class CBOW(Word2Vec):
