@@ -1,6 +1,8 @@
 # Created as experimental part of my research at
 # FIT@BUT 2018
 #
+from evaluation.intrinstric_evaluation.wordsim.wordsim import intrinstric_eval
+
 __modelname__ = "CBOW"
 __author__ = "Martin Fajčík"
 
@@ -17,6 +19,8 @@ from word2vec import init_argparser_general, DataProcessor, Word2Vec, init_loggi
 
 
 class CBOW(Word2Vec):
+    def intristric_eval(self):
+        return intrinstric_eval(self.u_embeddings, self.dp.w2id, use_cuda=self.use_cuda)
 
     def create_embedding_matrices(self):
         self.u_embeddings = nn.EmbeddingBag(num_embeddings=data_proc.vocab_size,
