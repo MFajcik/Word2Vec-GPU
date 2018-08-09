@@ -1,23 +1,26 @@
 # Created as experimental part of my research at
 # FIT@BUT 2018
 #
+from evaluation.intrinstric_evaluation.wordsim.wordsim import intrinstric_eval
+
 __modelname__ = "Skipgram"
 __author__ = "Martin Fajčík"
 
 import argparse
-import os
-import sys
 import numpy as np
 import torch
+import logging
 import torch.nn as nn
 
 from collections import deque
-from nlpfit.other.logging_config import init_logging
 from nlpfit.preprocessing.nlp_io import read_word_lists
-from word2vec import init_argparser_general, DataProcessor, Word2Vec
+from word2vec import init_argparser_general, DataProcessor, Word2Vec, init_logging
 
 
 class Skipgram(Word2Vec):
+    def intristric_eval(self):
+        return intrinstric_eval(self.u_embeddings, self.dp.w2id, use_cuda=self.use_cuda)
+
     def create_embedding_matrices(self):
         # create U embedding (target word) matrix
         self.u_embeddings = nn.Embedding(self.dp.vocab_size, self.dp.embedding_size, sparse=True)
@@ -78,7 +81,11 @@ class Skipgram(Word2Vec):
         return -1. * (torch.sum(score) + torch.sum(neg_score)) / self.dp.batch_size
 
 
-class SGDataProcessor(DataProcessor):
+class WordTargetDataProcessor(DataProcessor):
+    """
+    This dataprocessor creates batches of words and their contexts
+    So each sample has pattern `(t,c)`, where `t` is the target word and `c` is the context word
+    """
 
     def create_batch_gen(self):
         # Create word list generator
@@ -101,9 +108,9 @@ class SGDataProcessor(DataProcessor):
                     if not (self.frequency_vocab_with_OOV[w] < self.min_freq or self.should_be_subsampled(w)):
                         wlist_clean.append(w)
                 except KeyError as e:
-                    logging.critical("Encountered unknown word!")
-                    logging.critical(e)
-                    logging.critical(f"Wlist: {wlist}")
+                    logging.error("Encountered unknown word!")
+                    logging.error(e)
+                    logging.error(f"Wlist: {wlist}")
             wlist = wlist_clean
 
             # TODO: Phrase clustering here
@@ -198,11 +205,12 @@ if __name__ == "__main__":
     init_argparser_general(parser)
     init_argparser_skipgram(parser)
     args = parser.parse_args()
-    logging = init_logging(os.path.basename(sys.argv[0]).split(".")[0], logpath=args.logging)
-    with SGDataProcessor(args, __modelname__, logging=logging) as data_proc:
+    init_logging(args)
+
+    with WordTargetDataProcessor(args, __modelname__) as data_proc:
         skipgram_model = Skipgram(data_proc)
         bytes_read = 0
-        epochs = 10
+        epochs = 100
         for e in range(epochs):
             logging.info(f"Starting epoch: {e}")
             bytes_read = skipgram_model._train(previously_read=bytes_read, epoch=e)

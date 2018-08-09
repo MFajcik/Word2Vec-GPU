@@ -39,7 +39,7 @@ class Wordsim:
             else:
                 f = open(path, "rb")
         except ValueError:
-            print("Oops!  No such file.  Try again ..")
+            logging.error("Oops!  No such file.  Try again ..")
         word2vec = {}
         for wn, line in enumerate(f):
             line = line.lower().strip()
@@ -51,12 +51,12 @@ class Wordsim:
     @staticmethod
     def pprint(result):
         from prettytable import PrettyTable
-        print("\n################# Intristric Evaluation ####################")
+        logging.debug("\n################# Intristric Evaluation ####################")
         x = PrettyTable(["Dataset", "Found", "Not Found", "Score (rho)"])
         x.align["Dataset"] = "l"
         for k, v in result.items():
             x.add_row([k, v[0], v[1], v[2]])
-        print(x)
+        logging.debug("\n"+str(x))
 
     def evaluate(self, word_dict):
         result = {}
@@ -98,7 +98,7 @@ class EmbeddingDict():
             key = key.cuda()
             rng = rng.cuda()
         if type(self.emb) is EmbeddingBag:
-            return self.emb(key,rng).cpu().squeeze(0).detach().numpy()
+            return self.emb(key, rng).cpu().squeeze(0).detach().numpy()
         else:
             return self.emb(key).cpu().squeeze(0).detach().numpy()
 
@@ -107,7 +107,15 @@ class EmbeddingDict():
 
 
 def intrinstric_eval(nnembedding, w2id, lang="en", use_cuda=False):
+    """
+    :param nnembedding: embedding matrix  to evaluate
+    :param w2id:
+    :param lang:
+    :param use_cuda:
+    :return:
+    """
     wordsim = Wordsim(lang)
     word2vec = EmbeddingDict(nnembedding, w2id, use_cuda)
     result = wordsim.evaluate(word2vec)
     wordsim.pprint(result)
+    return result

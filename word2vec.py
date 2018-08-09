@@ -1,5 +1,7 @@
+import logging
 import math
 import os
+import sys
 import time
 
 import numpy as np
@@ -8,12 +10,11 @@ import torch.nn as nn
 import visdom
 import torch.nn.functional as F
 import torch.optim as optimizer
+from nlpfit.other.logging_config import setup_logging
 
-from nlpfit.other.logging_config import logger_stub
 from nlpfit.preprocessing.tools import read_frequency_vocab
 from tensorboardX import SummaryWriter
 from evaluation.analogy_questions.analogy_questions import read_analogies, eval_analogy_questions
-from evaluation.intrinstric_evaluation.wordsim.wordsim import intrinstric_eval
 
 
 # The wisdom server can be started with command
@@ -23,6 +24,8 @@ from evaluation.intrinstric_evaluation.wordsim.wordsim import intrinstric_eval
 # tensorboard --logdir runs
 
 # TODO
+# Save weights in h5py numpy format instead of .pkl!
+
 # Evaluate solution on extrinstric properties
 # Add evaluation to tensorboard (or visdom?)
 # Phrase clustering
@@ -43,21 +46,20 @@ class DataProcessor:
     def __enter__(self):
         return self
 
-    def __init__(self, args, modelname, logging=logger_stub()):
+    def __init__(self, args, modelname):
         self.modelname = modelname
-        self.min_freq = args.min_freq
+        self.min_freq = int(args.min_freq)
         self.bytes_to_read = args.bytes_to_read
         self.corpus = args.corpus
         self.vocab_path = args.vocab
-        self.batch_size = args.batch_size
-        self.window_size = args.window
-        self.threshold = args.subsfqwords_tr
-        self.learning_rate = args.learning_rate
-        self.randints_to_precalculate = args.random_ints
-        self.nsamples = args.nsamples
-        self.embedding_size = args.dimension
+        self.batch_size = int(args.batch_size)
+        self.window_size = int(args.window)
+        self.threshold = float(args.subsfqwords_tr)
+        self.learning_rate = float(args.learning_rate)
+        self.randints_to_precalculate = int(args.random_ints)
+        self.nsamples = int(args.nsamples)
+        self.embedding_size = int(args.dimension)
         self.share_weights = args.shareweights
-        self.logging = logging
 
         self.sanitychecklist = args.sanitychecklist.split()
 
@@ -116,7 +118,7 @@ class DataProcessor:
             p = t - self.benchmarktime - self.time_spent_on_validation
             # Derive epoch from bytes read
             total_size = self.corpus_fsize * (math.floor(self.bytes_read / self.corpus_fsize) + 1)
-            self.logging.info(
+            logging.info(
                 f"I:{self.batch_iteration} Time: {p/60:.2f} min - epoch state {self.bytes_read/total_size *100:.2f}% ({int(self.bytes_read/p/1e3)} KB/s)")
 
     # For fast negative sampling
@@ -157,8 +159,8 @@ class DataProcessor:
         return not keep_prob > roll
 
     def load_vocab(self):
-        self.logging.info("Loading vocabulary...")
-        return read_frequency_vocab(self.vocab_path)
+        logging.info("Loading vocabulary...\n")
+        return read_frequency_vocab(self.vocab_path, quiet=True)
 
     def parse_vocab(self):
         # TODO: implement
@@ -182,7 +184,8 @@ class DataProcessor:
         return w2id
 
     def __exit__(self, exc_type, exc_value, traceback):
-        self.writer.close()
+        if self.tensorboard_enabled:
+            self.writer.close()
 
 
 class SuppressBenchmarkTime:
@@ -198,7 +201,7 @@ class SuppressBenchmarkTime:
 
 
 class Word2Vec(nn.Module):
-    def __init__(self, data_proc):
+    def __init__(self, data_proc, _optimizer=optimizer.SparseAdam):
         super(Word2Vec, self).__init__()
         self.dp = data_proc
 
@@ -208,13 +211,13 @@ class Word2Vec(nn.Module):
         self.logsigmoid = nn.LogSigmoid()
 
         self.initial_lr = self.dp.learning_rate
-        self.dp.logging.info(f"Optimizing {self.count_parameters()} parameters!")
+        logging.info(f"Optimizing {self.count_parameters()} parameters!")
 
         # We need to carefully choose optimizer and its parameters to guarantee no global update will be excuted when training.
         # For example, parameters like weight_decay and momentum in torch.optim. SGD require the global calculation
         # on embedding matrix, which is extremely time-consuming.
-        self.optimizer = optimizer.SparseAdam(self.parameters(),
-                                              lr=self.initial_lr)
+        self.optimizer = _optimizer(filter(lambda p: p.requires_grad, self.parameters()),
+                                    lr=self.initial_lr)
 
         # Move everything on GPU, if possible
         self.use_cuda = torch.cuda.is_available()
@@ -238,6 +241,13 @@ class Word2Vec(nn.Module):
     def create_embedding_matrices(self):
         """
         Defines the embedding matrices.
+        Should be overridden by all subclasses.
+        """
+        raise NotImplementedError
+
+    def intristric_eval(self):
+        """
+        Implement evaluation of intrinstric embeddings here
         Should be overridden by all subclasses.
         """
         raise NotImplementedError
@@ -278,7 +288,7 @@ class Word2Vec(nn.Module):
     def validate_step(self, epoch, loss, iteration):
 
         if iteration % self.dp.lossreport_step == 0:
-            self.dp.logging.info(f"Epoch {epoch}, Loss: {loss.data}")
+            logging.info(f"Epoch {epoch}, Loss: {loss.data}")
 
         # Simple sanity check shows nearest words for
         # words in self.data_processor.sanitycheck
@@ -287,10 +297,13 @@ class Word2Vec(nn.Module):
                 self.run_sanity_check()
 
         # Evaluate solution on analogy questions task
-        if iteration % self.dp.eval_aq_step == 0:
+        if iteration % self.dp.eval_aq_step == 0 and self.dp.eval_aq_step > 0:
             if self.dp.analogy_questions is not None:
                 eval_analogy_questions(data_processor=self.dp,
                                        embeddings=self.u_embeddings,
+                                       use_cuda=self.use_cuda)
+                eval_analogy_questions(data_processor=self.dp,
+                                       embeddings=self.v_embeddings,
                                        use_cuda=self.use_cuda)
 
         ################################################################################################
@@ -307,7 +320,7 @@ class Word2Vec(nn.Module):
         # - [YP-130](http://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.214.7538&rep=rep1&type=pdf)
         if iteration % self.dp.eval_intrx_step == 0:
             if self.dp.eval_intrinstric:
-                intrinstric_eval(self.u_embeddings, self.dp.w2id, use_cuda=self.use_cuda)
+                self.intristric_eval()
 
         # Evaluate solution on extrinstric properties
         # TODO: Implement
@@ -315,12 +328,12 @@ class Word2Vec(nn.Module):
             pass
 
     def run_sanity_check(self):
-        self.dp.logging.info("\nSANITY CHECK")
-        self.dp.logging.info(
+        logging.info("\nSANITY CHECK")
+        logging.info(
             "----------------------------------------------------------------------------------------------------------------------------------")
         for testword in self.dp.sanitycheck:
-            self.dp.logging.info(f"Nearest words to '{testword}' are: {', '.join(self.find_nearest(testword))}")
-        self.dp.logging.info(
+            logging.info(f"Nearest words to '{testword}' are: {', '.join(self.find_nearest(testword))}")
+        logging.info(
             "----------------------------------------------------------------------------------------------------------------------------------")
 
     def log_step(self, epoch, loss, iteration, previously_read=0):
@@ -332,10 +345,10 @@ class Word2Vec(nn.Module):
                     win=self.loss_window,
                     update='append')
 
-        if iteration % self.dp.tensorboard_step == 0 and iteration>0:
+        if iteration % self.dp.tensorboard_step == 0 and iteration > 0:
             if self.dp.tensorboard_enabled:
                 tag = f"{self.dp.modelname}_UEMB_Epoch_{epoch}_iter_{iteration}"
-                self.dp.logging.info(f"Saving U embeddings {tag} for tensorboard...")
+                logging.info(f"Saving U embeddings {tag} for tensorboard...")
                 self.dp.writer.add_embedding(self.u_embeddings.weight,
                                              metadata=[f"{k}({v})" for k, v in self.dp.frequency_vocab.items()],
                                              tag=tag,
@@ -376,18 +389,31 @@ class Word2Vec(nn.Module):
     # one 0.32731 0.044409 -0.46484 0.14716...
     def save(self, vec_path):
         vocab_size = self.dp.vocab_size
+        is_embedding_bag = type(self.u_embeddings) is nn.EmbeddingBag
         embedding_dimension = self.dp.embedding_size
         # Using linux file endings
         with open(vec_path, 'w') as f:
-            self.logging.info("Saving .vec file to {}".format(vec_path))
+            logging.info("Saving .vec file to {}".format(vec_path))
             f.write("{} {}\n".format(vocab_size, embedding_dimension))
             for word, id in self.dp.w2id.items():
                 tensor_id = torch.LongTensor([id])
                 if self.use_cuda:
                     tensor_id = tensor_id.cuda()
-                embedding = self.u_embeddings(tensor_id).cpu().squeeze(0).detach().numpy()
+                if is_embedding_bag:
+                    trange = torch.LongTensor(range(len(tensor_id)))
+                    if self.use_cuda:
+                        trange = trange.cuda()
+                    self.u_embeddings(tensor_id, trange).cpu().squeeze(0).detach().numpy()
+                else:
+                    embedding = self.u_embeddings(tensor_id).cpu().squeeze(0).detach().numpy()
                 f.write("{} {}\n".format(word, ' '.join(map(str, embedding))))
 
+def init_logging(args):
+    setup_logging(os.path.basename(sys.argv[0]).split(".")[0], logpath=args.logging,
+                  config_path="configurations/logging.yml")
+
+    logging.debug("All settings used:")
+    for k, v in sorted(vars(args).items()): logging.debug("{0}: {1}".format(k, v))
 
 def init_argparser_general(parser):
     # Obligatory arguments
@@ -432,4 +458,4 @@ def init_argparser_general(parser):
                              'serves as sanity check, i.e. "dog family king eye"',
                         default="dog family king eye")
     parser.add_argument("-l", "--logging", help="external path to save example_logs into",
-                        default="")
+                        default="logs/")

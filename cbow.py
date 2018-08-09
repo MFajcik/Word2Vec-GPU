@@ -4,13 +4,12 @@
 __modelname__ = "CBOW"
 __author__ = "Martin Fajčík"
 
-import sys
 import argparse
-import os
 import pickle
 import numpy as np
 import torch
 import torch.nn as nn
+import logging
 
 from nlpfit.other.logging_config import init_logging
 from nlpfit.preprocessing.nlp_io import read_word_lists
@@ -98,7 +97,12 @@ class CBOW(Word2Vec):
         return -1. * (torch.sum(score) + torch.sum(neg_score)) / self.dp.batch_size
 
 
-class CBDataProcessor(DataProcessor):
+class WordContextDataProcessor(DataProcessor):
+    """
+    This dataprocessor creates batches of words and their contexts
+    So each sample has pattern `([a,b,c,d],y)`, where `a,b,c,d` are context words and `y` is target word
+    """
+
     def create_batch_gen(self):
         # Create word list generator
         wordgen = read_word_lists(self.corpus, bytes_to_read=self.bytes_to_read, report_bytesread=True)
@@ -121,9 +125,9 @@ class CBDataProcessor(DataProcessor):
                     if not (self.frequency_vocab_with_OOV[w] < self.min_freq or self.should_be_subsampled(w)):
                         wlist_clean.append(w)
                 except KeyError as e:
-                    self.logging.critical("Encountered unknown word!")
-                    self.logging.critical(e)
-                    self.logging.critical(f"Wlist: {wlist}")
+                    self.logging.error("Encountered unknown word!\n Are you using the right vocabulary?")
+                    self.logging.error(e)
+                    self.logging.error(f"Wlist: {wlist}")
             wlist = wlist_clean
 
             # TODO: Phrase clustering here
@@ -165,7 +169,7 @@ def init_argparser_cbow(parser):
     # Obligatory arguments
     # Optional switch arguments
     # Optional arguments with value
-    parser.add_argument("-lr", "--learning_rate", help="initial learning rate", default=0.005)
+    parser.add_argument("-lr", "--learning_rate", help="initial learning rate", default=0.003)
 
     ## Step count parameters
     parser.add_argument("--lossreport_step", help="number of steps after which loss value is reported",
@@ -175,7 +179,7 @@ def init_argparser_cbow(parser):
                         help="number of steps after which analogy questions evaluation if performed",
                         default=5000)
     parser.add_argument("--eval_intrx_step", help="number of steps after which intrinstric evaluation if performed",
-                        default=5000)
+                        default=10000)
     parser.add_argument("--sanity_check_step", help="number of steps after which sanity check if performed",
                         default=5000)
     parser.add_argument("--eval_extrx_step", help="number of steps after which extrinstric evaluation if performed",
@@ -192,22 +196,27 @@ if __name__ == "__main__":
     init_argparser_general(parser)
     init_argparser_cbow(parser)
     args = parser.parse_args()
-    logging = init_logging(os.path.basename(sys.argv[0]).split(".")[0], logpath=args.logging)
+    init_logging(args)
 
-    data_proc = CBDataProcessor(args, __modelname__, logging=logging)
+    data_proc = WordContextDataProcessor(args, __modelname__)
     cbow_model = CBOW(data_proc)
 
     # We need to carefully choose optimizer and its parameters to guarantee no global update will be excuted when training.
     # For example, parameters like weight_decay and momentum in torch.optim. SGD require the global calculation
     # on embedding matrix, which is extremely time-consuming.
     bytes_read = 0
-    epochs = 100
+    epochs = 25
     for e in range(epochs):
         logging.info(f"Starting epoch: {e}")
         bytes_read = cbow_model._train(previously_read=bytes_read, epoch=e)
-
-    with open(f"trained/u_embeddings_e{epochs}.pkl", "wb") as f:
-        pickle.dump(cbow_model.u_embeddings.weight, f, protocol=pickle.HIGHEST_PROTOCOL)
-    with open(f"trained/v_embeddings_e{epochs}.pkl", "wb") as f:
-        pickle.dump(cbow_model.v_embeddings.weight, f, protocol=pickle.HIGHEST_PROTOCOL)
+    try:
+        with open(f"trained/u_embeddings_e{epochs}.pkl", "wb") as f:
+            pickle.dump(cbow_model.u_embeddings.weight, f, protocol=pickle.HIGHEST_PROTOCOL)
+    except MemoryError as e:
+        logging.critical(e)
+    try:
+        with open(f"trained/v_embeddings_e{epochs}.pkl", "wb") as f:
+            pickle.dump(cbow_model.v_embeddings.weight, f, protocol=pickle.HIGHEST_PROTOCOL)
+    except MemoryError as e:
+        logging.critical(e)
     cbow_model.save(f"trained/embeddings_test_e{epochs}.vec")

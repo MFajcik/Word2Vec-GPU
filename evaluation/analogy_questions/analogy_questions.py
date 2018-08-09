@@ -1,5 +1,5 @@
 import torch
-
+import logging
 import numpy as np
 import torch.nn.functional as F
 
@@ -27,29 +27,31 @@ def read_analogies(file, w2id):
             else:
                 questions.append(np.array(ids))
 
-    print("\n###########################################")
-    print("Loaded evaluation method: Question analogy")
-    print("-------------------------------------------\n")
-    print("Eval analogy file: ", file)
-    print("Questions: ", len(questions))
-    print("Skipped: ", questions_skipped)
-    print("###########################################\n")
+    logging.info("###########################################")
+    logging.info("Loaded evaluation method: Question analogy")
+    logging.info("-------------------------------------------\n")
+    logging.info("Eval analogy file: "+ file)
+    logging.info("Questions: "+ str(len(questions)))
+    logging.info("Skipped: "+ str(questions_skipped))
+    logging.info("###########################################\n")
     return np.array(questions, dtype=np.int32)
+
 
 # Each analogy task is to predict the 4th word (d) given three
 # words: a, b, c.  E.g., a=italy, b=rome, c=france, we should
 # predict d=paris
-def eval_analogy_questions(data_processor, embeddings, use_cuda, top_k=4):
+def eval_analogy_questions(data_processor, embeddings, use_cuda):
     """Evaluate analogy questions and reports accuracy."""
 
-    embedding_bag = type(embeddings) is EmbeddingBag
+    is_embedding_bag = type(embeddings) is EmbeddingBag
     # How many questions we get right at precision@1.
     correct = 0
     aq = data_processor.analogy_questions
     total = aq.shape[0]
 
     start = 0
-    N = 256
+    # Lower the N, if you are running out of memory
+    N = 32
     predict_item_index = 3
 
     # Normalize matrix so we can calculate cosine distances with dot product
@@ -65,7 +67,7 @@ def eval_analogy_questions(data_processor, embeddings, use_cuda, top_k=4):
         b = torch.LongTensor(analogy[:, 1])
         c = torch.LongTensor(analogy[:, 2])
 
-        if embedding_bag:
+        if is_embedding_bag:
             arange = torch.LongTensor(range(len(a)))
             brange = torch.LongTensor(range(len(b)))
             crange = torch.LongTensor(range(len(c)))
@@ -74,12 +76,12 @@ def eval_analogy_questions(data_processor, embeddings, use_cuda, top_k=4):
             a = a.cuda()
             b = b.cuda()
             c = c.cuda()
-            if embedding_bag:
+            if is_embedding_bag:
                 arange = arange.cuda()
                 brange = brange.cuda()
                 crange = crange.cuda()
 
-        if embedding_bag:
+        if is_embedding_bag:
             a_emb = embeddings(a, arange)
             b_emb = embeddings(b, brange)
             c_emb = embeddings(c, crange)
@@ -87,7 +89,6 @@ def eval_analogy_questions(data_processor, embeddings, use_cuda, top_k=4):
             a_emb = embeddings(a)
             b_emb = embeddings(b)
             c_emb = embeddings(c)
-
 
         # We expect that d's embedding vectors on the unit hyper-sphere is
         # near: c_emb + (b_emb - a_emb), which has the shape [N, emb_dim].
@@ -98,11 +99,11 @@ def eval_analogy_questions(data_processor, embeddings, use_cuda, top_k=4):
         dist = torch.matmul(d_emb, nembs)
 
         # top_k closest EMBEDDINGS
-        top_predicted = torch.topk(dist, dim=1, k=top_k)[1].cpu().numpy()
+        top_predicted = torch.topk(dist, dim=1, k=4)[1].cpu().numpy()
 
         start = limit
         for question in range(analogy.shape[0]):
-            for j in range(top_k):
+            for j in range(4):
                 if top_predicted[question, j] == analogy[question, predict_item_index]:
                     # Bingo! We predicted correctly. E.g., [italy, rome, france, paris].
                     correct += 1
@@ -113,4 +114,4 @@ def eval_analogy_questions(data_processor, embeddings, use_cuda, top_k=4):
                 else:
                     # The correct label is not the precision@1
                     break
-    print("Eval analogy questions %4d/%d accuracy = %4.1f%%" % (correct, total, correct * 100.0 / total))
+    logging.info("Eval analogy questions %4d/%d accuracy = %4.1f%%" % (correct, total, correct * 100.0 / total))
