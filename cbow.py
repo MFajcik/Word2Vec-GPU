@@ -128,9 +128,9 @@ class WordContextDataProcessor(DataProcessor):
                     if not (self.frequency_vocab_with_OOV[w] < self.min_freq or self.should_be_subsampled(w)):
                         wlist_clean.append(w)
                 except KeyError as e:
-                    self.logging.error("Encountered unknown word!\n Are you using the right vocabulary?")
-                    self.logging.error(e)
-                    self.logging.error(f"Wlist: {wlist}")
+                    logging.error("Encountered unknown word!\n Are you using the right vocabulary?")
+                    logging.error(e)
+                    logging.error(f"Wlist: {wlist}")
             wlist = wlist_clean
 
             # TODO: Phrase clustering here
